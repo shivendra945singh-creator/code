@@ -1,12 +1,12 @@
-//                                 sorting means arrange in an order
+                                            // sorting means arrange in an order
 
 
 
 
-//                                 bubble sort means large element come to the end of array by swapping with adjacent elements
+                            //   bubble sort means large element come to the end of array by swapping with adjacent elements
 
 
-//                        ##time complexity of bubble sort , insertion sort, selection sort is O(n square)
+                                   // ##time complexity of bubble sort , insertion sort, selection sort is O(n square)
 
 
 
@@ -73,7 +73,7 @@
 
 
 
-//                                            selection sort means pick the smallest (from unsorted) put it at the beginning
+                              // selection sort means pick the smallest (from unsorted) put it at the beginning
 
 
 
@@ -242,7 +242,7 @@
 
                                            // counting sorting
 
-                                           
+
 
 
 public static void countingsort(int arr[]) {
