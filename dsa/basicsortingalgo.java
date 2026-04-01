@@ -242,6 +242,8 @@
 
                                            // counting sorting
 
+                                           
+
 
 public static void countingsort(int arr[]) {
     int largest = Integer.MIN_VALUE;
@@ -266,7 +268,7 @@ public static void countingsort(int arr[]) {
 
 
 
-public static void printArr(int[] args) {
+public static void printArr(int arr[]) {
     for(int i=0; i<arr.length; i++) {
     System.err.print(arr[i]+" ");
     }
@@ -280,5 +282,4 @@ public static void main(String[] args) {
     countingsort(arr);
     printArr(arr);
 }
-
-          //s  pp     kk       
+      
