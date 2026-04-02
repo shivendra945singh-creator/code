@@ -184,32 +184,74 @@
 
 
 
-public class twoDarray {
+// public class twoDarray {
 
-public static int diagonalsum(int matrix[][]) {  //O(n)
-    int sum = 0;
+// public static int diagonalsum(int matrix[][]) {  //O(n)
+//     int sum = 0;
 
-    for(int i=0; i<matrix.length; i++) {
-        // primary diagonal condition
-        sum += matrix[i][i];
-        // secondary diagonal condition
-        if(i != matrix.length - 1 - i) // to avoid adding the middle element twice in case of odd-sized matrix
-            sum += matrix[i][matrix.length - 1 - i];
+//     for(int i=0; i<matrix.length; i++) {
+//         // primary diagonal condition
+//         sum += matrix[i][i];
+//         // secondary diagonal condition
+//         if(i != matrix.length - 1 - i) // to avoid adding the middle element twice in case of odd-sized matrix
+//             sum += matrix[i][matrix.length - 1 - i]; // here matrix.length - 1 - i gives j value
 
             
+//     }
+
+//     return sum;
+    
+// }
+
+// public static void main(String args []) {
+//     int matrix[][] = { {1, 2, 3, 4},
+//         {5, 6, 7, 8},
+//         {9, 10, 11, 12},
+//         {13, 14, 15, 16}};
+
+//     System.out.println("Sum of diagonal elements: " + diagonalsum(matrix));
+// }
+// }
+
+
+
+
+
+
+                                                   //search in sorted matrix
+
+
+ public class twoDarray {
+public static boolean search(int matrix[][], int key) {
+ int row = 0;
+   int col = matrix[0].length - 1; // start from top right corner
+   
+  while(row < matrix.length && col >= 0) {
+       if(matrix[row][col] == key) {
+     System.out.println("Found at cell (" + row + "," + col + ")");
+     return true;
     }
 
-    return sum;
-    
-}
+    else if( key <matrix[row][col] ) {
+    col--; // move left
+     }
+     else {
+     row++; // move down
+     }
+     }
+      System.out.println("Key not found");
+         return false;
+     } 
+                 
+    public static void main(String args[]) {
+    int matrix[][] = {
+     {1, 2, 3, 4},
+      {5, 6, 7, 8},
+      {9, 10, 11, 12},
+     {13, 14, 15, 16}
+     };
+     int key = 12;
+      search(matrix, 12);
 
-public static void main(String args []) {
-    int matrix[][] = { {1, 2, 3, 4},
-        {5, 6, 7, 8},
-        {9, 10, 11, 12},
-        {13, 14, 15, 16}};
-
-    System.out.println("Sum of diagonal elements: " + diagonalsum(matrix));
-}
-}
-
+       }
+   }
