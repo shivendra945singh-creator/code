@@ -210,4 +210,20 @@
 
 
 
-                                          //print largest string
+                                          //Q3 print largest string
+
+
+//O(x into n) is time complexity because we are comparing each string with every other string 
+
+   public class strings {
+        public static void main(String args[]) {
+            String str[] = {"hello", "world", "java", "programming"};
+            String largest = str[0];
+            for (int i = 1; i < str.length; i++) {
+                if (largest.compareTo(str[i]) < 0) { // compareTo() method compares two strings lexicographically and returns a negative integer, zero, or a positive integer as this string is less than, equal to, or greater than the specified object.
+                    largest = str[i];
+                }
+            }
+            System.out.println("largest string is " + largest);
+        }
+    }                                      
