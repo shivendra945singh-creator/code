@@ -4,21 +4,21 @@
 
 
 public class recursion {
-    public static void printDec(int n) {
-        if (n == 1) {
-            System.out.println(n);
-            return;
-        }
-        System.out.print(n + " ");
-        printDec(n- 1);
-    }
+//     public static void printDec(int n) {
+//         if (n == 1) {
+//             System.out.println(n);
+//             return;
+//         }
+//         System.out.print(n + " ");
+//         printDec(n- 1);
+//     }
 
-    public static void main(String args[]) {
-        int n = 10;
-        printDec(n);
-    }
+//     public static void main(String args[]) {
+//         int n = 10;
+//         printDec(n);
+//     }
     
-}
+// }
 
 
 
@@ -305,34 +305,34 @@ public class recursion {
 
 
     // time complexity: O(n) and space complexity: O(n) 
-//     public static int lastOcc(int arr[], int key, int i) {
-//         if (i == arr.length) {
-//             return -1; // base case: if we have reached the end of the array without finding the key, return -1
-//         }
-//         int isFound = lastOcc(arr, key, i + 1); // recursive call to check the rest of the array
-//         if (isFound != -1) {
-//             return isFound; // if the key was found in the rest of the array, return its index
-//         }
-//         if (arr[i] == key) {
-//             return i; // if the current element is equal to the key, return its index
-//         }
-//         return -1; // if the key was not found in the current element or the rest of the array, return -1
-//     }
+    public static int lastOcc(int arr[], int key, int i) {
+        if (i == arr.length) {
+            return -1; // base case: if we have reached the end of the array without finding the key, return -1
+        }
+        int isFound = lastOcc(arr, key, i + 1); // recursive call to check the rest of the array
+        if (isFound != -1) {
+            return isFound; // if the key was found in the rest of the array, return its index
+        }
+        if (arr[i] == key) {
+            return i; // if the current element is equal to the key, return its index
+        }
+        return -1; // if the key was not found in the current element or the rest of the array, return -1
+    }
 
-//     public static void main(String args[]) {
-//         int arr[] = {1, 2, 3, 4, 5, 3, 6};
-//         int key = 3;
-//         int result = lastOcc(arr, key, 0);
-//         if (result != -1) {
-//             System.out.println("The last occurrence of " + key + " is at index: " + result);
-//         } else {
-//             System.out.println(key + " not found in the array.");
-//         }
-//     }
-// }   
+    public static void main(String args[]) {
+        int arr[] = {1, 2, 3, 4, 5, 3, 6};
+        int key = 3;
+        int result = lastOcc(arr, key, 0);
+        if (result != -1) {
+            System.out.println("The last occurrence of " + key + " is at index: " + result);
+        } else {
+            System.out.println(key + " not found in the array.");
+        }
+    }
+}   
 
 
-                                                     //or
+                                                        //or
 
 
 
@@ -385,7 +385,7 @@ public class recursion {
 
 
                                                             //find x raised to the power n (x^n)
-                                                            
+
 
 
     // time complexity: O(n) and space complexity: O(n)
