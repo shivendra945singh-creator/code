@@ -108,7 +108,7 @@
 //     }
 //     return f;  // final f value 
 // }public static void main(String[] args) {
-//     System.out.println(factorial(4));
+//     System.out.println(factorial(25));
 // }
 //  }
 
@@ -141,7 +141,7 @@
 
     
 // public static void main(String args []) {  
-//     System.out.println(bincoeff(5, 2));
+//     System.out.println(bincoeff(10, 2));
 // }
 //  }
 
