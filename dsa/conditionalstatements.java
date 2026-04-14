@@ -316,7 +316,7 @@
 // public class conditionalstatements {
 //     public static void main(String[] args) {
 //         Scanner sc = new Scanner(System.in);
-//         System.out.print(" enter a number ");
+//         System.out.print(" enter a number : ");
 //         int number = sc.nextInt();       // int num and switch num must be same 
 
 //         switch (number) {
@@ -411,6 +411,171 @@
 //     } 
 // }     
 
+
+
+
+                                                             //practise question 
+
+
+
+                                                             //Q1
+
+
+//    Write a Javaprogram to get a number from the user and print whether it is positive or negative 
+
+
+
+// import java.util.*;
+// public class conditionalstatements {
+//     public static void main (String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         System.out.print("enter a number");
+//         int num = sc.nextInt();
+//         if (num >=0) {
+//             System.out.println(num + " is a positive number.");
+//         } else if (num < 0) {
+//             System.out.println(num + " is a negative number.");
+//         }
+//     } 
+// }
+
+
+
+                                                             //Q2
+
+
+// Finish the following  code sothat it prints You have a  fever if your temperature is above 100 and otherwise prints You don't have a fever.
+
+
+
+// public class conditionalstatements{
+// public static void main(String[]args) {
+// double temp = 103.5;
+// if (temp>100) {
+//     System.out.println("You have a fever.");
+// } else {
+//     System.out.println("You don't have a fever.");
+// }
+// }
+// }
+           
+
+
+                                                          //Q3
+
+
+//  What will be the value of x & y in thefollowing program:
+
+
+
+// public class conditionalstatements {
+// public static void main(String args[]) {
+// int a = 63 , b = 36;
+// boolean x = (a < b)? true:false;
+
+// int  y = (a>b) ? a:b;
+
+
+                                              
+
+
+//In this code, there is actually no output.
+
+//This is because the program calculates the values for x = false and y = 63 and stores them in memory, but it never uses a print command (like System.out.println) to show them on the screen
+
+
+
+
+                                                             //Q4
+
+
+ //Write a Java program that takes a year from the user and prints whether that year is a leap year or not.                                   
+
+
+
+import java.util.*;
+
+public class conditionalstatements {
+public static void main (String[]args) {
+
+Scanner sc= new Scanner(System.in);
+System.out.print("Input the year: ");
+
+int year = sc.nextInt();
+boolean x= (year%4) ==0;// if the year is divisible by 4 and its remainder is 0 then it is a leap year otherwise it is not a leap year
+boolean y= (year%100) !=0;// if the year is not divisible by 100 then it is a leap year otherwise it is not a leap year
+boolean z= ((year % 100 == 0) && ( year % 400 == 0));// if the year is divisible by 100 and its remainder is 0 and the year is also divisible by 400 and its remainder is 0 then it is a leap year otherwise it is not a leap year
+
+if(x && (y||z)) {//
+System.out.println(year+" is a leap year");
+}
+else{
+System.out.println( year +" is not a leapyear");
+}
+}
+}
+
+
+
+
+                                                               //complete
+
+
+
+
+
+
+
+
+
+//dry run
+
+
+
+// If you enter 2024: 2024 is a leap year
+
+// If you enter 1900: 1900 is not a leap year
+
+// If you enter 2000: 2000 is a leap year
+
+// How the Logic Works
+// The program uses three boolean variables (x, y, and z) to test the three mathematical conditions for a leap year:
+
+// x = (year % 4) == 0: Is the year divisible by 4? (e.g., 2024 is true).
+
+// y = (year % 100) != 0: Is the year not a "century" year (like 1900 or 2100)?
+
+// z = (year % 100 == 0) && (year % 400 == 0): If it is a century year, is it also divisible by 400? (This is why 2000 was a leap year, but 1900 was not).
+
+// The Final Decision
+// The line if (x && (y || z)) combines these rules:
+
+// The year must be divisible by 4 (x).
+
+// AND it must either not be a century (y) OR it must be a century divisible by 400 (z).
+
+// If this complex condition results in true, it prints that it is a leap year; otherwise, it executes the else block
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
                                                     
