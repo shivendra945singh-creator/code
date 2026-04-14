@@ -189,7 +189,7 @@
 
                                                   // type casting in java
 
-
+// public class varianddata {
 // public static void main(String[] args) {
 //   float num1 = 10.5f;
 //   int num2 = (int) num1;  // type casting
@@ -207,39 +207,41 @@
 //     System.out.println(num4);   
 //     System.out.println(num5);
 //     }
+//    }
 
 
 
                                               // type permotation in java
 
 
-
+// public class varianddata {
 //  public static void main(String[] args) {
-    // char a = 'A';
-    // char b = 'B';
-    // System.out.println((int)a);  // type casting
-    // System.out.println((int)b);  // type casting
-    // System.out.println(b-a);  // type permotation
-    // System.out.println(a);  //ye par a ki value A print hogi nha ki 65 print hogi kuki a ko char type me declare kiya hai
+//     char a = 'A';
+//     char b = 'B';
+//     System.out.println((int)a);  // type casting
+//     System.out.println((int)b);  // type casting
+//     System.out.println(b-a);  // type permotation
+//     System.out.println(a);  //ye par a ki value A print hogi nha ki 65 print hogi kuki a ko char type me declare kiya hai
 
- //concept of type promotion in java
+//  //concept of type promotion in java
 
-   //  int a = 10;
-   //  float b = 20.5f;
-   //  long c = 30;
-   //  double d = 40.5;
-   //  double answer = (a + b + c + d);  // here all values are converted to double type because double is the largest data type among them
-   //  System.out.println(answer);
+//     int aa = 10;
+//     float bb = 20.5f;
+//     long cc = 30;
+//     double dd = 40.5;
+//     double answer = (aa + bb + cc + dd);  // here all values are converted to double type because double is the largest data type among them
+//     System.out.println(answer);
 
 
   
 //    //concept of type promotion in java
 
-//     byte b = 10;
-//    //  byte a = b*2;  // here b*2 is int type while a is byte type so we cannot assign int value to byte variable without type casting
-//     byte a = (byte)(b*2);  
-//     System.out.println(a);
+//     byte bbb = 10;
+//    //  byte aaa = bbb*2;  // here bbb*2 is int type while aaa is byte type so we cannot assign int value to byte variable without type casting
+//     byte aaa = (byte)(bbb*2);  
+//     System.out.println(aaa);
 //  }
+// }
                                                
 
 
@@ -324,3 +326,15 @@
    //      int $ = 24;
    //      System.out.println($);
    //  }                                                
+
+
+
+
+
+
+
+
+
+
+
+                                                          //##complete
