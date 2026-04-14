@@ -229,7 +229,7 @@ public class recursion {
     //         System.out.println("The array is not sorted.");
     //     }
     // }
-}                                            
+// }                                            
 
 
 
@@ -525,11 +525,39 @@ public class recursion {
       
 //   }  
   
-  // public static void main(String[] args) {
-    // int n = 5;
-    // System.out.println("Number of ways to tile a 2x" + n + " board is: " + tilingProblem(n));
-  // }
+//   public static void main(String[] args) {
+//     int n = 5;
+//     System.out.println("Number of ways to tile a 2x" + n + " board is: " + tilingProblem(n));
+//   }
 // }
+
+
+                                                       //or
+
+
+
+
+
+//   public static int tilingProblem(int n) { //2xn board size and 2x1 tiles
+//     // base cases: if n is 0 or 1, there is only one way to tile the board
+//     if (n == 0 || n == 1) {
+//         return 1; // base case: there is one way to tile a 2x0 or 2x1 board
+//     }
+
+//     return  tilingProblem(n - 1) + tilingProblem(n - 2);
+      
+//   }  
+  
+//   public static void main(String[] args) {
+//     int n = 5;
+//     System.out.println("Number of ways to tile a 2x" + n + " board is: " + tilingProblem(n));
+//   }
+// }
+
+
+
+
+
 
 
 
@@ -564,6 +592,50 @@ public class recursion {
 
 
 
+                                                        //friend pairing problem
+
+
+
+//   public static int friendPairing(int n) {
+//     // base case: if there are 0 or 1 friends, there is only one way to pair them
+//     if (n == 0 || n == 1) {
+//         return 1; // base case: there is one way to pair 0 or 1 friend
+//     }
+//     // choice 1: the first friend remains single, so we need to pair the remaining (n-1) friends
+//     int single = friendPairing(n - 1); // recursive call for the case where the first friend remains single
+
+//     // choice 2: the first friend pairs up with any of the remaining (n-1) friends, so we need to pair the remaining (n-2) friends
+//     int pairUp = (n - 1) * friendPairing(n - 2); // recursive call for the case where the first friend pairs up with another friend
+
+//     int totalWays = single + pairUp; // calculate the total number of ways to pair n friends using the results from the recursive calls
+//     return totalWays; // return the total number of ways to pair n friends
+    
+// }  
+//     public static void main(String args[]) {
+//         int n = 3;
+//         System.out.println("Number of ways to pair " + n + " friends is: " + friendPairing(n));
+//     }
+// }       
+
+
+                                              // or
+
+
+
+  public static int friendPairing(int n) {
+    // base case: if there are 0 or 1 friends, there is only one way to pair them
+    if (n == 0 || n == 1) {
+        return 1; // base case: there is one way to pair 0 or 1 friend
+    }
+    
+    return friendPairing(n - 1) + (n - 1) * friendPairing(n - 2); // recursive calls for both choices: single and pair up
+}
+    public static void main(String args[]) {
+        int n = 3;
+        System.out.println("Number of ways to pair " + n + " friends is: " + friendPairing(n));
+    }
+
+}
 
 
 
