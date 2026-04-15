@@ -16,7 +16,7 @@
 
 
 
-                                                //or
+                                                          //or
 
 
 
@@ -32,7 +32,7 @@
 // }
 
 
-                                               // print number from 1 to n
+                                                       // print number from 1 to n
 
 
 
@@ -56,7 +56,7 @@
 
 
 
-                                             //sum of first n natural numbers
+                                                    //sum of first n natural numbers
                 
 
 
@@ -85,7 +85,7 @@
 
 
 
-                                                     //for loop
+                                                                //for loop
 
 
 // public class loops {
@@ -103,7 +103,7 @@
 
 
 
-                                                //print square pattern
+                                                          //print square pattern
 
 
 // public class loops {
@@ -120,7 +120,7 @@
 
 
 
-                                              //or
+                                                                  //or
 
                                               
 // public class loops {
@@ -136,7 +136,7 @@
  
 
 
-                                        //print reverse of a number
+                                                        //print reverse of a number
 
 // public class loops {
 //     public static void main(String[] args) {
@@ -154,7 +154,7 @@
 
 
 
-                                         // revese the given number
+                                                   // reverse the given number !!
 
 
 
@@ -176,7 +176,7 @@
 
 
 
-                                              //do while loop
+                                                       //do while loop
 
 
 
@@ -197,7 +197,7 @@
 
 
 
-                                                //break statement
+                                                         //break statement
 
 
 
@@ -218,7 +218,7 @@
 
 
 
-                                           //keep entering numbers till user enters a multiple of 10 by using do  while statement
+                                            //keep entering numbers till user enters a multiple of 10 by using do  while statement
 
 
 
@@ -247,7 +247,8 @@
 
 
 
-                                              //continue statement means  to skip an iteration
+                                                //continue statement means  to skip an iteration
+
 
 
 //     public class loops {
@@ -291,7 +292,7 @@
 // } 
 
 
-                                           // check a mumber is prime or not
+                                                      // check a mumber is prime or not
 
 
 
@@ -329,7 +330,7 @@
 
 
 
-                                                    //or
+                                                        //or
 
 
 
@@ -375,6 +376,10 @@
                                                   // Q1
 
 
+//  How many times 'Hello' is printed ?
+
+
+
 // public class loops{
 //     public static void main(String[]args){
 //     for(int i=0; i<5; i++) {
@@ -383,3 +388,111 @@
 //     }
 //     }
 // }
+
+
+
+                                                    //answer
+
+
+   //Iteration 1: starts at i = 0. It prints "Hello". Then, i += 2 makes i = 2. Finally, the loop's own i++ runs, making i = 3.
+   // Iteration 2: starts at i = 3. Since 3 < 5, it prints "Hello" again. Then, i += 2 makes i = 5. Finally, the loop's i++ runs, making i = 6.
+   // Termination: The condition i < 5 is checked. Since 6 is not less than 5, the loop terminates.
+
+   // Total "Hello" count: 2                                                 
+
+
+
+
+
+                                                      // Q2
+
+
+// Write a program to print the multiplication table of a number N, entered by the user.  
+
+
+
+// import java.util.*;
+// public class loops {
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         System.out.print("enter the number : ");
+//         int n = sc.nextInt();
+
+//         for (int i=1; i<=10; i++) {
+//             System.out.println(n + " x " + i + " = " + n*i);
+//         }
+//     }
+// }
+
+
+
+                                                          // Q3
+
+
+  //What is wrong in the following program?
+
+//   public class loops {
+//   public static void main(String args[]) {
+
+//   for(int i=0 ;i <=5 ; i++ ) {
+//    System.out.println("i = "+i);
+//   }
+// System.out.println("i after the loop = " + i);
+// }
+// }                                                        
+
+
+
+                                                          // answer
+
+
+ //Scope Visibility: Your final print statement System.out.println("i after the loop = " + i); is trying to access i outside of the loop where it was defined. 
+ // This will cause a compiler error: cannot find symbol: variable i.   
+ 
+ 
+
+
+
+
+
+
+
+                                                             // Q4  !!
+
+
+// Write a program that reads a set of integers, and then prints the sum of the even and odd integers
+
+
+
+  import java.util.*;
+  public class loops{
+  public static void main(String[]args) {
+  Scanner sc = new Scanner(System.in);
+  int number;
+  int choice;
+  int evenSum=0;
+  int oddSum=0;
+
+  do {
+    System.out.print("Enter the number : ");
+    number=sc.nextInt();
+
+  if(number%2==0) {
+    evenSum+=number;
+  }else{
+    oddSum+=number;
+  }
+  
+  System.out.print("Do you want to continue? Press 1 for yes or 0 for no: ");
+  choice=sc.nextInt();
+  }while(choice==1);
+
+  System.out.println("Sum of even numbers: "+evenSum);
+  System.out.println("Sum of odd numbers: "+oddSum);
+
+  }
+  }                                                           
+
+
+
+                                                         //##complete
