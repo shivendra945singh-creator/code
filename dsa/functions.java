@@ -55,6 +55,11 @@
 
 // import java.util.*;
 // public class functions {
+//     public static int calcsum(int a, int b) {  // this is function which takes two parameters or formal parameters and return the sum of those two parameters
+//         int sum = a + b;
+//         return sum;
+//     }
+
 //     public static void main(String[] args) {
 //         Scanner sc = new Scanner(System.in);
 //         System.out.print("Enter a number: ");
@@ -62,7 +67,7 @@
 //         System.out.print("Enter a number: ");
 //         int b = sc.nextInt();
 
-//         int sum =  a + b;
+//         int sum = calcsum(a, b);  // this is function call and we are passing a and b as arguments or actual parameters to the function
 //         System.out.println("The sum is: " + sum);
         
 //     }
@@ -70,29 +75,126 @@
 
 
 
+                                                //or
 
 
-                                               // or
 
-                   
+//  import java.util.*;
+//  public class functions {
+//      public static int calcsum(int num1, int num2) {  // this is function which takes two parameters and return the sum of those two parameters
+//         //  int sum = num1 + num2;
+//         //  return sum;
+//         //or
+//          return num1 + num2;  // we can also directly return the sum without storing it in a variable
+//      }
 
-// import java.util.*;
+//      public static void main(String[] args) {
+//          Scanner sc = new Scanner(System.in);
+//          System.out.print("Enter a number: ");
+//          int a  = sc.nextInt();
+//          System.out.print("Enter a number: ");
+//          int b = sc.nextInt();
+//          calcsum(a, b);  // this is function call and we are passing a and b as arguments to the function
+
+//          System.out.println("The sum is: " + calcsum(a, b));  // this is function call and we are passing a and b as arguments to the function
+        
+//      }
+//  }                                               
+            
+
+                                                   //CALL BY VALUE IN JAVA
+
+
+
+//  public class functions {
+//      public static void change(int a) {  // this is function which takes one parameter and change the value of that parameter
+//          a = 98;  // this change will not reflect in main function because java is call by value language
+//      }
+     
+//         public static void main(String[] args) {
+//             int x = 45;
+//             change(x);  // this is function call and we are passing x as argument to the function
+//             System.out.println(x);  // this will print 45 because change function does not change the value of x in main function
+//         }
+//     }
+
+
+
+                                               //or(call by value takes here)
+
+
+
 // public class functions {
-//     public static void main(String[] args) {
-//         Scanner sc = new Scanner(System.in);
-//         System.out.print("Enter a number: ");
-//         int a  = sc.nextInt();
-//         System.out.print("Enter a number: ");
-    
-//         int b = sc.nextInt();
+//  public static void swap(int a, int b) {  // this is function which takes two parameters and swap the values of those two parameters
+//      //swap
+//     int temp = a;
+//         a = b;
+//         b = temp;
+   
+// }
 
-//         int sum =  a + b;
-//         System.out.println("The sum is: " + sum);
-        
+//     public static void main(String[] args) {
+//         int a = 5;
+//         int b = 10;
+//         swap(a, b);  // this is function call and we are passing a and b as arguments to the function
+//     System.out.println("  a = " + a );// this will print 5 because swap function does not change the value of a in main function
+//     System.out.println("  b = " + b);  // this will print 10 because swap function does not change the value of b in main function
 //     }
 // }
 
 
+            
+                                                     //or (call by value  not takes here)
+
+
+
+// public class functions {
+//  public static void swap(int a, int b) {  // this is function which takes two parameters and swap the values of those two parameters
+//      //swap
+//     int temp = a;
+//         a = b;
+//         b = temp;
+ 
+
+//  System.out.println("After swapping a = " + a );
+//  System.out.println("After swapping b = " + b);  // this will print swapped values of a and b 
+   
+// }
+
+//     public static void main(String[] args) {
+//         int a = 5;
+//         int b = 10;
+//         swap(a, b);  // this is function call and we are passing a and b as arguments to the function
+//     }
+// }
+
+
+                                               // product of two numbers 
+
+
+// public class functions {
+// public static int multiply (int a , int b) {
+//     int product = a*b;
+//     return product;
+// }
+
+// public static void main(String[] args) {
+//     int a = 5;
+//     int b = 8;
+//     // int ans = multiply(a,b);
+//     // System.out.println(" a * b = " + ans);
+
+//     //or
+
+//     multiply(a,b);
+//     System.out.println(multiply(a,b));
+// }
+// }
+
+
+
+
+    
                                                // factorial of a number in java
 
 

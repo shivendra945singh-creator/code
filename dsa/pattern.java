@@ -79,6 +79,7 @@
 
 
 
+
                                  // 04 print reverse star pattern with 10 lines
 
 
@@ -146,22 +147,22 @@
 
 
 
-                                            // 07 print character pattern
+                                                            // 07 print character pattern
 
 
                                             
 
-public class pattern {
+// public class pattern {
 
-    public static void main(String[] args) {
-        int n=4;
-        char ch='A';
-        for( int line =1; line<=n; line++) {   // line ko i bhi let karsakte the
-            for (int chars =1; chars<=line; chars++) {  //   chars ko j bhi let karsakte the
-                   System.out.print(ch);
-                   ch++;
-            }
-            System.out.println();
-        }
-    }
-}
+//     public static void main(String[] args) {
+//         int n=4;
+//         char ch='A';
+//         for( int line =1; line<=n; line++) {   // line ko i bhi let karsakte the
+//             for (int chars =1; chars<=line; chars++) {  //   chars ko j bhi let karsakte the
+//                    System.out.print(ch);
+//                    ch++;
+//             }
+//             System.out.println();
+//         }
+//     }
+// }
