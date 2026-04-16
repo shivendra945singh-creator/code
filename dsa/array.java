@@ -33,7 +33,7 @@
 //          System.out.println("average is :" + average );
 
 
-//         System.out.println("lenght of array = " + marks.length);  // .lenght is used for find array lenght and  here marks is funcition name 
+//         System.out.println("lenght of array = " + marks.length);  // .lenght is used for find array lenght(elements or size) and  here marks is funcition name 
 
 //     }
     
@@ -59,22 +59,25 @@
 //         update(marks);  //call function
         
 
-              // print our function
+//              // print our function
 //         for (int i = 0; i<marks.length; i++) {
 //            System.out.println(marks[i] + ""); 
 //         }
 //         System.out.println();
+//          System.out.println( marks.length);
 //     }
-    
+   
 // }
 
 
 
-                                                  //or error occur
+                                                   // array as function argument
+
+
 
 // public class array {
 //     public static void update(int marks[] , int nonchangable ) {
-//         nonChangable = 10;
+//         nonchangable = 10;
 //      for (int i = 0; i<marks.length; i++) {
 //          marks[i] = marks[i] + 1;
 
@@ -293,9 +296,35 @@
 
 
 
+//dry run
+
+//     Initial array: [2, 4, 6, 8, 10]
+// Variables: first = 0, last = 4 (last index)
+// First Iteration (first < last: 0 < 4)
+
+// Swap numbers[first] and numbers[last]: Swap numbers[0] and numbers[4]
+// temp = 10
+// numbers[4] = 2
+// numbers[0] = 10
+// Array becomes: [10, 4, 6, 8, 2]
+// first = 1, last = 3
+// Second Iteration (first < last: 1 < 3)
+
+// Swap numbers[1] and numbers[3]: Swap 4 and 8
+// temp = 8
+// numbers[3] = 4
+// numbers[1] = 8
+// Array becomes: [10, 8, 6, 4, 2]
+// first = 2, last = 2
+// Third Iteration (first < last: 2 < 2) condition fails, loop exits.
+
+// Final reversed array: [10, 8, 6, 4, 2]
+
+
 
 
                                                  // pairs in an array
+                                                 
 
     // ## time complexity for this is O(n square)
 
@@ -353,27 +382,71 @@
 
 
 
-// public class array {
-//     public static void printSubarrays( int numbers[]) {
+public class array {
+    public static void printSubarrays( int numbers[]) {
       
-//         for (int i =0; i<numbers.length; i++) {
-//             int start = i;
-//             for(int j=i; j<numbers.length; j++) {
-//                 int end = j;
-//                 for ( int k = start; k<=end; k++) {
-//                     System.err.print(numbers[k]+" ");   // subarray
-//                 }
-//                 System.err.println();
-//             }
-//             System.err.println();
-//         }
-//     }
+        for (int i =0; i<numbers.length; i++) {
+            int start = i;
+            for(int j=i; j<numbers.length; j++) {
+                int end = j;
+                for ( int k = start; k<=end; k++) {
+                    System.err.print(numbers[k]+" ");   // subarray
+                }
+                System.err.println();
+            }
+            System.err.println();
+        }
+    }
 
-//     public static void main(String[] args) {
-//         int numbers[] = {2, 4, 6, 8, 10};
-//         printSubarrays(numbers);
-//     }
-//     }
+    public static void main(String[] args) {
+        int numbers[] = {2, 4, 6, 8, 10};
+        printSubarrays(numbers);
+    }
+    }
+
+
+
+//dry run
+
+//     Outer loop, i (start index) runs from 0 to 4.
+// Middle loop, j (end index) runs from i to 4.
+// Inner loop prints elements from start = i to end = j.
+// Step-by-step output:
+
+// For i=0:
+
+// j=0: prints 2
+// j=1: prints 2 4
+// j=2: prints 2 4 6
+// j=3: prints 2 4 6 8
+// j=4: prints 2 4 6 8 10
+// (blank line)
+
+// For i=1:
+
+// j=1: prints 4
+// j=2: prints 4 6
+// j=3: prints 4 6 8
+// j=4: prints 4 6 8 10
+// (blank line)
+
+// For i=2:
+
+// j=2: prints 6
+// j=3: prints 6 8
+// j=4: prints 6 8 10
+// (blank line)
+
+// For i=3:
+
+// j=3: prints 8
+// j=4: prints 8 10
+// (blank line)
+// For i=4:
+
+// j=4: prints 10
+// (blank line)
+// This prints all possible contiguous subarrays of the array elements
 
                                   
 
