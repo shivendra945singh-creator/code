@@ -1,6 +1,6 @@
-// import java.util.ArrayList;
+import java.util.ArrayList;
 
-// public class Arraylist {
+public class Arraylist {
 //     public static void main(String args[]) {
 //         //className objectName = new ClassName();
 //        ArrayList<Integer> list = new ArrayList<>();
@@ -234,7 +234,36 @@
 //        System.out.println(list);
 
        
-//        Collections.sort(list);//ascending order
+//        Collections.sort(list);// for ascending order and collections is a class and collection is a interface and  .sort is a function
 //        System.out.println(list);
-//  }
+
+//        Collections.sort(list, Collections.reverseOrder());//for descending order and Collections.reverseOrder() is a comparator is a function in java which define logic
+//          System.out.println(list);
 // }
+
+// }
+
+
+                                            //multidimensional arraylist
+
+
+public static void main (String args[]) {
+       ArrayList<ArrayList<Integer>> mainList = new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<>();
+       list.add(1); list.add(2);
+       mainList.add(list);
+
+        ArrayList<Integer> list2 = new ArrayList<>();
+       list2.add(3); list2.add(4);
+       mainList.add(list2);
+
+       for(int i=0; i<mainList.size(); i++) {
+              ArrayList<Integer> currList = mainList.get(i);
+              for(int j= 0; j<currList.size(); j++) {
+                     System.out.print(currList.get(j) + " ");
+              }
+               System.out.println();
+       }
+        System.out.println(mainList);
+   }  
+}                                       
