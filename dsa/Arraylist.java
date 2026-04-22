@@ -247,23 +247,256 @@ public class Arraylist {
                                             //multidimensional arraylist
 
 
-public static void main (String args[]) {
-       ArrayList<ArrayList<Integer>> mainList = new ArrayList<>();
-        ArrayList<Integer> list = new ArrayList<>();
-       list.add(1); list.add(2);
-       mainList.add(list);
+// public static void main (String args[]) {
+//        ArrayList<ArrayList<Integer>> mainList = new ArrayList<>();
+//         ArrayList<Integer> list = new ArrayList<>();
+//        list.add(1); list.add(2);
+//        mainList.add(list);
 
-        ArrayList<Integer> list2 = new ArrayList<>();
-       list2.add(3); list2.add(4);
-       mainList.add(list2);
+//         ArrayList<Integer> list2 = new ArrayList<>();
+//        list2.add(3); list2.add(4);
+//        mainList.add(list2);
 
-       for(int i=0; i<mainList.size(); i++) {
-              ArrayList<Integer> currList = mainList.get(i);
-              for(int j= 0; j<currList.size(); j++) {
-                     System.out.print(currList.get(j) + " ");
+//        for(int i=0; i<mainList.size(); i++) {
+//               ArrayList<Integer> currList = mainList.get(i);
+//               for(int j= 0; j<currList.size(); j++) {
+//                      System.out.print(currList.get(j) + " ");
+//               }
+//                System.out.println();
+//        }
+//         System.out.println(mainList);
+//    }  
+// }                                       
+
+
+                                                        //or
+
+
+
+//    public static void main (String args[]) {
+//         ArrayList<ArrayList<Integer>> mainList = new ArrayList<>();
+//         ArrayList<Integer> list1 = new ArrayList<>();
+//         ArrayList<Integer> list2 = new ArrayList<>(); 
+//         ArrayList<Integer> list3 = new ArrayList<>();  
+        
+//         for(int i = 1; i<=5; i++) {
+//               list1.add(i*1);
+//               list2.add(i*2);
+//               list3.add(i*3);
+//         }
+
+
+//         mainList.add(list1);
+//         mainList.add(list2);
+//         mainList.add(list3);
+
+//         System.out.println(mainList); 
+
+//mainList is an ArrayList that contains 3 inner lists. 
+// So, mainList.size() returns 3 because you added three separate lists to it.
+//This size represents the number of inner ArrayLists stored inside the mainList
+
+
+//nested loop 
+
+//         for(int i = 0; i<mainList.size(); i++) {
+//               ArrayList<Integer> currList = mainList.get(i);
+//               for(int j = 0; j<currList.size();j++) {
+//               System.out.print(currList.get(j) +" ");
+//               }
+//                System.out.println();
+//         }
+//   }
+// }
+
+//dry run
+
+// When i=0:
+// currList = [1, 2, 3, 4, 5]
+// The inner loop prints: 1 2 3 4 5
+// When i=1:
+// currList = [2, 4, 6, 8, 10]
+// Print: 2 4 6 8 10
+// When i=2:
+// currList = [3, 6, 9, 12, 15]
+// Print: 3 6 9 12 15
+
+// Summary:
+
+// Outer loop picks each inner list one-by-one.
+// Inner loop prints all elements of that inner list in a line.
+// System.out.println() moves to next line after each inner list is printed.
+
+ 
+
+                                            //container with most water (brute force)
+
+
+
+// public static int storeWater(ArrayList<Integer> height ) {
+//        int maxWater = 0;
+
+//brute force - O(n^2)
+       
+//        for(int i = 0; i<height.size(); i++) {
+//               for(int j= i+1; j<height.size(); j++) {
+//                   int ht = Math.min(height.get(i), height.get(j)); 
+//                   int width = j-i;
+//                   int currWater = ht*width;
+//                   maxWater = Math.max(maxWater, currWater);
+//               }
+//        }
+
+//        return maxWater;
+// }
+
+
+// public static void main (String args[]) {
+//         ArrayList<Integer> height = new ArrayList<>();
+//          //1,8,6,2,5,4,8,3,7
+
+//          height.add(1);
+//           height.add(8);
+//            height.add(6);
+//             height.add(2);
+//              height.add(5);
+//               height.add(4);
+//                height.add(8);
+//                 height.add(3);
+//                  height.add(7);
+
+//                  System.out.println(storeWater(height));
+//        }
+// }
+
+//dry rum
+
+// Consider the list of heights:
+
+// Index: 0 1 2 3 4 5 6 7 8
+// Height: 1, 8, 6, 2, 5, 4, 8, 3, 7
+
+// Let's take an example pair (i=1, j=8):
+// height at 1 = 8
+// height at 8 = 7
+// width = 8 - 1 = 7
+// The height used to calculate water is minimum of both heights: min(8,7) = 7
+// Water area (capacity) = height * width = 7 * 7 = 49
+
+
+
+                                              //container with most water (2 pointer approach)
+
+
+
+//   public static int storeWater(ArrayList<Integer> height) {
+//     int maxWater = 0; 
+//     int lp = 0; // left pointer
+//     int rp = height.size() - 1; // right pointer
+
+//     while (lp < rp) {
+//         // Calculate water area
+//         int ht = Math.min(height.get(lp), height.get(rp));
+//         int width = rp - lp;
+//         int currWater = ht * width;
+//         maxWater = Math.max(maxWater, currWater);
+
+//         // Update pointer
+//         if (height.get(lp) < height.get(rp)) {
+//             lp++;
+//         } else {
+//             rp--;
+//         }
+//     }
+//     return maxWater;  // <-- Return required here
+// }
+ 
+ 
+//  public static void main(String[] args) {
+//      ArrayList<Integer> height = new ArrayList<>();
+
+//         //1,8,6,2,5,4,8,3,7
+
+//        height.add(1);
+//        height.add(8);
+//        height.add(6);
+//        height.add(2);
+//        height.add(5);
+//        height.add(4);
+//        height.add(8);
+//        height.add(3);
+//        height.add(7);
+
+//         System.out.println(storeWater(height));
+//  }
+// }
+ 
+
+                                            //  pair sum - 1 (find if any pair in a sorted arraylist has a target sum )
+
+
+
+//brute force - O(n^2)
+//  public static boolean pairSum1 (ArrayList<Integer> list, int target) {
+
+//        for(int i = 0; i<list.size(); i++){
+//               for(int j = i+1; j<list.size(); j++) {
+//                      if(list.get(i) + list.get(j) == target) {
+//                             return true;
+//                      }
+//               }
+//        }
+//        return false;
+// }
+
+//    public static void main(String[] args) {
+//        ArrayList<Integer> list = new ArrayList<>();
+
+//        list.add(16);
+//        list.add(20);
+//        list.add(32);
+//        list.add(4);
+//        int target = 36;
+//        System.out.println(pairSum1(list, target));
+//    }      
+//  }                                           
+
+
+
+                                             //  pair sum - 1 (2 pointer approach) &  O(n)
+
+
+
+  public static boolean pairSum1(ArrayList<Integer> list, int target) {
+       int lp = 0;
+       int rp = list.size()-1;
+
+       while(lp != rp) {
+              //case 1
+              if(list.get(lp) + list.get(rp) == target) {
+                     return true;
               }
-               System.out.println();
+
+          //case 2
+         if(list.get(lp) + list.get(rp) < target) {
+           lp++;
+         }else{
+              //case 3
+              rp--;
+         }
        }
-        System.out.println(mainList);
-   }  
-}                                       
+   return false;
+  }         
+  
+     public static void main(String[] args) {
+       ArrayList<Integer> list = new ArrayList<>();
+
+       list.add(16);
+       list.add(20);
+       list.add(32);
+       list.add(4);
+
+       int target = 36;
+       System.out.println(pairSum1(list, target));
+    }      
+ }       
