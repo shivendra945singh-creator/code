@@ -14,6 +14,7 @@ public class LinkedList {
 
     public static Node head;
     public static Node tail;
+    public static int size;//by defeault java initilize this value as 0
 
     //add first operation  - O(1)
 
@@ -23,6 +24,7 @@ public class LinkedList {
 
         //classname objectname = new classname (constructor me data pass kardiya)
         Node newNode = new Node(data);
+        size++;
 
         //when linkedlist is empty
         if(head == null) {
@@ -44,6 +46,7 @@ public class LinkedList {
 
         public void addLast (int data) {
             Node newNode = new Node(data);
+             size++;
             if(head == null) {
                 head = tail = newNode;
                 return;
@@ -62,6 +65,7 @@ public class LinkedList {
             }
             
             Node  newNode = new Node(data);
+             size++;
             Node temp = head;
             int i = 0;
 
@@ -73,6 +77,27 @@ public class LinkedList {
             //when i= idx-1; then temp = previous
             newNode.next = temp.next;
             temp.next = newNode;
+        }
+
+        //remove in first linkedlist
+
+        public int removeFirst() {
+            //case 1
+            if(size == 0) {
+                System.out.println("ll is empty");
+                //case 2
+            }else if (size == 1 ) {
+                 int value = head.data;
+                 head = tail = null;
+                 size = 0;
+                 return value;
+                }
+                //case 3
+            int value = head.data;
+            head = head.next;
+            size --;
+            return value;
+
         }
     
         //print a linkedlist
@@ -102,12 +127,15 @@ public class LinkedList {
         
         ll.addFirst(1);
        
-        ll.addLast(3);
-        
         ll.addLast(4);
-        ll.add(2,9); //at index 2 add 9 value
+        
+        ll.addLast(5);
+        ll.add(2,3); //at index 2 add 9 value
 
         ll.print();
-        
+        //  System.out.println(ll.size);
+
+         ll.removeFirst();
+         ll.print();
     }
 }
