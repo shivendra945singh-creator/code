@@ -467,36 +467,92 @@ public class Arraylist {
 
 
 
-  public static boolean pairSum1(ArrayList<Integer> list, int target) {
-       int lp = 0;
-       int rp = list.size()-1;
+//   public static boolean pairSum1(ArrayList<Integer> list, int target) {
+//        int lp = 0;
+//        int rp = list.size()-1;
 
-       while(lp != rp) {
-              //case 1
-              if(list.get(lp) + list.get(rp) == target) {
-                     return true;
-              }
+//        while(lp != rp) {
+//               //case 1
+//               if(list.get(lp) + list.get(rp) == target) {
+//                      return true;
+//               }
 
-          //case 2
-         if(list.get(lp) + list.get(rp) < target) {
-           lp++;
-         }else{
-              //case 3
-              rp--;
+//           //case 2
+//          if(list.get(lp) + list.get(rp) < target) {
+//            lp++;
+//          }else{
+//               //case 3
+//               rp--;
+//          }
+//        }
+//    return false;
+//   }         
+  
+//      public static void main(String[] args) {
+//        ArrayList<Integer> list = new ArrayList<>();
+
+//        list.add(16);
+//        list.add(20);
+//        list.add(32);
+//        list.add(4);
+
+//        int target = 36;
+//        System.out.println(pairSum1(list, target));
+//     }      
+//  }       
+
+
+
+                                 //pair sum - 2 (find if any pair in a sorted & rotated arraylist has a target sum)
+
+
+// 2 - point approach - O (n)
+
+
+ public static boolean pairSum1(ArrayList<Integer> list, int target) {
+       int bp = -1;
+       int n = list.size();
+       for(int i = 0; i<list.size(); i++) {
+         if(list.get(i) > list.get(i+1)) { //breaking point
+            bp = i;
+            break;
          }
        }
-   return false;
-  }         
-  
-     public static void main(String[] args) {
-       ArrayList<Integer> list = new ArrayList<>();
 
+  int lp = bp+1;//smallest
+int rp = bp;//largest
+
+while(lp!= rp) {
+       //case 1 
+       if(list.get(lp) + list.get(rp) == target) {
+              return true;
+       }
+
+       //case 2
+       if(list.get(lp) + list.get(rp) < target) {
+              lp = (lp+1 % n);
+
+       }else{//case 3
+              rp = (n + rp -1) % n;
+
+       }
+}
+
+return false;
+}
+
+
+   public static void main(String[] args) {
+       ArrayList<Integer> list = new ArrayList<>();
+       //45, 50, 16, 20, 32, 40 - sorted array
+
+       list.add(45);
+       list.add(50);
        list.add(16);
        list.add(20);
        list.add(32);
-       list.add(4);
-
+       list.add(40);
        int target = 36;
        System.out.println(pairSum1(list, target));
-    }      
- }       
+   }      
+ } 
