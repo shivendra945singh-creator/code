@@ -1,4 +1,5 @@
 
+
 public class LinkedList {
     public static class Node {
         //blueprint
@@ -79,7 +80,7 @@ public class LinkedList {
             temp.next = newNode;
         }
 
-        //remove in first linkedlist
+        //remove first in  linkedlist
 
         public int removeFirst() {
             //case 1
@@ -98,6 +99,36 @@ public class LinkedList {
             size --;
             return value;
 
+        }
+
+
+
+         //remove last in linkedlist
+
+        public int removeLast() {
+            //case 1
+            if(size == 0) {
+                System.out.println("ll is empty");
+                return Integer.MIN_VALUE;
+                //case 2
+            }else if (size == 1 ) {
+                 int value = head.data;
+                 head = tail = null;
+                 size = 0;
+                 return value;
+                }
+                //case 3
+                //previous : i = size -2
+           Node previous = head;
+           for(int i = 0; i< size-2; i++) {
+            previous = previous.next;
+           }
+
+           int value = previous.next.data;//tail data
+           previous.next = null;
+           tail = previous;
+           size--;
+           return value;
         }
     
         //print a linkedlist
@@ -137,5 +168,9 @@ public class LinkedList {
 
          ll.removeFirst();
          ll.print();
+
+         ll.removeLast();
+         ll.print();
+         System.out.println(ll.size);
     }
 }
