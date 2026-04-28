@@ -130,6 +130,52 @@ public class LinkedList {
            size--;
            return value;
         }
+
+
+        //iterative search - O(n)
+
+
+    public int itrSearch (int key) {
+        Node temp = head;
+        int i = 0;
+
+        while (temp != null) {
+            if( temp.data == key) {//key found
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+
+        return -1;//when key is not found
+    }
+
+
+    //recursive search - O(n)
+
+    public int helper(Node head, int key) {
+        if(head== null) {
+            return -1;
+
+        }
+
+        if(head.data==key) {
+            return 0;
+
+        }
+        int idx = helper(head.next, key);
+        if(idx == -1) {
+            return -1;
+        }
+        return idx+1;
+    }
+
+    public int recSearch(int key) {
+    return helper(head, key);
+    }
+
+
+
     
         //print a linkedlist
 
@@ -166,11 +212,18 @@ public class LinkedList {
         ll.print();
         //  System.out.println(ll.size);
 
-         ll.removeFirst();
-         ll.print();
+        //  ll.removeFirst();
+        //  ll.print();
 
-         ll.removeLast();
-         ll.print();
-         System.out.println(ll.size);
+        //  ll.removeLast();
+        //  ll.print();
+
+        //  System.out.println(ll.size);
+
+        //  System.out.println(ll.itrSearch(3)); //3 is a number not index
+        //   System.out.println(ll.itrSearch(10));
+
+          System.out.println(ll.recSearch(3));//3 is a number not index
+          System.out.println(ll.recSearch(10));
     }
 }
