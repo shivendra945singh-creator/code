@@ -1,4 +1,4 @@
-
+import org.w3c.dom.Node;
 
 public class LinkedList {
     public static class Node {
@@ -175,9 +175,107 @@ public class LinkedList {
     }
 
 
+    //reverse a linkedlist
+
+    public void reverse() {
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+
+        while ( curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
+
+    //***find and remove nth node from end 
+
+    public void deleteNthkfromEnd (int n ) {
+        //calculate size
+        int sz = 0;
+        Node temp = head;
+        while ( temp!= null) {
+            temp = temp.next;
+            sz++;
+        }
+
+        if(n == sz) {
+            head = head.next; // remove first
+        }
+
+        //sz-n
+        int i = 1;
+        int itofind = sz-n;
+        Node prev = head;
+        while(i < itofind) {
+            prev = prev.next;
+            i++;
+        }
+    
+
+    prev.next = prev.next.next;
+    return;
+}
+
+
+
+
+
+//check if a linkedlist is a palindrome 
+
+//slow - fast appraoch
+
+public Node findMid(Node head) {
+    Node slow = head;
+    Node fast = head;
+
+    while ( fast != null && fast.next!= null) {
+        slow = slow.next; //+1
+        fast = fast.next.next;//+2
+    }
+    return slow; //slow is my midnode
+}
+
+public boolean checkPalindrome() {
+    if( head == null || head.next== null) {
+        return true;
+    }
+    //step 1 - find mid
+    Node  midNode = findMid(head);
+
+    //step 2 - reverse 2nd half
+    Node prev = null;
+    Node curr = midNode;
+    Node next;
+    while(curr != null ){
+        next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next;
+    }
+
+    Node right = prev; //right half head
+    Node left = head;
+
+    //step 3 - check left half & right half
+    while(right != null) {
+        if(left.data != right.data) {
+            return false;
+        }
+        left = left.next;
+        right = right.next;
+    }
+
+    return true;
+}
+
 
     
-        //print a linkedlist
+        //print a linkedlist - O(n)
 
      public  void print() {
 
@@ -209,7 +307,7 @@ public class LinkedList {
         ll.addLast(5);
         ll.add(2,3); //at index 2 add 9 value
 
-        ll.print();
+        ll.print();//1->2->3->4->5
         //  System.out.println(ll.size);
 
         //  ll.removeFirst();
@@ -223,7 +321,25 @@ public class LinkedList {
         //  System.out.println(ll.itrSearch(3)); //3 is a number not index
         //   System.out.println(ll.itrSearch(10));
 
-          System.out.println(ll.recSearch(3));//3 is a number not index
-          System.out.println(ll.recSearch(10));
+        //   System.out.println(ll.recSearch(3));//3 is a number not index
+        //   System.out.println(ll.recSearch(10));
+
+        // ll.reverse();
+        // ll.print();
+
+        // ll.deleteNthkfromEnd(1);//1st node from last
+        // ll.print();
+
+
+          ll.addFirst(1);
+        
+        ll.addFirst(2);
+       
+        ll.addLast(2);
+
+        ll.print();//1->2->2
+         System.out.println(ll.checkPalindrome());
+
+
     }
 }
