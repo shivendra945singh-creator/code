@@ -274,12 +274,75 @@ public boolean checkPalindrome() {
 }
 
 
+
+
+//detecting cycle in a ll
+
+public static boolean isCycle() {//Floyd's cycle finding algorithm
+    Node slow = head;
+    Node fast = head;
+
+    while(fast != null && fast.next != null) {
+        slow = slow.next; //+1
+        fast = fast.next.next; //+2
+        if(slow == fast) {
+            return true; //cycle exists
+        }
+    }
+
+    return false; //cycle doesn't exists
+}
+
+
+
+
+
+//removing cycle 
+
+public static void removeCycle(){
+    //detect cycle 
+    Node slow = head;
+    Node fast = head;
+    boolean cycle = false;
+    while(fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+        if(fast == slow) {
+            cycle = true;
+            break;
+        }
+    }
+    if (cycle == false) {
+        return;
+    }
+
+
+    //find meeting point
+    slow = head;
+    Node prev = null; //last node
+    while(slow != fast) {
+        prev = fast;
+        slow = slow.next;
+        fast = fast.next;
+    }
+
+    //remove cycle -> last.next = null
+    prev.next = null;
+}
+
+
+
+
+
+
+
+
     
-        //print a linkedlist - O(n)
+    //print a linkedlist - O(n)
 
      public  void print() {
 
-        //base case
+    //base case
 
         if(head == null) {
             System.err.println("ll is empty");
@@ -298,16 +361,16 @@ public boolean checkPalindrome() {
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
        
-        ll.addFirst(2);
+        // ll.addFirst(2);
         
-        ll.addFirst(1);
+        // ll.addFirst(1);
        
-        ll.addLast(4);
+        // ll.addLast(4);
         
-        ll.addLast(5);
-        ll.add(2,3); //at index 2 add 9 value
+        // ll.addLast(5);
+        // ll.add(2,3); //at index 2 add 9 value
 
-        ll.print();//1->2->3->4->5
+        // ll.print();//1->2->3->4->5
         //  System.out.println(ll.size);
 
         //  ll.removeFirst();
@@ -331,14 +394,43 @@ public boolean checkPalindrome() {
         // ll.print();
 
 
-          ll.addFirst(1);
+        //   ll.addFirst(1);
         
-        ll.addFirst(2);
+        // ll.addFirst(2);
        
-        ll.addLast(2);
+        // ll.addLast(2);
 
-        ll.print();//1->2->2
-         System.out.println(ll.checkPalindrome());
+        // ll.print();//1->2->2
+        //  System.out.println(ll.checkPalindrome());
+
+
+
+
+
+
+        //  head = new Node(1);
+        //  head.next = new Node(2);
+        //  head.next.next = new Node(3);
+        //  head.next.next.next = new Node(4);
+        //  head.next.next.next.next = head;
+        //  //1->2->3->4->1
+
+        //  System.out.println(isCycle());
+
+
+
+
+         head = new Node(1);
+         Node temp = new Node(2);
+         head.next = temp;
+         head.next.next = new Node(3);
+         head.next.next.next = new Node(4);
+         head.next.next.next.next = temp;
+         //1->2->3->4->2
+
+         System.out.println(isCycle());
+         removeCycle();
+         System.out.println(isCycle());
 
 
     }
