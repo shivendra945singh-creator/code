@@ -3,7 +3,7 @@
                                             
 
 
-public class QueueB {
+// public class QueueB {
 //     static int arr[];
 //     static int size;
 //     static int rear;
@@ -259,88 +259,242 @@ public class QueueB {
 
                                              //circular queue using array
 
-    static class Queue {
-    static int arr[];
-    static int size;
-    static int rear;
-    static int front;
+//     static class Queue {
+//     static int arr[];
+//     static int size;
+//     static int rear;
+//     static int front;
     
-    Queue(int n) {
-        arr = new int[n];
-        size = n;
-        rear = -1;
-        front = -1;
-    }
+//     Queue(int n) {
+//         arr = new int[n];
+//         size = n;
+//         rear = -1;
+//         front = -1;
+//     }
+
+//     public static boolean isEmpty() {
+//         return rear == -1 && front == -1;
+//     }
+
+//     public static boolean isFull() {
+//         return (rear + 1) % size == front;// when we increase rare by 1 and front is at the same position then queue is full ,,example - size = 5, rear = 4, front = 0, (rear + 1) % size = 0 == front
+//     }
+
+//     //add function - O(1) time complexity
+
+//     public static void add(int data) {
+//         if (isFull()) {
+//             System.out.println("Queue is full");
+//             return;
+//         }
+//         if (front == -1) {// when we add first element then front and rear both will point to the first element
+//             front = 0;
+//         }
+//         rear = (rear + 1) % size;
+//         arr[rear] = data;
+//     }
+
+
+//     //remove function - O(1) time complexity
+
+//     public static int remove() {
+//         if (isEmpty()) {
+//             System.out.println("Queue is empty");
+//             return -1;
+//         }
+//         int frontElement = arr[front];
+//         if (front == rear) {// when we remove the last element then front and rear both will point to -1
+//             front = -1;
+//             rear = -1;
+//         } else {
+//             front = (front + 1) % size;
+//         }
+//         return frontElement;
+//     }
+
+//     //peek function - O(1) time complexity
+
+//     public static int peek() {
+//         if (isEmpty()) {
+//             System.out.println("Queue is empty");
+//             return -1;
+//         }
+//         return arr[front];
+//     }
+// }
+
+
+// public static void main(String args[]) {
+//         Queue q = new Queue(5);
+//         q.add(1);
+//         q.add(2);
+//         q.add(3);
+//         q.add(4);
+//         q.add(5);
+//         q.add(6);
+//         System.out.println(q.remove());
+//         q.add(7);
+//         System.out.println(q.remove());
+//         q.add(8);
+
+//         while (!q.isEmpty()) {
+//             System.out.println(q.peek());
+//             q.remove();
+//         }
+//     }  
+// }
+
+
+
+                                                                  //**Queue using linked list
+
+// static class Node {
+//     int data;
+//     Node next;
+
+//     Node(int data) {
+//         this.data = data;
+//         this.next = null;
+//     }
+// }
+
+// static class Queue {
+//     static Node head = null;
+//     static Node tail = null;
+
+//     public static boolean isEmpty() {
+//         return head == null && tail == null;
+//     }
+
+//     //add - O(1) time complexity
+//     public static void add(int data) {
+//         Node newNode = new Node(data);
+//         if (isEmpty()) {
+//             head = tail = newNode;
+//             return;
+//         }
+//         tail.next = newNode;
+//         tail = newNode;
+//     }
+     
+//     //remove - O(1) time complexity
+//     public static int remove() {
+//         if (isEmpty()) {
+//             System.out.println("Queue is empty");
+//             return -1;
+//         }
+//         int frontData = head.data;
+//         if (head == tail) { // only one element in the queue
+//             head = tail = null;
+//         } else {
+//             head = head.next;
+//         }
+//         return frontData;
+//     }
+
+//     public static int peek() {
+//         if (isEmpty()) {
+//             System.out.println("Queue is empty");
+//             return -1;
+//         }
+//         return head.data;
+//     }
+// }
+
+// public static void main(String args[]) {
+//         Queue q = new Queue();
+//         q.add(1);
+//         q.add(2);
+//         q.add(3);
+//         q.add(4);
+//         q.add(5);
+
+//         while (!q.isEmpty()) {
+//             System.out.println(q.peek());
+//             q.remove();
+//         }
+//     }  
+// }
+
+
+                                                  //Queue using JCF(Java Collections Framework)
+
+
+// import java.util.*;
+// public class QueueB {
+//          public static void main(String args[]) {
+//         Queue<Integer> q = new java.util.LinkedList<>();//
+//         // Queue<Integer> q = new ArrayDeque<>(); // for better performance than LinkedList
+//         q.add(1);
+//         q.add(2);
+//         q.add(3);
+//         q.add(4);
+//         q.add(5);
+
+//         while (!q.isEmpty()) {
+//             System.out.println(q.peek());
+//             q.remove();
+//         }
+//     }  
+// } 
+
+
+                                                        //Queue using two stacks
+                                                        
+ 
+import java.util.*;
+public class QueueB {
+ static class Queue {
+    static Stack<Integer> s1 = new Stack<>();
+    static Stack<Integer> s2 = new Stack<>();
 
     public static boolean isEmpty() {
-        return rear == -1 && front == -1;
+        return s1.isEmpty() ;
     }
 
-    public static boolean isFull() {
-        return (rear + 1) % size == front;// when we increase rare by 1 and front is at the same position then queue is full ,,example - size = 5, rear = 4, front = 0, (rear + 1) % size = 0 == front
-    }
-
-    //add function - O(1) time complexity
-
+     //add - O(n) time complexity
     public static void add(int data) {
-        if (isFull()) {
-            System.out.println("Queue is full");
-            return;
+        while(!s1.isEmpty()) {
+            s2.push(s1.pop());
         }
-        if (front == -1) {// when we add first element then front and rear both will point to the first element
-            front = 0;
+        s1.push(data);
+
+        while(!s2.isEmpty()) {
+            s1.push(s2.pop());
         }
-        rear = (rear + 1) % size;
-        arr[rear] = data;
     }
 
-
-    //remove function - O(1) time complexity
-
+        //remove - O(1) time complexity
     public static int remove() {
         if (isEmpty()) {
             System.out.println("Queue is empty");
             return -1;
         }
-        int frontElement = arr[front];
-        if (front == rear) {// when we remove the last element then front and rear both will point to -1
-            front = -1;
-            rear = -1;
-        } else {
-            front = (front + 1) % size;
-        }
-        return frontElement;
+        
+        return s1.pop();
     }
 
-    //peek function - O(1) time complexity
-
+    //peek - O(1) time complexity
     public static int peek() {
         if (isEmpty()) {
             System.out.println("Queue is empty");
             return -1;
         }
-        return arr[front];
+        return s1.peek();
     }
 }
 
+public static void main(String[] args) {
+    Queue q = new Queue();
+    q.add(1);
+    q.add(2);
+    q.add(3);
+    q.add(4);
+    q.add(5);
 
-public static void main(String args[]) {
-        Queue q = new Queue(5);
-        q.add(1);
-        q.add(2);
-        q.add(3);
-        q.add(4);
-        q.add(5);
-        q.add(6);
-        System.out.println(q.remove());
-        q.add(7);
-        System.out.println(q.remove());
-        q.add(8);
-
-        while (!q.isEmpty()) {
-            System.out.println(q.peek());
-            q.remove();
-        }
-    }  
+    while (!q.isEmpty()) {
+        System.out.println(q.peek());
+        q.remove();
+    }
 }
-
+}
