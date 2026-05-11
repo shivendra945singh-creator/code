@@ -346,7 +346,7 @@
 
 
 
-                                                                  //**Queue using linked list
+                                                          //**Queue using linked list
 
 // static class Node {
 //     int data;
@@ -504,91 +504,286 @@
                                                 //stack using two queues
 
 
-  import java.util.*;
-  import java.util.LinkedList;
-public class QueueB {
-    static class Stack {
-        static Queue<Integer> q1 = new LinkedList<>();
-        static Queue<Integer> q2 = new LinkedList<>();
+//   import java.util.*;
+//   import java.util.LinkedList;
+//   public class QueueB {
+//     static class Stack {
+//         static Queue<Integer> q1 = new LinkedList<>();
+//         static Queue<Integer> q2 = new LinkedList<>();
 
-        public static boolean isEmpty() {
-            return q1.isEmpty() && q2.isEmpty();
-        }
+//         public static boolean isEmpty() {
+//             return q1.isEmpty() && q2.isEmpty();
+//         }
 
-        //push - O(1) time complexity
-        public static void push(int data) {
-           if (!q1.isEmpty()) {
-                q1.add(data);
-            } else {
-               q2.add(data);
-            }
-        }
+//         //push - O(1) time complexity
+//         public static void push(int data) {
+//            if (!q1.isEmpty()) {
+//                 q1.add(data);
+//             } else {
+//                q2.add(data);
+//             }
+//         }
 
-        //pop - O(1) time complexity
-        public static int pop() {
-            if (isEmpty()) {
-                System.out.println("Stack is empty");
-                return -1;
-            }
-           int top = -1;
+//         //pop - O(1) time complexity
+//         public static int pop() {
+//             if (isEmpty()) {
+//                 System.out.println("Stack is empty");
+//                 return -1;
+//             }
+//            int top = -1;
            
-           //case 1: when q1 is not empty
-           if (!q1.isEmpty()) {
-               while (!q1.isEmpty()) {
-                   top = q1.remove();
-                   if (q1.isEmpty()) {
-                       break;
-                   }
-                   q2.add(top);
-               }
-           } else { // case 2: when q2 is not empty
-               while (!q2.isEmpty()) {
-                   top = q2.remove();
-                   if (q2.isEmpty()) {
-                          break;
-                   }
-                   q1.add(top);
-               }
-           }
-              return top;
-        }
+//            //case 1: when q1 is not empty
+//            if (!q1.isEmpty()) {
+//                while (!q1.isEmpty()) {
+//                    top = q1.remove();
+//                    if (q1.isEmpty()) {
+//                        break;
+//                    }
+//                    q2.add(top);
+//                }
+//            } else { // case 2: when q2 is not empty
+//                while (!q2.isEmpty()) {
+//                    top = q2.remove();
+//                    if (q2.isEmpty()) {
+//                           break;
+//                    }
+//                    q1.add(top);
+//                }
+//            }
+//               return top;
+//         }
 
-        //peek - O(1) time complexity
-        public static int peek() {
-            if (isEmpty()) {
-                System.out.println("Stack is empty");
-                return -1;
-            }
-           int top = -1;
+//         //peek - O(1) time complexity
+//         public static int peek() {
+//             if (isEmpty()) {
+//                 System.out.println("Stack is empty");
+//                 return -1;
+//             }
+//            int top = -1;
            
-           //case 1: when q1 is not empty
-           if (!q1.isEmpty()) {
-               while (!q1.isEmpty()) {
-                   top = q1.remove();
-                     q2.add(top);
-               }
-           } else { // case 2: when q2 is not empty
-               while (!q2.isEmpty()) {
-                   top = q2.remove();
-                   q1.add(top);
-               }
-           }
-              return top;
-        }
-    }
+//            //case 1: when q1 is not empty
+//            if (!q1.isEmpty()) {
+//                while (!q1.isEmpty()) {
+//                    top = q1.remove();
+//                      q2.add(top);
+//                }
+//            } else { // case 2: when q2 is not empty
+//                while (!q2.isEmpty()) {
+//                    top = q2.remove();
+//                    q1.add(top);
+//                }
+//            }
+//               return top;
+//         }
+//     }
 
-    public static void main(String[] args) {
-        Stack s = new Stack();
-        s.push(1);
-        s.push(2);
-        s.push(3);
-        s.push(4);
-        s.push(5);
-        //output should be 5 4 3 2 1
+//     public static void main(String[] args) {
+//         Stack s = new Stack();
+//         s.push(1);
+//         s.push(2);
+//         s.push(3);
+//         s.push(4);
+//         s.push(5);
+//         //output should be 5 4 3 2 1
 
-        while (!s.isEmpty()) {
-            System.out.println(s.peek());
-            s.pop();
-        }
-    }
-}                                              
+//         while (!s.isEmpty()) {
+//             System.out.println(s.peek());
+//             s.pop();
+//         }
+//     }
+// }                                              
+
+
+
+    //Question- first non-repeating character in a stream of characters
+    
+    
+    // import java.util.*;
+    // import java.util.LinkedList;
+    // public class QueueB {
+    //     public static void printNonRepeating(String str) {
+    //         int freq[] = new int[26]; // assuming only lowercase letters 'a' to 'z'
+    //         Queue<Character> q = new LinkedList<>();
+
+    //         for (int i = 0; i < str.length(); i++) {
+    //             char ch = str.charAt(i);
+    //             q.add(ch);
+    //             freq[ch - 'a']++;// increment frequency of the character here ch-a means that we are converting the character to its corresponding index in the frequency array, where 'a' corresponds to index 0, 'b' to index 1, and so on. This allows us to easily update the frequency count for each character as we process the stream.
+
+    //             while (!q.isEmpty() && freq[q.peek() - 'a'] > 1) {
+    //                 q.remove();
+    //             }
+
+    //             if (q.isEmpty()) {
+    //                 System.out.print(-1 + " ");
+    //             } else {
+    //                 System.out.print(q.peek() + " ");
+    //             }
+    //         }
+    //         System.out.println();
+    //     }
+       
+    //     public static void main(String[] args) {
+    //         String str = "aabccxb";
+    //         printNonRepeating(str); // Output: a -1 b b b b x
+    //     }
+    // }
+
+
+
+    //Question - interleave 2 halves of a queue with even length
+
+    // import java.util.*;
+    // import java.util.LinkedList;
+    // public class QueueB {
+    //     public static void interleaveQueue(Queue<Integer> q) {
+    //       Queue<Integer> firstHalf = new LinkedList<>();
+    //         int size = q.size();
+            
+
+    //         // Step 1: Dequeue the first half of the elements and enqueue them into the firstHalf queue
+    //         for (int i = 0; i < size / 2; i++) {
+    //             firstHalf.add(q.remove());
+    //         }
+
+    //         // Step 2: Interleave the elements from firstHalf and the remaining elements in q
+    //         while (!firstHalf.isEmpty()) {
+    //             q.add(firstHalf.remove()); // Add element from firstHalf
+    //                 q.add(q.remove()); // Add element from second half (remaining in q)
+                
+    //         } 
+    //     }
+
+    //     public static void main(String[] args) {
+    //         Queue<Integer> q = new LinkedList<>();
+    //         q.add(1);
+    //         q.add(2);
+    //         q.add(3);
+    //         q.add(4);
+    //         q.add(5);
+    //         q.add(6);
+
+    //         System.out.println("Original Queue: " + q); // Output: [1, 2, 3, 4, 5, 6]
+    //         interleaveQueue(q);
+    //         System.out.println("Interleaved Queue: " + q); // Output: [1, 4, 2, 5, 3, 6]
+
+    //         //or
+    //         //interleave(q);
+    //         //while (!q.isEmpty()) {
+    //         //    System.out.print(q.remove() + " ");
+    //         //}
+    //        // System.out.println();
+    //     }
+    // }
+
+
+
+                                                             //reverse queue using stack
+
+
+// import java.util.*;
+// import java.util.LinkedList;
+// public class QueueB {   
+
+//     public static void reverseQueue(Queue<Integer> q) {
+//         Stack<Integer> s = new Stack<>();
+
+//         // Step 1: Dequeue all elements from the queue and push them onto the stack
+//         while (!q.isEmpty()) {
+//             s.push(q.remove());
+//         }
+
+//         // Step 2: Pop all elements from the stack and enqueue them back into the queue
+//         while (!s.isEmpty()) {
+//             q.add(s.pop());
+//         }
+//     }
+
+//     public static void main(String[] args) {
+//         Queue<Integer> q = new LinkedList<>();
+//         q.add(1);
+//         q.add(2);
+//         q.add(3);
+//         q.add(4);
+//         q.add(5);
+
+//         System.out.println("Original Queue: " + q); // Output: [1, 2, 3, 4, 5]
+//         reverseQueue(q);
+//         System.out.println("Reversed Queue: " + q); // Output: [5, 4, 3, 2, 1]
+//     }
+// }
+
+
+
+                                                            //deque(double ended queue) 
+
+           
+                                                            
+    //    import java.util.*;
+    //    import java.util.LinkedList;
+    //    public class QueueB {
+    //        public static void main(String[] args) {
+    //            Deque<Integer> dq = new LinkedList<>();
+    //            dq.addFirst(1); // 1 
+    //             dq.addFirst(2); // 2 1
+    //             System.out.println(dq); //  [2, 1]
+
+
+    //            dq.addLast(3);  //2 1 3
+    //            dq.addLast(4);  // 2 1 3 4
+
+    //            dq.removeFirst(); //  1 3 4
+    //             dq.removeLast(); // 1 3
+    //            System.out.println(dq); // 1 3
+
+    //            System.out.println(dq.getFirst()); // 1
+    //             System.out.println(dq.getLast()); // 3
+         
+    //        }
+    //    }                                                     
+
+
+
+
+                                                         //implementing stack using deque
+
+//  import java.util.*;
+//  import java.util.LinkedList;
+
+//  public class QueueB {
+//      static class Stack {
+//          Deque<Integer> dq = new LinkedList<>();
+
+//          public void push(int data) {
+//              dq.addLast(data);
+//          }
+
+//          public int pop() {
+//              return dq.removeLast();
+//          }
+
+//          public int peek() {
+//              return dq.getLast();
+//          }
+
+//      }
+
+//      public static void main(String[] args) {
+//          Stack s = new Stack();//this stack is not of jcf , this stack is our above stack class 
+//          s.push(1);
+//          s.push(2);
+//          s.push(3);
+//          s.push(4);
+//          s.push(5);
+
+//         System.out.println(s.peek()); // 
+//          System.out.println(s.pop()); // 5
+//          System.out.println(s.pop()); // 4
+//          System.out.println(s.peek()); // 3
+//      }
+//  }
+ 
+ 
+
+
+                                                //implementing queue using deque
