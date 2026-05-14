@@ -191,32 +191,87 @@
                                                   //indian coin change problem using greedy algorithm
 
 
-   import java.util.*;
-   import java.util.ArrayList; 
+//    import java.util.*;
+//    import java.util.ArrayList; 
  
  
-    public class greedyalgo {
-        public static void main(String args[]) {
-            Integer coins[] = {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000};
+//     public class greedyalgo {
+//         public static void main(String args[]) {
+//             Integer coins[] = {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000};
             
     
-           Arrays.sort(coins, Comparator.reverseOrder());//sort in descending order and also we have to use Integer instead of int for sorting in reverse order because int is a primitive data type and cannot be used with Comparator.reverseOrder() which is a method for objects. Integer is a wrapper class for int and can be used with Comparator.reverseOrder().
+//            Arrays.sort(coins, Comparator.reverseOrder());//sort in descending order and also we have to use Integer instead of int for sorting in reverse order because int is a primitive data type and cannot be used with Comparator.reverseOrder() which is a method for objects. Integer is a wrapper class for int and can be used with Comparator.reverseOrder().
 
-           int countofCoins = 0;
-           int amount = 12478;
-           ArrayList<Integer> ans = new ArrayList<>();
+//            int countofCoins = 0;
+//            int amount = 12478;
+//            ArrayList<Integer> ans = new ArrayList<>();
 
 
-           for (int i = 0; i < coins.length; i++) {
-               if (coins[i] <= amount) {
-                  while (coins[i] <= amount) {
-                       amount -= coins[i];
-                       countofCoins++;
-                       ans.add(coins[i]);
-                   }
-               }
-           }
-           System.out.println("Minimum number of coins required: " + countofCoins);
-           System.out.println("Coins used: " + ans);
-        }
-    }
+//            for (int i = 0; i < coins.length; i++) {
+//                if (coins[i] <= amount) {
+//                   while (coins[i] <= amount) {
+//                        amount -= coins[i];
+//                        countofCoins++;
+//                        ans.add(coins[i]);
+//                    }
+//                }
+//            }
+//            System.out.println("Minimum number of coins required: " + countofCoins);
+//            System.out.println("Coins used: " + ans);
+//         }
+//     }
+
+
+
+
+                                                           //job sequencing problem
+
+
+
+ import java.util.*;
+ import java .util.ArrayList;
+ 
+ public class greedyalgo {
+     static class Job {
+         int id;
+         int deadline;
+         int profit;
+
+         //constructor
+         public Job(int i, int d, int p) {
+             id = i;
+             deadline = d;
+            profit = p;
+         }
+     }
+
+     public static void main(String args[]) {
+         int jobsInfo[][] = {{4, 20}, {1, 10}, {1, 40}, {1, 30}};
+
+         ArrayList<Job> jobs = new ArrayList<>();
+
+         for (int i = 0; i < jobsInfo.length; i++) {
+             jobs.add(new Job(i , jobsInfo[i][0], jobsInfo[i][1])); 
+         }
+
+            //sort jobs by profit in descending order
+            Collections.sort(jobs, (obj1, obj2) -> obj2.profit - obj1.profit);
+
+            ArrayList<Integer> seq = new ArrayList<>();
+            int time = 0;
+            for ( int i = 0; i < jobs.size(); i++) {
+                Job curr = jobs.get(i);
+                if (time < curr.deadline) {
+                    seq.add(curr.id);
+                    time++;
+                }
+            }
+
+            //print job sequence 
+            System.out.println("max job: " + seq.size());
+            for(int i = 0; i < seq.size(); i++) {
+                System.out.print( seq.get(i) + " " );
+            }
+            System.out.println();
+     }
+ }
