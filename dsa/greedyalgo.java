@@ -91,41 +91,67 @@
 
                                                           // Fractional Knapsack Problem using Greedy Algorithm
 
-import java.util.Arrays;
-import java.util.Comparator;
 
-public class greedyalgo {
-        public static void main(String args[]) {
-            int value[] = {60, 100, 120};
-            int weight[] = {10, 20, 30};
-            int W = 50;
+// import java.util.Arrays;
+// import java.util.Comparator;
+
+// public class greedyalgo {
+//         public static void main(String args[]) {
+//             int value[] = {60, 100, 120};
+//             int weight[] = {10, 20, 30};
+//             int W = 50;
     
-          double ratio[][] = new double[value.length][2];
-          //0th col = idx; 1st col = ratio
+//           double ratio[][] = new double[value.length][2];
+//           //0th col = idx; 1st col = ratio
 
-          for (int i = 0; i < value.length; i++) {
-              ratio[i][0] = i; //item number
-              ratio[i][1] = (double)value[i] / (double)weight[i]; //value to weight ratio
-          }
+//           for (int i = 0; i < value.length; i++) {
+//               ratio[i][0] = i; //item number
+//               ratio[i][1] = (double)value[i] / (double)weight[i]; //value to weight ratio
+//           }
 
-          //ascending order
-          Arrays.sort(ratio, Comparator.comparingDouble(o -> o[1]));
+//           //ascending order
+//           Arrays.sort(ratio, Comparator.comparingDouble(o -> o[1]));
 
-            int capacity = W;
-            int finalvalue = 0;
-            for(int i = ratio.length - 1; i >= 0; i--) {
-                int idx = (int)ratio[i][0];
-                if ( capacity >= weight[idx]) {//include full item
-                    finalvalue += value[idx];
-                    capacity -= weight[idx];
-                } else {
-                    //include fractional item
-                    finalvalue += ratio[i][1] * capacity;
-                    capacity = 0;
-                    break;
-                }
+//             int capacity = W;
+//             int finalvalue = 0;
+//             for(int i = ratio.length - 1; i >= 0; i--) {
+//                 int idx = (int)ratio[i][0];
+//                 if ( capacity >= weight[idx]) {//include full item
+//                     finalvalue += value[idx];
+//                     capacity -= weight[idx];
+//                 } else {
+//                     //include fractional item
+//                     finalvalue += ratio[i][1] * capacity;
+//                     capacity = 0;
+//                     break;
+//                 }
+//             }
+//             System.out.println("final value: " + finalvalue);
+//         }
+        
+//     }
+
+
+
+                                        //minimum sum of absolute difference of pairs 
+
+ import java.util.*;
+ 
+ 
+    public class greedyalgo {
+        public static void main(String args[]) {
+            int A[] = {4,1,8,7};
+            int B[] = {2, 3, 6,5};
+    
+            Arrays.sort(A);
+            Arrays.sort(B);
+    
+            int minDiff= 0;
+
+            for (int i = 0; i < A.length; i++) {
+                minDiff += Math.abs(A[i] - B[i]);// Math.abs is a built-in function in java for absolute value
             }
-            System.out.println("final value: " + finalvalue);
+            System.out.println("Minimum sum of absolute difference of pairs: " + minDiff);
         }
         
     }
