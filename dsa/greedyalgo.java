@@ -135,23 +135,88 @@
 
                                         //minimum sum of absolute difference of pairs 
 
- import java.util.*;
+//  import java.util.*; //O(nlogn) 
+ 
+ 
+//     public class greedyalgo {
+//         public static void main(String args[]) {
+//             int A[] = {4,1,8,7};
+//             int B[] = {2, 3, 6,5};
+    
+//             Arrays.sort(A);
+//             Arrays.sort(B);
+    
+//             int minDiff= 0;
+
+//             for (int i = 0; i < A.length; i++) {
+//                 minDiff += Math.abs(A[i] - B[i]);// Math.abs is a built-in function in java for absolute value
+//             }
+//             System.out.println("Minimum sum of absolute difference of pairs: " + minDiff);
+//         }
+        
+//     }
+
+
+
+                                                       //maximum length of chain of pairs
+
+
+
+//  import java.util.*; //O(nlogn) 
+ 
+ 
+//     public class greedyalgo {
+//         public static void main(String args[]) {
+//             int pairs[][] = {{5, 24}, {15, 25}, {27, 40}, {50, 60}};
+    
+//             Arrays.sort(pairs, Comparator.comparingDouble(o -> o[1])); //sort by end time
+    
+//             int chainLen = 1;
+//             int chainEnd = pairs[0][1];//last selected pair end  //chain end
+    
+//             for (int i = 1; i < pairs.length; i++) {
+//                 if (pairs[i][0] > chainEnd) { //if start of current pair is greater than end of last selected pair
+//                     chainLen++;
+//                     chainEnd = pairs[i][1]; //update last end to current pair's end
+//                 }
+//             }
+//             System.out.println("Maximum length of chain of pairs: " + chainLen);
+//         }
+        
+//     }                                                      
+
+
+
+
+                                                  //indian coin change problem using greedy algorithm
+
+
+   import java.util.*;
+   import java.util.ArrayList; 
  
  
     public class greedyalgo {
         public static void main(String args[]) {
-            int A[] = {4,1,8,7};
-            int B[] = {2, 3, 6,5};
+            Integer coins[] = {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000};
+            
     
-            Arrays.sort(A);
-            Arrays.sort(B);
-    
-            int minDiff= 0;
+           Arrays.sort(coins, Comparator.reverseOrder());//sort in descending order and also we have to use Integer instead of int for sorting in reverse order because int is a primitive data type and cannot be used with Comparator.reverseOrder() which is a method for objects. Integer is a wrapper class for int and can be used with Comparator.reverseOrder().
 
-            for (int i = 0; i < A.length; i++) {
-                minDiff += Math.abs(A[i] - B[i]);// Math.abs is a built-in function in java for absolute value
-            }
-            System.out.println("Minimum sum of absolute difference of pairs: " + minDiff);
+           int countofCoins = 0;
+           int amount = 12478;
+           ArrayList<Integer> ans = new ArrayList<>();
+
+
+           for (int i = 0; i < coins.length; i++) {
+               if (coins[i] <= amount) {
+                  while (coins[i] <= amount) {
+                       amount -= coins[i];
+                       countofCoins++;
+                       ans.add(coins[i]);
+                   }
+               }
+           }
+           System.out.println("Minimum number of coins required: " + countofCoins);
+           System.out.println("Coins used: " + ans);
         }
-        
     }
