@@ -33,7 +33,7 @@
 //          System.out.println("average is :" + average );
 
 
-//         System.out.println("lenght of array = " + marks.length);  // .lenght is used for find array lenght(elements or size) and  here marks is funcition name 
+//         System.out.println("lenght of array = " + marks.length);  // .lenght is used for find array lenght(elements or size) and  here marks is array name 
 
 //     }
     
@@ -61,7 +61,7 @@
 
 //              // print our function
 //         for (int i = 0; i<marks.length; i++) {
-//            System.out.println(marks[i] + ""); 
+//            System.out.println(marks[i] + ""); //here value change by call by reference
 //         }
 //         System.out.println();
 //          System.out.println( marks.length);
@@ -89,7 +89,7 @@
 //         update(marks , nonChangable);
 //         System.err.println(nonChangable);
 
-
+//       // print our function
 //         for (int i = 0; i<marks.length; i++) {
 //            System.out.println(marks[i] + ""); 
 //         }
@@ -236,6 +236,7 @@
 
 
 
+
 // dry run
 
  // ##Index:   0   1   2   3   4    5    6
@@ -263,7 +264,7 @@
 
 
 
-// public class array {
+// public class array {  //O(n) time complexity and O(1) space complexity
 //     public static void reverse( int numbers[]) {
 //         int first = 0, last = numbers.length-1;
 
