@@ -38,8 +38,9 @@
 //             bubblesort(arr);
 //             printArr(arr);
 //         }
-//     // }
+//     }
 
+                                                                         
 
 
 // dry run
@@ -156,7 +157,7 @@
 
 
 
-                                //insertion sort means pick an element(from unsorted part) & place in the right in sorted part
+                                //insertion sort means pick an element(from unsorted part) & place in the right position in sorted part
 
 
 
@@ -239,6 +240,65 @@
 
 
 
+                                          // inbuilt sorting function
+
+
+// import java.util.Arrays;
+
+// public class basicsortingalgo {
+                   
+
+//     public static void printArr(int arr[]) {
+//         for(int i=0; i<arr.length; i++) {
+//             System.out.print(arr[i] + " ");
+//         }
+//         System.out.println();
+//     }
+    
+            
+
+//         public static void main(String[] args) {
+//         int arr[] = {4,8,7,1,2};
+//         Arrays.sort(arr);// inbuilt sorting function //here sorting will be in ascending order //output will be [1, 2, 4, 7, 8]
+//         Arrays.sort(arr, 0, 3);//inbuilt sorting function // sort from index 0 to 2 //output will be [4, 7, 8, 1, 2]
+//         printArr(arr);
+        
+//         }
+// }
+
+
+                                                     // inbuilt sorting function
+
+
+
+import java.util.Arrays;
+import java.util.Collections;//for descending order we have to import Collections class and use reverse order function of that class
+public class basicsortingalgo {
+   
+                   
+
+    public static void printArr(Integer arr[]) {
+        for(int i=0; i<arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+    
+            
+
+        public static void main(String[] args) {
+            Integer arr[] = {4,8,7,1,2};
+            Arrays.sort(arr, Collections.reverseOrder());// inbuilt sorting function //reverse order function works on Integer arrays not int //here sorting will be in descending order //output will be [8, 7, 4, 2, 1]
+           Arrays.sort(arr, 0, 3, Collections.reverseOrder());//inbuilt sorting function // sort from index 0 to 2 in reverse order //output will be [8, 7, 4, 1, 2]
+            printArr(arr);
+        
+        }
+}
+
+
+
+
+
 
 
                                            // counting sorting
@@ -267,8 +327,6 @@ public static void countingsort(int arr[]) {
     }
 }           
 
-
-
 public static void printArr(int arr[]) {
     for(int i=0; i<arr.length; i++) {
     System.err.print(arr[i]+" ");
@@ -276,7 +334,6 @@ public static void printArr(int arr[]) {
     System.err.println();
     
 }
-
 
 public static void main(String[] args) {
     int arr[] = {1,1,4,5,7,3,2,5,6,};
