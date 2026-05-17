@@ -1,4 +1,7 @@
-                                                      // matrix(rows and columns)
+                                                     
+                                                     
+                                                     
+                                                     // matrix(rows and columns)
 
 
 //  import java.util.*;                          
@@ -8,6 +11,7 @@
 //         int matrix[][] = new int[3][3]; // [] [] is for 2D array, 3 is no of rows and 3 is no of columns
 //         int n = matrix.length; // no of rows
 //         int m = matrix[0].length; // no of columns
+
 //         // input
 //         Scanner sc = new Scanner(System.in);
 //         for(int i=0; i<n; i++) { // for rows
@@ -15,6 +19,7 @@
 //                 matrix[i][j] = sc.nextInt();
 //             }
 //         }
+
 //         // output
 //         for(int i=0; i<n; i++) {
 //             for(int j=0; j<m; j++) {
@@ -25,6 +30,64 @@
 //     }
     
 // }
+
+
+//dry run 
+
+// int matrix[][] = new int[3][3];
+// int n = matrix.length;       // number of rows = 3
+// int m = matrix[0].length;    // number of columns = 3
+
+// Step 1: Initializing matrix
+// Creates a 3x3 matrix (a 2D array) with all elements default to 0.
+// matrix =
+// 0 0 0
+// 0 0 0
+// 0 0 0
+
+// Step 2: Input elements into matrix
+
+// for(int i=0; i<n; i++) {
+//     for(int j=0; j<m; j++) {
+//         matrix[i][j] = sc.nextInt();
+//     }
+// }
+// For each row i from 0 to 2:
+// For each column j from 0 to 2, read an integer input and store it in matrix[i][j].
+// Assuming input is:
+
+// 1 2 3
+// 4 5 6
+// 7 8 9
+// Dry-run for input:
+
+// i	j	Action	matrix state after change
+// 0	0	matrix[0][0] = 1	1 0 0
+// 0	1	matrix[0][1] = 2	1 2 0
+// 0	2	matrix[0][2] = 3	1 2 3
+// 1	0	matrix[1][0] = 4	1 2 3<br>4 0 0
+// 1	1	matrix[1][1] = 5	1 2 3<br>4 5 0
+// 1	2	matrix[1][2] = 6	1 2 3<br>4 5 6
+// 2	0	matrix[2][0] = 7	1 2 3<br>4 5 6<br>7 0 0
+// 2	1	matrix[2][1] = 8	1 2 3<br>4 5 6<br>7 8 0
+// 2	2	matrix[2][2] = 9	1 2 3<br>4 5 6<br>7 8 9
+
+// Step 3: Output elements
+
+// for(int i=0; i<n; i++) {
+//     for(int j=0; j<m; j++) {
+//         System.out.print(matrix[i][j] + " ");
+//     }
+//     System.out.println();
+// }
+// Loop over rows i and columns j to print all matrix elements with a space.
+// After each row, print a new line.
+
+// Output:
+
+// 1 2 3 
+// 4 5 6 
+// 7 8 9 
 
 
 
@@ -39,8 +102,8 @@
 
 // public class twoDarray {
 //     public static boolean search(int matrix[][] , int key) { // if we use string[] args then error will come 
-//        for(int i=0; i<matrix[0].length; i++) {
-//         for(int j=0; j<matrix.length; j++) {
+//        for(int i=0; i<matrix.length; i++) {
+//         for(int j=0; j<matrix[0].length; j++) {
 //             if(matrix[i][j] == key) {
 //                 System.out.println("found at cell (" + i + "," + j + ")");
 //                 return true;
@@ -57,6 +120,7 @@
 //             int matrix[][] = new int [3][3];
 //             int n = matrix.length; // no of rows
 //             int m = matrix[0].length; // no of columns
+
 //             // input
 //             Scanner sc = new Scanner(System.in);
 //             for(int i=0; i<n; i++) { // for rows
@@ -64,6 +128,7 @@
 //                     matrix[i][j] = sc.nextInt();
 //                 }
 //             }
+            
 //             // output
 //             for(int i=0; i<n; i++) {
 //                 for(int j=0; j<m; j++) {
@@ -76,7 +141,9 @@
 //     }
 
 
-                                                        // spiral matrix code
+
+
+                                                        // **spiral matrix code
 
 
 
@@ -131,6 +198,55 @@
 //     printspiral(matrix);
 // }
 // }
+
+
+
+
+//dry run
+
+// Initialization:
+// startrow = 0
+// endrow = 3 (index of last row)
+// startcol = 0
+// endcol = 3 (index of last column)
+
+// First while loop iteration: (startrow=0, endrow=3, startcol=0, endcol=3)
+// Top row loop (row 0, cols 0 to 3):
+// Print: 1 2 3 4
+// Right column loop (col 3, rows 1 to 3):
+// Print: 8 12 16
+// Bottom row loop (row 3, cols 2 to 0):
+// Since startrow != endrow, print 15 14 13
+// Left column loop (col 0, rows 2 to 1):
+// Since startcol != endcol, print 9 5
+// Update indices:
+// startrow = 1
+// endrow = 2
+// startcol = 1
+// endcol = 2
+
+// Second while loop iteration: (startrow=1, endrow=2, startcol=1, endcol=2)
+// Top row loop (row 1, cols 1 to 2):
+// Print: 6 7
+// Right column loop (col 2, rows 2 to 2):
+// Print: 11
+// Bottom row loop (row 2, cols 1 to 1):
+// Since startrow != endrow, loop runs once:
+// Print: 10
+// Left column loop (col 1, rows 1 to 1):
+// Loop does not run because i > startrow condition fails (i starts at endrow-1=1 and needs to be >1).
+// No print here.
+// Update indices:
+// startrow = 2
+// endrow = 1 (loop ends as startrow > endrow)
+// startcol = 2
+// endcol = 1
+
+// Loop ends because startrow > endrow and/or startcol > endcol.
+// Final printed output (spiral order):
+// 1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10 
+
+
 
 
 
@@ -221,37 +337,37 @@
                                                    //search in sorted matrix
 
 
- public class twoDarray {
-public static boolean search(int matrix[][], int key) {
- int row = 0;
-   int col = matrix[0].length - 1; // start from top right corner
+//  public class twoDarray {
+// public static boolean search(int matrix[][], int key) {
+//  int row = 0;
+//    int col = matrix[0].length - 1; // start from top right corner
    
-  while(row < matrix.length && col >= 0) {
-       if(matrix[row][col] == key) {
-     System.out.println("Found at cell (" + row + "," + col + ")");
-     return true;
-    }
+//   while(row < matrix.length && col >= 0) {
+//        if(matrix[row][col] == key) {
+//      System.out.println("Found at cell (" + row + "," + col + ")");
+//      return true;
+//     }
 
-    else if( key <matrix[row][col] ) {
-    col--; // move left
-     }
-     else {
-     row++; // move down
-     }
-     }
-      System.out.println("Key not found");
-         return false;
-     } 
+//     else if( key <matrix[row][col] ) {
+//     col--; // move left
+//      }
+//      else {
+//      row++; // move down
+//      }
+//      }
+//       System.out.println("Key not found");
+//          return false;
+//      } 
                  
-    public static void main(String args[]) {
-    int matrix[][] = {
-     {1, 2, 3, 4},
-      {5, 6, 7, 8},
-      {9, 10, 11, 12},
-     {13, 14, 15, 16}
-     };
-     int key = 12;
-      search(matrix, 12);
+//     public static void main(String args[]) {
+//     int matrix[][] = {
+//      {1, 2, 3, 4},
+//       {5, 6, 7, 8},
+//       {9, 10, 11, 12},
+//      {13, 14, 15, 16}
+//      };
+//      int key = 12;
+//       search(matrix, 12);
 
-       }
-   }
+//        }
+//    }
