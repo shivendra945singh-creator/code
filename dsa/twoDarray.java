@@ -253,6 +253,7 @@
                                                  // sum of diagonal elements 
 
 
+//brute force approach
 
 // public class twoDarray {
 
@@ -337,7 +338,7 @@
                                                    //search in sorted matrix
 
 
-//  public class twoDarray {
+//  public class twoDarray {//O(n+m) time complexity 
 // public static boolean search(int matrix[][], int key) {
 //  int row = 0;
 //    int col = matrix[0].length - 1; // start from top right corner
@@ -348,7 +349,7 @@
 //      return true;
 //     }
 
-//     else if( key <matrix[row][col] ) {
+//     else if( key < matrix[row][col] ) {
 //     col--; // move left
 //      }
 //      else {
