@@ -1,7 +1,11 @@
 
+
+
+
+
 // import java.util.Scanner;
 
-// public class strings {
+// public class strings {//this class string is not inbuild this  class  string we created
 //     public static void main(String[] args) {
 //        Scanner sc = new Scanner(System.in);
 
@@ -107,7 +111,32 @@
         
 //     System.out.println(isPalindrome(str));
 //     }   
-// }                                           
+// }    
+
+
+//dry run
+
+// String str = "madam";
+// str.length() = 5
+
+// Loop iterations:
+// Loop runs from i = 0 to i < str.length() / 2 → i < 2 (i.e., i = 0 and i = 1)
+
+// Iteration 1: i = 0
+
+// str.charAt(0) = 'm'
+// str.charAt(str.length() - 1 - 0) = str.charAt(4) = 'm'
+// Comparison: 'm' == 'm' → true (continue)
+
+// Iteration 2: i = 1
+
+// str.charAt(1) = 'a'
+// str.charAt(str.length() - 1 - 1) = str.charAt(3) = 'a'
+// Comparison: 'a' == 'a' → true (continue)
+
+// Loop ends as i < 2 condition is not met anymore.
+
+// Since all corresponding characters from the start and end matched, the function returns true.
 
 
 
@@ -138,8 +167,8 @@
 //         }
 //     }
 
-//     int x2 = x * x;
-//     int y2 = y * y;
+//     int x2 = x * x;//x square
+//     int y2 = y * y;//y square
 //     return (float) Math.sqrt(x2 + y2);
 //  }
 
@@ -173,23 +202,23 @@
                                              //substring(means contiguous or connected sequence of characters within a string) of string
 
 //  public class strings {
-//      public static String substring(String str, int si, int ei) {
-//         String substr = "";
-//         for (int i = si; i < ei; i++) {
-//             substr += str.charAt(i);
-//         }
-//         return substr;
-//      }
+    //  public static String substring(String str, int si, int ei) {
+    //     String substr = "";
+    //     for (int i = si; i < ei; i++) {
+    //         substr += str.charAt(i);
+    //     }
+    //     return substr;
+    //  }
 
-//     public static void main(String args[]) {
-//         //sunstring
-//         String str = "hello world";
+    // public static void main(String args[]) {
+    //     //substring
+    //     String str = "hello world";
         
-//         System.out.println(substring(str, 0, 5)); // hello
-//         System.out.println(substring(str, 6, 11)); // world
-//     }
+    //     System.out.println(substring(str, 0, 5)); // hello
+    //     System.out.println(substring(str, 6, 11)); // world
+    // }
         
-//      }
+    //  }
 
 
 
@@ -202,6 +231,8 @@
     //         String str = "hello world";
     //         String substr = str.substring(0, 5); // for finding substring of string we use substring() method and it takes two parameters one is starting index and another is ending index and it returns the substring from starting index to ending index-1
     //         System.out.println(substr); // hello
+    //         //or
+    //         System.out.println(str.substring(0, 5)); // hello
     //         String substr2 = str.substring(6, 11);
     //         System.out.println(substr2); // world
     //     }
@@ -210,7 +241,7 @@
 
 
 
-                                          //Q3 print largest string
+                                        //  Q3 print largest string
 
 
 //O(x into n) is time complexity because we are comparing each string with every other string 
