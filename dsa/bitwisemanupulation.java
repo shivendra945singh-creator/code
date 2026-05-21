@@ -1,3 +1,6 @@
+
+
+
 // public class bitwisemanupulation {
 //     public static void main(String[] args) {
 //         int a = 5; // in binary 0101
@@ -143,18 +146,64 @@
 
 
 //  public class bitwisemanupulation {
-//     public static int clearithbit(int n, int i) {
+    // public static int clearithbit(int n, int i) {
+    //     int bitmask = ~(1 << i); // create a bitmask by left shifting 1 by i positions and then negating it
+    //     return n & bitmask; // clear the ith bit by performing a bitwise AND with the bitmask
+    // }
+
+    // public static void main(String[] args) {
+        // int n = 5; // in binary 0101
+        // int i = 0; // we want to clear the 0th bit (counting from 0)
+        // int result = clearithbit(n, i); // function call
+        // System.out.println("After clearing the " + i + "th bit of " + n + ", the result is: " + result);
+    // }
+// }                             
+
+
+
+                                                        //update ith bit of a number to x (0 or 1) using bitwise operator
+
+
+
+//  public class bitwisemanupulation {
+    // public static int updateithbit(int n, int i, int newbit) {
+    //    if (newbit == 0) {
+    //        return clearithbit(n, i); // if newbit is 0, clear the ith bit
+    //     } else {
+    //           return setithbit(n, i); // if newbit is 1, set the ith bit
+    //         }
+    //     }
+    // }
+
+
+                                                        //or
+
+
+
+//  public class bitwisemanupulation {
+
+//       public static int clearithbit(int n, int i) {
 //         int bitmask = ~(1 << i); // create a bitmask by left shifting 1 by i positions and then negating it
 //         return n & bitmask; // clear the ith bit by performing a bitwise AND with the bitmask
 //     }
 
+
+//     public static int updateithbit(int n, int i, int newbit) {
+//         n = clearithbit(n, i); // first clear the ith bit
+//         int bitmask = newbit << i; // create a bitmask for the new bit
+//         return n | bitmask; // set the ith bit to the new value  
+//     }
+    
 //     public static void main(String[] args) {
 //         int n = 5; // in binary 0101
-//         int i = 0; // we want to clear the 0th bit (counting from 0)
-//         int result = clearithbit(n, i); // function call
-//         System.out.println("After clearing the " + i + "th bit of " + n + ", the result is: " + result);
+//         int i = 0; // we want to update the 0th bit (counting from 0)
+//         int newbit = 0; // we want to set the 0th bit to 0
+//         int result = updateithbit(n, i, newbit); // function call
+//         System.out.println("After updating the " + i + "th bit of " + n + ", the result is: " + result);
+//         //or
+//         System.out.println(updateithbit(5, 0, 0)); // Output: 4
 //     }
-// }                                                       
+// }
 
 
 
@@ -198,6 +247,31 @@
 //     Result        00011000 (24)
 
 
+
+                                          //clear range of bits from i to j in a number using bitwise operator
+
+
+
+    // public class bitwisemanupulation {
+    //     public static int clearbitsinrange(int n, int i, int j) {
+    //         int a = (~0 << (j + 1)); // create a bitmask with 1s from the left up to j
+    //         int b = (1 << i) - 1; // create a bitmask with 1s from the right up to i
+    //         int bitmask = a | b; // combine the two bitmasks to get a bitmask with 0s from i to j and 1s elsewhere
+    //         return n & bitmask; // clear the bits from i to j by performing a bitwise AND with the bitmask
+    //     }
+
+    //     public static void main(String[] args) {
+    //         int n = 31; // in binary 11111
+    //         int i = 1; // we want to clear bits from position 1
+    //         int j = 3; // to position 3 (inclusive)
+    //         int result = clearbitsinrange(n, i, j); // function call
+    //         //or
+    //         System.out.println(clearbitsinrange(31, 1, 3)); // Output: 17
+    //         System.out.println("After clearing bits from " + i + " to " + j + " in " + n + ", the result is: " + result);
+    //     }
+    // }                                      
+
+
                                           //check if a number is power of 2 using bitwise operator
 
 
@@ -236,18 +310,20 @@
 
 
 
-//   public class bitwisemanupulation {
-//     public static boolean isPowerOfTwo(int n) {
+  public class bitwisemanupulation {
+    public static boolean isPowerOfTwo(int n) {
 
-//         return (n & (n - 1)) == 0; // A power of 2 has only one bit set
-//     }
+        return (n & (n - 1)) == 0; // A power of 2 has only one bit set
+    }
 
-//     public static void main(String[] args) {
-//         int n = 16; // Example number
-//         boolean result = isPowerOfTwo(n); // function call
-//         System.out.println(n + " is a power of 2: " + result);
-//     } 
-// }       
+    public static void main(String[] args) {
+        int n = 16; // Example number
+        boolean result = isPowerOfTwo(n); // function call
+        System.out.println(n + " is a power of 2: " + result);
+        //or
+        System.out.println(isPowerOfTwo(16)); // Output: true
+    } 
+}       
 
 
 
