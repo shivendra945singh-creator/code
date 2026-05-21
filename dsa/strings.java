@@ -246,15 +246,102 @@
 
 //O(x into n) is time complexity because we are comparing each string with every other string 
 
-   public class strings {
-        public static void main(String args[]) {
-            String str[] = {"hello", "world", "java", "programming"};
-            String largest = str[0];
-            for (int i = 1; i < str.length; i++) {
-                if (largest.compareTo(str[i]) < 0) { // compareTo() method compares two strings lexicographically and returns a negative integer, zero, or a positive integer as this string is less than, equal to, or greater than the specified object.
-                    largest = str[i];
-                }
+//    public class strings {
+//         public static void main(String args[]) {
+//             String str[] = {"hello", "world", "java", "programming"};
+//             String largest = str[0];
+//             for (int i = 1; i < str.length; i++) {
+//                 if (largest.compareTo(str[i]) < 0) { // compareTo() method compares two strings lexicographically and returns a negative integer, zero, or a positive integer as this string is less than, equal to, or greater than the specified object.
+//                     largest = str[i];
+//                 }
+//             }
+//             System.out.println("largest string is " + largest);
+//         }
+//     }                                      
+
+
+                                                //string builder
+
+
+//  public class strings {
+//     public static void main(String[] args) {
+//         StringBuilder sb = new StringBuilder("hello");
+//         sb.append(" world"); // for adding string to string builder we use append() method
+//         System.out.println(sb); // hello world
+//         sb.insert(5, " java"); // for inserting string at specific index in string builder we use insert() method and it takes two parameters one is index and another is string to be inserted
+//         System.out.println(sb); // hello java world
+//         sb.delete(5, 10); // for deleting string from string builder we use delete() method and it takes two parameters one is starting index and another is ending index and it deletes the string from starting index to ending index-1
+//         System.out.println(sb); // hello world
+//         System.out.println(sb.length()); // for finding length of string builder we use length() method
+//     }
+// }                                               
+
+
+                                                     //or
+
+
+//    public static void main(String args[]) {//O(26)
+//     StringBuilder sb = new StringBuilder("");
+//     for(char ch = 'a'; ch <= 'z'; ch++) {
+//         sb.append(ch);// for adding character to string builder we use append() method and it takes character as parameter
+//     }
+//     System.out.println(sb);
+//    }                                                  
+
+
+
+
+    //**Q4 for a given string convert each the first letter of each word to uppercase and rest of the letters to lowercase
+
+
+    // public static String toUppercase(String str) {//O(n)
+    //     StringBuilder sb = new StringBuilder("");
+
+    //     char ch = Character.toUpperCase(str.charAt(0)); // for converting first letter of string to uppercase we use toUpperCase() method of Character class and it takes character as parameter and returns the uppercase character
+    //     sb.append(ch); // for adding character to string builder we use append() method and it takes character as parameter
+
+    //     for (int i = 1; i < str.length(); i++) {
+    //      if(str.charAt(i) == ' ' && i < str.length() - 1) { // for checking if the current character is space and it is not the last character of string
+    //          sb.append(' '); // for adding space to string builder we use append() method and it takes space as parameter
+    //          i++; // for skipping the space character
+    //          sb.append(Character.toUpperCase(str.charAt(i))); // for converting first letter of next word to uppercase we use toUpperCase() method of Character class and it takes character as parameter and returns the uppercase character
+    //      } else {
+    //          sb.append(Character.toLowerCase(str.charAt(i))); // for converting rest of the letters to lowercase we use toLowerCase() method of Character class and it takes character as parameter and returns the lowercase character
+             
+    //      }
+    //     }
+    //     return sb.toString(); // for converting string builder to string we use toString() method and it returns the string representation of string builder
+    // }
+
+
+    // public static void main(String args[]) {
+    //     String str = "hello world java programming";
+    //     System.out.println(toUppercase(str));
+    // }
+
+
+
+    //Q5 string compression 
+
+
+    public static String compress(String str) {//O(n)
+            String newStr = "";
+        for (int i = 0; i < str.length(); i++) {
+            Integer count = 1;
+            while (i < str.length() - 1 && str.charAt(i) == str.charAt(i + 1)) {// for counting the number of occurrences of each character in string we use while loop and it checks if the current character is equal to the next character and it is not the last character of string
+                count++;
+                i++;
             }
-            System.out.println("largest string is " + largest);
+           
+            newStr += str.charAt(i); // for adding character to string we use + operator
+            if (count > 1) {
+                newStr += count.toString(); // for adding count to string we use + operator and count is an integer so we need to convert it to string using toString() method of Integer class
+            }
         }
-    }                                      
+        return newStr;
+    }
+
+    public static void main(String args[]) {
+        String str = "aaabbccdee";
+        System.out.println(compress(str)); // a3b2c2de2
+    }
