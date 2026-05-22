@@ -310,20 +310,20 @@
 
 
 
-  public class bitwisemanupulation {
-    public static boolean isPowerOfTwo(int n) {
+//   public class bitwisemanupulation {
+//     public static boolean isPowerOfTwo(int n) {
 
-        return (n & (n - 1)) == 0; // A power of 2 has only one bit set
-    }
+//         return (n & (n - 1)) == 0; // A power of 2 has only one bit set
+//     }
 
-    public static void main(String[] args) {
-        int n = 16; // Example number
-        boolean result = isPowerOfTwo(n); // function call
-        System.out.println(n + " is a power of 2: " + result);
-        //or
-        System.out.println(isPowerOfTwo(16)); // Output: true
-    } 
-}       
+//     public static void main(String[] args) {
+//         int n = 16; // Example number
+//         boolean result = isPowerOfTwo(n); // function call
+//         System.out.println(n + " is a power of 2: " + result);
+//         //or
+//         System.out.println(isPowerOfTwo(16)); // Output: true
+//     } 
+// }       
 
 
 
@@ -331,4 +331,48 @@
 
 
 
-                                                                                               
+//  public class bitwisemanupulation {//O(log n)
+//     public static int countSetBits(int n) {
+//         int count = 0; // Initialize count of set bits
+//         while (n > 0) { // Loop until n becomes 0
+//             if ((n & 1) == 1) { //or if(n & 1) != 0)//tf0 Check if the least significant bit is set
+//                 count++; // Increment count if it is set9
+//             }
+//             n = n >> 1; // Right shift n to check the next bit
+//         }
+//         return count; // Return the total count of set bits
+//     }
+
+//     public static void main(String[] args) {
+//         int n = 10; // Example number (in binary: 1010)
+//         int result = countSetBits(n); // function call
+//         System.out.println("The number of set bits in " + n + " is: " + result);
+//     }    
+// }                                                                                          
+
+
+
+                                               //fast exponentiation using bitwise operator
+
+
+
+ public static int fastExponentiation(int x, int n) {
+        int result = 1; // Initialize result
+        while (n > 0) { // Loop until n becomes 0
+            if ((n & 1) == 1) { // Check if the least significant bit is set
+                result *= x; // If it is set, multiply the result by x
+            }
+            x *= x; // Square x for the next iteration
+            n = n >> 1; // Right shift n to check the next bit
+        }
+        return result; // Return the final result
+    }
+
+    public static void main(String[] args) {
+        int x = 2; // Base
+        int n = 10; // Exponent
+        int result = fastExponentiation(x, n); // function call
+        System.out.println(x + " raised to the power of " + n + " is: " + result);
+        //or
+        System.out.println(fastExponentiation(3,5)); // Output: 243
+    }                                              
