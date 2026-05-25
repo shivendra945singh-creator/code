@@ -649,7 +649,7 @@
 
 
 
-                                                         //converst bst to balanced bst
+                                                         //convert bst to balanced bst
 
 
 
