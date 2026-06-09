@@ -653,100 +653,280 @@
 
 
 
-import java.util.ArrayList;//O(N)
+// import java.util.ArrayList;//O(N)
+
+// public class bst {
+//     static class Node {
+//         int data;
+//         Node left, right;
+
+//         Node(int data) {
+//             this.data = data;
+//             this.left = null;
+//             this.right = null;
+           
+//         }
+//     }
+
+//     public static void getInorder(Node root, ArrayList<Integer> inorder) {
+//         if (root == null) {
+//             return;
+//         }
+//         getInorder(root.left, inorder);
+//         inorder.add(root.data);
+//         getInorder(root.right, inorder);
+//     }
+
+//     public static Node sortedArrayToBST(ArrayList<Integer> inorder, int start, int end) {
+//         if (start > end) {
+//             return null;
+//         }
+//         int mid = start + (end - start) / 2;//or int mid = (start + end) / 2;
+//         Node node = new Node(inorder.get(mid));
+//         node.left = sortedArrayToBST(inorder, start, mid - 1);
+//         node.right = sortedArrayToBST(inorder, mid + 1, end);
+//         return node;
+//     }
+
+//     public static Node convertToBalancedBST(Node root) {
+//         // Step 1: Store the elements of the BST in a sorted list using inorder traversal
+
+//         ArrayList<Integer> inorder = new ArrayList<>();
+//         getInorder(root, inorder);
+
+//         // Step 2: Construct a balanced BST from the sorted list
+
+//         return sortedArrayToBST(inorder, 0, inorder.size() - 1);
+//         //or
+//        // root = sortedArrayToBST(inorder, 0, inorder.size() - 1);
+//        //return root;
+//     }
+
+//     public static void preorder(Node root) {
+//         if (root == null) {
+//             return;
+//         }
+//         System.out.print(root.data + " ");
+//         preorder(root.left);
+//         preorder(root.right);
+//     }
+
+//     public static void main(String[] args) {
+//          Node root = new Node(8);
+//          root.left = new Node(6);
+//          root.left.left = new Node(5);
+//          root.left.left.left = new Node(3);
+
+//          root.right = new Node(10);
+//          root.right.right = new Node(11);
+//          root.right.right.right = new Node(12);
+
+//          /*
+//             The unbalanced BST is:
+//                  8
+//                 / \
+//                6   10
+//               /     \
+//              5     11
+//             /        \
+//            3         12
+
+//              The balanced BST will be:
+//                  8
+//                 / \
+//                5    11
+//               / \   / \
+//               3  6  10 12
+//          */
+
+//          System.out.println("Preorder traversal of the original BST:");
+//          preorder(root);
+//          System.out.println();
+
+//          root = convertToBalancedBST(root);
+
+//          System.out.println("Preorder traversal of the balanced BST:");
+//          preorder(root); // should print the values in a balanced order
+//          System.out.println();
+//       }
+// }                        
+
+
+
+
+
+                                        //size of largest BST in a binary tree
+
 
 public class bst {
-    static class Node {
-        int data;
-        Node left, right;
 
-        Node(int data) {
-            this.data = data;
-            this.left = null;
-            this.right = null;
-           
+      static class Node {
+         int data;
+         Node left, right;
+   
+         public  Node(int data) {
+               this.data = data;
+               this.left = null;
+               this.right = null;
+            
+         }
+      }
+
+
+    static class Info {
+        int size;
+        int min;
+        int max;
+        boolean isBST;
+
+         public Info(boolean isBST, int size, int min, int max) {
+           this.isBST = isBST;
+           this.min = min;
+           this.max = max;
+           this.size = size;
+
         }
     }
 
-    public static void getInorder(Node root, ArrayList<Integer> inorder) {
-        if (root == null) {
-            return;
-        }
-        getInorder(root.left, inorder);
-        inorder.add(root.data);
-        getInorder(root.right, inorder);
+    public static int maxBST = 0;
+
+    public static Info largestBST(Node root) {
+
+      if(root == null) {
+         return new Info(isBST: true, size: 0,  Integer.MAX_VALUE,  Integer.MIN_VALUE);
+      }
+
+        Info leftInfo = largestBST(root.left);
+        Info rightInfo = largestBST(root.right);
+        int size = leftInfo.size + rightInfo.size + 1;
+        int min = Math.min(root.data, Math.min(leftInfo.min, rightInfo.min));
+         int max = Math.max(root.data, Math.max(leftInfo.max, rightInfo.max));
+
+         if(root.data<= leftInfo.max || root.data >= rightInfo.min) {
+            return new Info(isBST : false, size , min, max);
+         }
+
+         if(leftInfo.isBST && rightInfo.isBST) {
+            maxBST = Math.max(maxBST , size);
+            new Info(isBST : true, size , min, max);
+         }
+
+         return new Info(isBST : false, size , min, max);
+        
     }
 
-    public static Node sortedArrayToBST(ArrayList<Integer> inorder, int start, int end) {
-        if (start > end) {
-            return null;
-        }
-        int mid = start + (end - start) / 2;//or int mid = (start + end) / 2;
-        Node node = new Node(inorder.get(mid));
-        node.left = sortedArrayToBST(inorder, start, mid - 1);
-        node.right = sortedArrayToBST(inorder, mid + 1, end);
-        return node;
-    }
-
-    public static Node convertToBalancedBST(Node root) {
-        // Step 1: Store the elements of the BST in a sorted list using inorder traversal
-
-        ArrayList<Integer> inorder = new ArrayList<>();
-        getInorder(root, inorder);
-
-        // Step 2: Construct a balanced BST from the sorted list
-
-        return sortedArrayToBST(inorder, 0, inorder.size() - 1);
-        //or
-       // root = sortedArrayToBST(inorder, 0, inorder.size() - 1);
-       //return root;
-    }
-
-    public static void preorder(Node root) {
-        if (root == null) {
-            return;
-        }
-        System.out.print(root.data + " ");
-        preorder(root.left);
-        preorder(root.right);
-    }
 
     public static void main(String[] args) {
-         Node root = new Node(8);
-         root.left = new Node(6);
+         Node root = new Node(50);
+         root.left = new Node(30);
+         root.right = new Node(60);
          root.left.left = new Node(5);
-         root.left.left.left = new Node(3);
+         root.left.right = new Node(20);
+         root.right.left = new Node(45);
+         root.right.right = new Node(70);
+         root.right.right.left = new Node(65);
+         root.right.right.right = new Node(80);
 
-         root.right = new Node(10);
-         root.right.right = new Node(11);
-         root.right.right.right = new Node(12);
 
-         /*
-            The unbalanced BST is:
-                 8
-                / \
-               6   10
-              /     \
-             5     11
-            /        \
-           3         12
-
-             The balanced BST will be:
-                 8
-                / \
-               5    11
-              / \   / \
-              3  6  10 12
-         */
-
-         System.out.println("Preorder traversal of the original BST:");
-         preorder(root);
-         System.out.println();
-
-         root = convertToBalancedBST(root);
-
-         System.out.println("Preorder traversal of the balanced BST:");
-         preorder(root); // should print the values in a balanced order
-         System.out.println();
+       Info  info = largestBST(root);
+         System.out.println("Size of the largest BST in the binary tree: " + maxBST); // should print 5
       }
-}                                                       
+}
+
+
+
+
+
+
+
+                                        //or
+
+
+
+
+// public class bst {
+//     static class Node {
+//         int data;
+//         Node left, right;
+
+//         Node(int data) {
+//             this.data = data;
+//             this.left = null;
+//             this.right = null;
+           
+//         }
+//     }
+
+//     static class Info {
+//         int size; //size of the subtree
+//         int min; //min value in the subtree
+//         int max; //max value in the subtree
+//         int ans; //size of largest BST in the subtree
+//         boolean isBST; //whether the subtree is a BST or not
+
+//         Info() {
+//             size = 0;
+//             min = Integer.MAX_VALUE;
+//             max = Integer.MIN_VALUE;
+//             ans = 0;
+//             isBST = true;
+//         }
+//     }
+
+//     public static Info largestBST(Node root) {
+//         if (root == null) {
+//             return new Info();
+//         }
+//         Info leftInfo = largestBST(root.left);
+//         Info rightInfo = largestBST(root.right);
+
+//         Info currInfo = new Info();
+//         currInfo.size = leftInfo.size + rightInfo.size + 1;
+//         currInfo.min = Math.min(root.data, Math.min(leftInfo.min, rightInfo.min));
+//         currInfo.max = Math.max(root.data, Math.max(leftInfo.max, rightInfo.max));
+
+//         if (leftInfo.isBST && rightInfo.isBST && root.data > leftInfo.max && root.data < rightInfo.min) {
+//             currInfo.ans = currInfo.size;
+//             currInfo.isBST = true;
+//         } else {
+//             currInfo.ans = Math.max(leftInfo.ans, rightInfo.ans);
+//             currInfo.isBST = false;
+//         }
+//         return currInfo;
+//     }
+
+//     public static void main(String[] args) {
+//          Node root = new Node(50);
+//          root.left = new Node(30);
+//          root.right = new Node(60);
+//          root.left.left = new Node(5);
+//          root.left.right = new Node(20);
+//          root.right.left = new Node(45);
+//          root.right.right = new Node(70);
+//          root.right.right.left = new Node(65);
+//          root.right.right.right = new Node(80);
+
+//          /*
+//              The binary tree is:
+//                   5
+//                  / \
+//                 30   60
+//                / \   / \
+//               5  20 45 70
+//                      / \
+//                     65 80
+
+//               The largest BST in this tree is:
+//                   60
+//                  / \
+//                 45 70
+//                    / \
+//                   65 80
+
+//               So the size of the largest BST is 5.
+//           */
+
+//           System.out.println("Size of the largest BST in the binary tree: " + largestBST(root).ans); // should print     
+//     } 
+// }
+
