@@ -211,7 +211,7 @@
 
 
 
-                                              // type permotation in java
+                                              // type promotion in java
 
 
 // public class varianddata {
@@ -220,10 +220,10 @@
 //     char b = 'B';
 //     System.out.println((int)a);  // type casting
 //     System.out.println((int)b);  // type casting
-//     System.out.println(b-a);  // type permotation
+//     System.out.println(b-a);  // type promotion
 //     System.out.println(a);  //ye par a ki value A print hogi nha ki 65 print hogi kuki a ko char type me declare kiya hai
 
-//  //concept of type promotion in java
+//  concept of type promotion in java
 
 //     int aa = 10;
 //     float bb = 20.5f;
