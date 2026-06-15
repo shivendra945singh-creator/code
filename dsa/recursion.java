@@ -253,7 +253,7 @@ public class recursion {
 
 //     public static void main(String args[]) {
 //         int arr[] = {1, 2, 3, 4, 5};
-//         System.err.println(isSorted(arr, 0));
+//         System.err.println(isSorted(arr, 0));//start checking from the first index (0) of the array
 //     }
 // }
 
@@ -567,28 +567,28 @@ public class recursion {
 
 
 
-//  public static void removeDuplicates(String str, int idx, StringBuilder newStr, boolean map[]) {
-//     // base case: if we have reached the end of the string, print the new string and return
-//     if (idx == str.length()) {
-//         System.out.println(newStr);
-//         return;
-//     }
-//     //kaam
-//     char currChar = str.charAt(idx); // get the current character
-//     if (map[currChar - 'a'] == true) { // if the current character has already been seen, skip it
-//       //duplicate
-//         removeDuplicates(str, idx + 1, newStr, map);
-//     } else { // if the current character has not been seen, add it to the new string and mark it as seen
-//         map[currChar - 'a'] = true; // mark the current character as seen
-//         removeDuplicates(str, idx + 1, newStr.append(currChar), map); // recursive call to process the rest of the string
-//     } 
-//   }
+ public static void removeDuplicates(String str, int idx, StringBuilder newStr, boolean map[]) {
+    // base case: if we have reached the end of the string, print the new string and return
+    if (idx == str.length()) {
+        System.out.println(newStr);
+        return;
+    }
+    //kaam
+    char currChar = str.charAt(idx); // get the current character
+    if (map[currChar - 'a'] == true) { // if the current character has already been seen, skip it
+      //duplicate
+        removeDuplicates(str, idx + 1, newStr, map);
+    } else { // if the current character has not been seen, add it to the new string and mark it as seen
+        map[currChar - 'a'] = true; // mark the current character as seen
+        removeDuplicates(str, idx + 1, newStr.append(currChar), map); // recursive call to process the rest of the string
+    } 
+  }
   
-//     public static void main(String args[]) {
-//         String str = "aabbccaapnaaacollegeee";
-//         removeDuplicates(str, 0, new StringBuilder(""), new boolean[26]);
-//     }
-//   // }
+    public static void main(String args[]) {
+        String str = "aabbccaapnaaacollegeee";
+        removeDuplicates(str, 0, new StringBuilder(""), new boolean[26]);
+    }
+  // }
 
 
 
