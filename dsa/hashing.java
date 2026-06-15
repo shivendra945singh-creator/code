@@ -284,18 +284,156 @@
                                                                  //tree hashset
 
 
-import java.util.TreeSet;
-public class hashing {
+// import java.util.TreeSet;
+// public class hashing {
+    
+//     public static void main (String args[]) {
+
+//         TreeSet<String> ts = new TreeSet<>();
+        
+//         ts.add("India");
+//         ts.add("China");    
+//         ts.add("USA");
+//         ts.add("Indonesia");
+//         System.out.println(ts); //[China, India, Indonesia, USA] //output is in the sorted order(alphabetical) of elements because tree hash set maintains the sorted order of elements
+
+//     }
+// }
+
+
+
+                                                          //count distinct elements in an array using hashset
+
+
+// import java.util.HashSet; // O(n)
+// public class hashing {
+    
+//     public static void main (String args[]) {
+
+//         int arr[] = {1, 2, 3, 4, 5, 1, 2, 3};
+
+//         HashSet<Integer> hs = new HashSet<>();
+
+//         for (int i = 0; i < arr.length; i++) {
+//             hs.add(arr[i]); //add elements of the array to the hash set
+//         }
+
+//         System.out.println("Distinct elements: " + hs.size()); // output is 5 because we have 5 distinct elements in the array
+
+//     }
+// }
+
+
+
+                                                //count union and intersection elements of two arrays using hashset
+
+
+
+// import java.util.HashSet; // O(n)
+
+
+// public class hashing {
+    
+//     public static void main (String args[]) {
+
+//         int arr1[] = {1, 2, 3, 4, 5};
+//         int arr2[] = {4, 5, 6, 7, 8};
+
+//         HashSet<Integer> hs = new HashSet<>();
+
+//         //union
+//         for (int i = 0; i < arr1.length; i++) {
+//             hs.add(arr1[i]); //add elements of the first array to the hash set
+//         }
+
+//         for (int i = 0; i < arr2.length; i++) {
+//             hs.add(arr2[i]); //add elements of the second array to the hash set
+//         }
+
+//         System.out.println("Union elements: " + hs.size()); // output is 8 because we have 8 distinct elements in the union of two arrays
+
+
+//         //intersection
+//         hs.clear(); //clear the hash set to store only the elements of the first array
+//         for (int i = 0; i < arr1.length; i++) {
+//             hs.add(arr1[i]); //add elements of the first array to the hash set
+//         }
+
+//         int count = 0;
+//         for (int i = 0; i < arr2.length; i++) {
+//             if (hs.contains(arr2[i])) { //check if the element of the second array is present in the hash set
+//                 count++; //increment count if the element is present in the hash set
+//                 hs.remove(arr2[i]); //remove the element from the hash set to avoid counting duplicate elements in the second array
+//             }
+//         }
+//         System.out.println("Intersection elements: " + count); // output is 2 because we have 2 common elements in both arrays
+//     }
+// }
+
+
+
+
+                                                                        //largest subarray with 0 sum using hashset
+
+
+ import java.util.HashMap; // O(n)
+ public class hashing {
     
     public static void main (String args[]) {
 
-        TreeSet<String> ts = new TreeSet<>();
-        
-        ts.add("India");
-        ts.add("China");    
-        ts.add("USA");
-        ts.add("Indonesia");
-        System.out.println(ts); //[China, India, Indonesia, USA] //output is in the sorted order(alphabetical) of elements because tree hash set maintains the sorted order of elements
+        int arr[] = {1, 2, -3, 3, 7, -7};
 
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        //(sum, index) //store the cumulative sum and its index in the hash map
+        int sum = 0;
+        int Length = 0;
+
+        for ( int j=0; j < arr.length; j++) {
+            sum += arr[j]; //calculate the cumulative sum of the elements of the array
+
+           if(map.containsKey(sum)) {
+                Length = Math.max(Length, j - map.get(sum)); //update the maximum length of the subarray with 0 sum
+            } else {
+                map.put(sum, j); //add the cumulative sum to the hash map
+            }
+        }
+
+        System.out.println("Largest subarray with 0 sum: " + Length); // output is 4 because we have a subarray with 0 sum from index 2 to index 5
     }
-}
+ }
+
+
+                                                           //or
+
+
+
+//  import java.util.HashSet; // O(n)
+//  public class hashing {
+    
+//     public static void main (String args[]) {
+
+//         int arr[] = {1, 2, -3, 3, 7, -7};
+
+//         HashSet<Integer> hs = new HashSet<>();
+
+//         int sum = 0;
+//         int maxLength = 0;
+
+//         for (int i = 0; i < arr.length; i++) {
+//             sum += arr[i]; //calculate the cumulative sum of the elements of the array
+
+//             if (sum == 0) { //if the cumulative sum is 0, then we have found a subarray with 0 sum
+//                 maxLength = i + 1; //update the maximum length of the subarray with 0 sum
+//             } else if (hs.contains(sum)) { //if the cumulative sum is already present in the hash set, then we have found a subarray with 0 sum
+//                 maxLength = Math.max(maxLength, i - hs.size()); //update the maximum length of the subarray with 0 sum
+//             } else {
+//                 hs.add(sum); //add the cumulative sum to the hash set
+//             }
+//         }
+
+//         System.out.println("Largest subarray with 0 sum: " + maxLength); // output is 4 because we have a subarray with 0 sum from index 1 to index 4
+
+//     }
+//  }                                                                       
+
