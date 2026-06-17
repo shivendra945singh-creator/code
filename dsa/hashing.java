@@ -372,36 +372,82 @@
 
 
 
+                                                               //find itinerary from given list of tickets using hashmap
 
-                                                                        //largest subarray with 0 sum using hashset
 
 
- import java.util.HashMap; // O(n)
- public class hashing {
+import java.util.HashMap; // O(n)
+public class hashing {
     
-    public static void main (String args[]) {
+    public static String getStartingPoint(HashMap<String, String> tickets) {//from to to data
+        HashMap<String, String> reverseMap = new HashMap<>();//to to from data
 
-        int arr[] = {1, 2, -3, 3, 7, -7};
-
-        HashMap<Integer, Integer> map = new HashMap<>();
-
-        //(sum, index) //store the cumulative sum and its index in the hash map
-        int sum = 0;
-        int Length = 0;
-
-        for ( int j=0; j < arr.length; j++) {
-            sum += arr[j]; //calculate the cumulative sum of the elements of the array
-
-           if(map.containsKey(sum)) {
-                Length = Math.max(Length, j - map.get(sum)); //update the maximum length of the subarray with 0 sum
-            } else {
-                map.put(sum, j); //add the cumulative sum to the hash map
-            }
+        for (String key : tickets.keySet()) {
+            reverseMap.put(tickets.get(key), key); //create a reverse map to find the starting point of the itinerary
         }
 
-        System.out.println("Largest subarray with 0 sum: " + Length); // output is 4 because we have a subarray with 0 sum from index 2 to index 5
+        for (String key : tickets.keySet()) {
+            if (!reverseMap.containsKey(key)) { //if the key is not present in the reverse map, then it is the starting point of the itinerary
+                return key; //return the starting point of the itinerary
+            }
+        }
+        return null; //return null if there is no starting point of the itinerary
     }
- }
+
+
+    public static void main (String args[]) {
+        HashMap<String, String> tickets = new HashMap<>();
+        tickets.put("chennai", "bangalore");
+        tickets.put("mumbai", "delhi");
+        tickets.put("goa", "chennai");
+        tickets.put("delhi", "goa");
+
+
+        String startingPoint = getStartingPoint(tickets);
+        System.out.print( startingPoint);//print the starting point of the itinerary
+
+        for(String key : tickets.keySet()) {
+            
+            System.out.print( " -> " + tickets.get(startingPoint));//print the next destination in the itinerary
+            startingPoint = tickets.get(startingPoint); //update the starting point to the next destination
+        }
+
+        System.out.println(); //print a new line after printing the itinerary
+    }
+}
+
+
+
+                                                                        //largest subarray with 0 sum using hashset
+                                                                        
+
+
+//  import java.util.HashMap; // O(n)
+//  public class hashing {
+    
+//     public static void main (String args[]) {
+
+//         int arr[] = {1, 2, -3, 3, 7, -7};
+
+//         HashMap<Integer, Integer> map = new HashMap<>();
+
+//         //(sum, index) //store the cumulative sum and its index in the hash map
+//         int sum = 0;
+//         int Length = 0;
+
+//         for ( int j=0; j < arr.length; j++) {
+//             sum += arr[j]; //calculate the cumulative sum of the elements of the array
+
+//            if(map.containsKey(sum)) {
+//                 Length = Math.max(Length, j - map.get(sum)); //update the maximum length of the subarray with 0 sum
+//             } else {
+//                 map.put(sum, j); //add the cumulative sum to the hash map
+//             }
+//         }
+
+//         System.out.println("Largest subarray with 0 sum: " + Length); // output is 4 because we have a subarray with 0 sum from index 2 to index 5
+//     }
+//  }
 
 
                                                            //or
