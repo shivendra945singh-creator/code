@@ -68,7 +68,7 @@
 //          String name;
 //          int roll;
 
-//          Student() { //if we dont create a constructor , java automatically creates a default constructor for us but in that constructor ther is no initialization occur so if we want to set a initialization in constructor we need to create it manually 
+//          Student() { //if we dont create this constructor , java automatically creates a default constructor for us but in that constructor ther is no initialization occur so if we want to set a initialization in constructor we need to create it manually 
                 
 //         System.out.println("Constructor IS called");
 
@@ -76,7 +76,7 @@
 //     }
 
 
-
+                                                                  //or
 
 
 // public class Oops {
@@ -141,7 +141,7 @@
 //         s1.password = "shivam123"; // changing the password property of s1
 
 
-//         Student s2 = new Student(s1); // creating a new object s2 and passing the object s1 to the constructor of Student class
+//         Student s2 = new Student(s1); // creating a new object s2 and passing the object s1 to the constructor of Student class //pass all properties of s1 to s2
 //         s2.password = "s2password"; // changing the password property of s2
 //     }
 // }
@@ -158,6 +158,21 @@
 //         this.roll = s1.roll; // here we are initializing the roll property of student class with the value of roll property of s1 object
 
 //     }
+
+//     Student() { // default constructor
+//         System.out.println("Default Constructor IS called");
+//     }
+
+//     Student(String name) { // parameterized constructor
+//         this.name = name; // here we are initializing the name property of student class with the value passed in constructor
+//         System.out.println("Parameterized Constructor IS called");
+//     }
+
+//     Student(int roll) { // parameterized constructor
+//         this.roll = roll; // here we are initializing the roll property of student class with the value passed in constructor
+//         System.out.println("Parameterized Constructor IS called");
+//     }
+    
 // }
 
 
@@ -168,8 +183,8 @@
 
 //  public class Oops {
 //     public static void main(String args[]) {
-//         Fish shark = new Fish(); // creating a new object f1 of Fish class
-//         shark.eat(); // calling the eat() method of Animal class using f1 object of Fish class
+//         Fish shark = new Fish(); // creating a new object shark of Fish class
+//         shark.eat(); // calling the eat() method of Animal class using shark object of Fish class
        
 //     }
 // }
@@ -203,45 +218,45 @@
 
 
                                          
-//  public class Oops {
-//     public static void main(String args[]) {
-//         Dog shiba = new Dog(); // creating a new object shiba of Dog class
-//         shiba.eat(); // calling the eat() method of Animal class using shiba object of Dog class
-//         shiba.walk(); // calling the walk() method of Mammels class using shiba object of Dog class
-//         shiba.bark(); // calling the bark() method of Dog class using shiba object of Dog class
-//         shiba.legs = 4; // accessing the legs property of Mammels class using shiba object of Dog class
-//         System.out.println("Dog has " + shiba.legs + " legs"); 
-//     }
-// }
+ public class Oops {
+    public static void main(String args[]) {
+        Dog shiba = new Dog(); // creating a new object shiba of Dog class
+        shiba.eat(); // calling the eat() method of Animal class using shiba object of Dog class
+        shiba.walk(); // calling the walk() method of Mammels class using shiba object of Dog class
+        shiba.bark(); // calling the bark() method of Dog class using shiba object of Dog class
+        shiba.legs = 4; // accessing the legs property of Mammels class using shiba object of Dog class
+        System.out.println("Dog has " + shiba.legs + " legs"); 
+    }
+}
 
-// //base class
-// class Animal {
-//     String color;
+//base class
+class Animal {
+    String color;
 
-//     void eat() {
-//         System.out.println("eating...");
-//     }
+    void eat() {
+        System.out.println("eating...");
+    }
 
-//     void sleep() {
-//         System.out.println("sleeping...");
-//     }
-// }
+    void sleep() {
+        System.out.println("sleeping...");
+    }
+}
 
-// class Mammels extends Animal { //derived class
-//     int legs;
+class Mammels extends Animal { //derived class
+    int legs;
 
-//     void walk() {
-//         System.out.println("walking...");
-//     }
-// }
+    void walk() {
+        System.out.println("walking...");
+    }
+}
 
-// class Dog extends Mammels { //derived class
-//     String breed;
+class Dog extends Mammels { //derived class
+    String breed;
 
-//     void bark() {
-//         System.out.println("barking...");
-//     }
-// }
+    void bark() {
+        System.out.println("barking...");
+    }
+}
 
 
 
@@ -582,34 +597,99 @@
                                                                  //static keyword in java
 
 
-public class Oops {
-    public static void main(String args[]) {
-        Student s1 = new Student(); // creating a new object s1 of Student class
-        s1.schoolName = "ABC School"; //this schoolName property is static so it is shared among all the objects of the class and it is not specific to any object of the class //this schoolname is same  for all object 
-        System.out.println("Student 1 school name: " + s1.schoolName); 
+// public class Oops {
+//     public static void main(String args[]) {
+//         Student s1 = new Student(); // creating a new object s1 of Student class
+//         s1.schoolName = "ABC School"; //this schoolName property is static so it is shared among all the objects of the class and it is not specific to any object of the class //this schoolname is same  for all object 
+//         System.out.println("Student 1 school name: " + s1.schoolName); 
 
-        Student s2 = new Student(); // creating a new object s2 of Student class
-        System.out.println("Student 2 school name: " + s2.schoolName); 
+//         Student s2 = new Student(); // creating a new object s2 of Student class
+//         System.out.println("Student 2 school name: " + s2.schoolName); 
 
-         Student s3 = new Student(); // creating a new object s3 of Student class
-         s3.schoolName = "XYZ School"; // changing the schoolName property of s3 //now this schoolname is become new schoolname for  all object  
-         System.out.println("Student 3 school name: " + s3.schoolName); 
-           System.out.println("Student 1 school name: " + s1.schoolName); 
+//          Student s3 = new Student(); // creating a new object s3 of Student class
+//          s3.schoolName = "XYZ School"; // changing the schoolName property of s3 //now this schoolname is become new schoolname for  all object  
+//          System.out.println("Student 3 school name: " + s3.schoolName); 
+//            System.out.println("Student 1 school name: " + s1.schoolName); //now s1.schoolname is xyz from ABC
 
-    }
-}
+//     }
+// }
 
-class Student { //Student class
-    String name;
-    int roll;
-    static String schoolName; //static property // here static keyword is used to declare a property that is shared among all the objects of the class and it is not specific to any object of the class
-    //static schoolname hai woh all objects ke liye same hai , agar humne s1 ke schoolname ko change kiya to woh s2 ke schoolname ko bhi change kar dega
+// class Student { //Student class
+//     String name;
+//     int roll;
+//     static String schoolName; //static property // here static keyword is used to declare a property that is shared among all the objects of the class and it is not specific to any object of the class
+//     //static schoolname hai woh all objects ke liye same hai , agar humne s1 ke schoolname ko change kiya to woh s2 ke schoolname ko bhi change kar dega
 
-    void setName(String name) { //method to set name
-        this.name = name;
-    }
 
-    void getName() { //method to get name
-        System.out.println("Student name: " + name);
-    }
-}
+//     static int percentage(int math , int phy , int chem ) { //static function //this static function create in a memory once time not every time
+//         return (math + phy + chem) / 3;
+//     }
+//     void setName(String name) { //method to set name
+//         this.name = name;
+//     }
+
+//     void getName() { //method to get name
+//         System.out.println("Student name: " + name);
+//     }
+// }
+
+
+
+                                                   //super keyword 
+
+
+//  public class Oops {
+//     public static void main(String args[]) {
+//         Horse d = new Horse(); // creating a new object d of Horse class
+//     }
+// }
+    
+//     class Animal { //base class
+//         Animal() {
+//             System.out.println("Animal constructor is called");
+//         }
+
+//     }
+
+//     class Horse extends Animal { //derived class
+//         Horse() {
+//             super(); // jaise hai hume object creation ki line liki waise hi hum horse ke constructor pe ha gye toh horse ne super() constructor mean immediate parent class ka constructor  call kiya  aur phir horse ka constructor call hua //if we dont write super() then  java bydefault call the  super() constructor
+//             System.out.println("Horse constructor is called");
+//         }
+//     }
+
+
+
+                                                              //or
+
+
+//  public class Oops {
+//     public static void main(String args[]) {
+//         Horse d = new Horse(); // creating a new object d of Horse class
+//         System.out.println("Horse color: " + d.color); // accessing the color property of Horse class
+//     }
+// }
+    
+//     class Animal { //base class
+//         String color;
+//         Animal() {
+//             System.out.println("Animal constructor is called");
+//         }
+
+//     }
+
+//     class Horse extends Animal { //derived class
+//         Horse() {
+//           super.color = "brown"; 
+//             System.out.println("Horse constructor is called");
+//         }
+//     }
+
+
+
+
+
+
+
+
+
