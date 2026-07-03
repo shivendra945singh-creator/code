@@ -1,585 +1,585 @@
-// import java.util.Scanner;
+import java.util.Scanner;
 
-// public class array {
-//     public static void main(String[] args) {
-//         Scanner sc =new Scanner(System.in);
-//         int marks[] = new int[100];   //array
+public class array {
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        int marks[] = new int[100];   //array
 
-//         // input
+        // input
 
-//         System.err.print("enter a number :");
-//         marks[0] = sc.nextInt();    // 0 means 0th index value
-//         System.err.print("enter a number :");
-//         marks[1] = sc.nextInt();
-//         System.err.print("enter a number :");
-//         marks[2] = sc.nextInt();
+        System.err.print("enter a number :");
+        marks[0] = sc.nextInt();    // 0 means 0th index value
+        System.err.print("enter a number :");
+        marks[1] = sc.nextInt();
+        System.err.print("enter a number :");
+        marks[2] = sc.nextInt();
 
-//         //output
+        //output
 
-//         System.err.println("phy : " + marks[0]);
-//         System.err.println("chem: " + marks[1]);
-//         System.err.println("math : " + marks[2]);
+        System.err.println("phy : " + marks[0]);
+        System.err.println("chem: " + marks[1]);
+        System.err.println("math : " + marks[2]);
         
 
-//         marks[2] = 100;   // for update
-//          System.err.println("math : " + marks[2]);
+        marks[2] = 100;   // for update
+         System.err.println("math : " + marks[2]);
         
 
-//          marks[2] = marks[2] + 1;   // for update
-//          System.err.println("math : " + marks[2]);
+         marks[2] = marks[2] + 1;   // for update
+         System.err.println("math : " + marks[2]);
         
 
-//          int average = (marks[0] +marks[1] + marks[2] / 3 );
-//          System.out.println("average is :" + average );
+         int average = (marks[0] +marks[1] + marks[2] / 3 );
+         System.out.println("average is :" + average );
 
 
-//         System.out.println("lenght of array = " + marks.length);  // .lenght is used for find array lenght(elements or size) and  here marks is array name 
+        System.out.println("lenght of array = " + marks.length);  // .lenght is used for find array lenght(elements or size) and  here marks is array name 
 
-//     }
+    }
     
-// }
+}
 
 
 
 
-                                      //array as functional arguments
+                                      array as functional arguments
 
 
 
-// public class array {
-//     public static void update(int marks[] ) {
+public class array {
+    public static void update(int marks[] ) {
         
-//      for (int i = 0; i<marks.length; i++) {   // here i is index and i<marks.length means i go to last element
-//          marks[i] = marks[i] + 5;
+     for (int i = 0; i<marks.length; i++) {   // here i is index and i<marks.length means i go to last element
+         marks[i] = marks[i] + 5;
 
-//      }
-//     }
-//     public static void main(String[] args) {
-//         int marks[] = {97,98,99};
-//         update(marks);  //call function
+     }
+    }
+    public static void main(String[] args) {
+        int marks[] = {97,98,99};
+        update(marks);  //call function
         
 
-//              // print our function
-//         for (int i = 0; i<marks.length; i++) {
-//            System.out.println(marks[i] + ""); //here value change by call by reference
-//         }
-//         System.out.println();
-//          System.out.println( marks.length);
-//     }
+             // print our function
+        for (int i = 0; i<marks.length; i++) {
+           System.out.println(marks[i] + ""); //here value change by call by reference
+        }
+        System.out.println();
+         System.out.println( marks.length);
+    }
    
-// }
+}
 
 
 
-                                                   // array as function argument
+                                                   array as function argument
 
 
 
-// public class array {
-//     public static void update(int marks[] , int nonchangable ) {
-//         nonchangable = 10;
-//      for (int i = 0; i<marks.length; i++) {
-//          marks[i] = marks[i] + 1;
+public class array {
+    public static void update(int marks[] , int nonchangable ) {
+        nonchangable = 10;
+     for (int i = 0; i<marks.length; i++) {
+         marks[i] = marks[i] + 1;
 
-//      }
-//     }
-//     public static void main(String[] args) {
-//         int marks[] = {97,98,99};
-//         int nonChangable = 5;
-//         update(marks , nonChangable);
-//         System.err.println(nonChangable);
+     }
+    }
+    public static void main(String[] args) {
+        int marks[] = {97,98,99};
+        int nonChangable = 5;
+        update(marks , nonChangable);
+        System.err.println(nonChangable);
 
-//       // print our function
-//         for (int i = 0; i<marks.length; i++) {
-//            System.out.println(marks[i] + ""); 
-//         }
-//         System.out.println();
-//     }
+      // print our function
+        for (int i = 0; i<marks.length; i++) {
+           System.out.println(marks[i] + ""); 
+        }
+        System.out.println();
+    }
     
-// }
+}
 
 
 
 
-                                               // liner search
+                                               liner search
                                                
-                                  //##time complexity for liner search is bigo(n) or O(n)
+                                  ##time complexity for liner search is bigo(n) or O(n)
                                   
 
 
-// public class array {
-//     public static int linersearch (int numbers[] , int key ) {
+public class array {
+    public static int linersearch (int numbers[] , int key ) {
         
-//      for (int i = 0; i<numbers.length; i++) {
-//         if (numbers[i]== key) {
-//             return i;
-//         }
-//     }
+     for (int i = 0; i<numbers.length; i++) {
+        if (numbers[i]== key) {
+            return i;
+        }
+    }
 
-//     return -1;
-// }
+    return -1;
+}
 
-// public static void main(String[] args) {
-//     int numbers[] = {2,4,6,8,10,12,14,16};
-//     int key = 10;
+public static void main(String[] args) {
+    int numbers[] = {2,4,6,8,10,12,14,16};
+    int key = 10;
 
-//     int index = linersearch(numbers, key);
-//     if (index==-1) {
-//         System.err.println("not found");
-//     } else {
-//         System.err.println("key is at index " + index);
-//     }
-// }
-// }
-
-
-
-
-                                              // find largest number in a array
+    int index = linersearch(numbers, key);
+    if (index==-1) {
+        System.err.println("not found");
+    } else {
+        System.err.println("key is at index " + index);
+    }
+}
+}
 
 
 
 
-// public class array {
-//     public static int getLargest( int numbers[]) {
-//         int largest = Integer.MIN_VALUE;     // in java, - infinity = Integer.MIN_VALUE
-
-//         for ( int i=0; i<numbers.length; i++) {
-//             if (largest < numbers[i]) {
-//                 largest = numbers[i];
-//             }
-//         }
-//         return largest;
-//     }
-
-//     public static void main(String[] args) {
-//         int numbers[] = {1,2,6,8,7};
-//         System.err.println("largest value is : " + getLargest(numbers));
-//     }
-// }
+                                              find largest number in a array
 
 
 
 
+public class array {
+    public static int getLargest( int numbers[]) {
+        int largest = Integer.MIN_VALUE;     // in java, - infinity = Integer.MIN_VALUE
 
+        for ( int i=0; i<numbers.length; i++) {
+            if (largest < numbers[i]) {
+                largest = numbers[i];
+            }
+        }
+        return largest;
+    }
 
-                                                    //  find smallest number in a array
-
-
-
-
-
-// public class array {
-//     public static int smallest( int numbers[]) {
-//         int smallest = Integer.MAX_VALUE;   //in java, + infinity = Integer.MAX_VALUE
-
-//         for ( int i=0; i<numbers.length; i++) {
-//             if (smallest > numbers[i]) {
-//                 smallest = numbers[i];
-//             }
-//         }
-//         return smallest;
-//     }
-
-//     public static void main(String[] args) {
-//         int numbers[] = {1,2,6,8,7};
-//         System.err.println("smallest value is : " + smallest(numbers));
-//     }
-// }
+    public static void main(String[] args) {
+        int numbers[] = {1,2,6,8,7};
+        System.err.println("largest value is : " + getLargest(numbers));
+    }
+}
 
 
 
 
 
 
-                                              //binary search 
-
-
-
- // ## prerequisite (means prerquirement)- sorted array (means array in ascending or decending order)
-
- //## binary search time complexity is always lesser than linear search
-
- // ## time complexity of binary search is bigologn or O(log n)
+                                                     find smallest number in a array
 
 
 
 
 
-//  public class array {
-//  public static int binarysearch (int numbers[] , int key ) {
-//     int start = 0, end = numbers.length-1;
+public class array {
+    public static int smallest( int numbers[]) {
+        int smallest = Integer.MAX_VALUE;   //in java, + infinity = Integer.MAX_VALUE
 
-//     while(start <= end) {
-//         int mid = (start + end ) / 2;
+        for ( int i=0; i<numbers.length; i++) {
+            if (smallest > numbers[i]) {
+                smallest = numbers[i];
+            }
+        }
+        return smallest;
+    }
 
-//         if (numbers[mid] == key) {
-//             return mid;
-//         }
-//         if (numbers[mid] < key) {
-//             start = mid+1;   // for right part
-//         } else {
-//             end = mid-1;      // for left part
-//         }
-//     }
-//     return -1;
-// }
+    public static void main(String[] args) {
+        int numbers[] = {1,2,6,8,7};
+        System.err.println("smallest value is : " + smallest(numbers));
+    }
+}
 
-// public static void main(String[] args) {
-//     int numbers[]= {2,4,6,8,10,12,14};
-//     int key = 10;
 
-//     System.out.println("index for key is : "  + binarysearch(numbers,key));
+
+
+
+
+                                              binary search 
+
+
+
+ ## prerequisite (means prerquirement)- sorted array (means array in ascending or decending order)
+
+ ## binary search time complexity is always lesser than linear search
+
+ ## time complexity of binary search is bigologn or O(log n)
+
+
+
+
+
+ public class array {
+ public static int binarysearch (int numbers[] , int key ) {
+    int start = 0, end = numbers.length-1;
+
+    while(start <= end) {
+        int mid = (start + end ) / 2;
+
+        if (numbers[mid] == key) {
+            return mid;
+        }
+        if (numbers[mid] < key) {
+            start = mid+1;   // for right part
+        } else {
+            end = mid-1;      // for left part
+        }
+    }
+    return -1;
+}
+
+public static void main(String[] args) {
+    int numbers[]= {2,4,6,8,10,12,14};
+    int key = 10;
+
+    System.out.println("index for key is : "  + binarysearch(numbers,key));
     
-// }
-//  }
+}
+ }
 
 
 
 
-// dry run
+dry run
 
- // ##Index:   0   1   2   3   4    5    6
-//    Value:   2   4   6   8   10   12   14
-
-
-// 🔹 Binary Search Steps (key = 10)
-// Start = 0, End = 6
-// Mid = (0 + 6) / 2 = 3
-// Value = 8
-// Since 10 > 8 → go right
-// Start = 4, End = 6
-// Mid = (4 + 6) / 2 = 5
-// Value = 12
-// Since 10 < 12 → go left
-// Start = 4, End = 4
-// Mid = (4 + 4) / 2 = 4
-// Value = 10 ✅ found
+ ##Index:   0   1   2   3   4    5    6
+   Value:   2   4   6   8   10   12   14
 
 
-
-
-                                                      // reverse an array
+🔹 Binary Search Steps (key = 10)
+Start = 0, End = 6
+Mid = (0 + 6) / 2 = 3
+Value = 8
+Since 10 > 8 → go right
+Start = 4, End = 6
+Mid = (4 + 6) / 2 = 5
+Value = 12
+Since 10 < 12 → go left
+Start = 4, End = 4
+Mid = (4 + 4) / 2 = 4
+Value = 10 ✅ found
 
 
 
 
-// public class array {  //O(n) time complexity and O(1) space complexity
-//     public static void reverse( int numbers[]) {
-//         int first = 0, last = numbers.length-1;
-
-//         while(first<last) {
+                                                      reverse an array
 
 
-//             //swape
-//             int temp = numbers[last];
-//             numbers[last] = numbers[first];
-//             numbers[first] = temp;
 
-//             first++;
-//             last--;
-//         }
-//         }
 
-//         public static void main(String[] args) {
-//             int numbers[] = {2,4,6,8,10};
+public class array {  //O(n) time complexity and O(1) space complexity
+    public static void reverse( int numbers[]) {
+        int first = 0, last = numbers.length-1;
 
-//                 reverse(numbers);
+        while(first<last) {
 
-//                 //print
-//                 for(int i=0; i<numbers.length; i++) {
-//                     System.err.print(numbers[i] + " ");
-//                 }
-//                 System.err.println();
+
+            //swape
+            int temp = numbers[last];
+            numbers[last] = numbers[first];
+            numbers[first] = temp;
+
+            first++;
+            last--;
+        }
+        }
+
+        public static void main(String[] args) {
+            int numbers[] = {2,4,6,8,10};
+
+                reverse(numbers);
+
+                //print
+                for(int i=0; i<numbers.length; i++) {
+                    System.err.print(numbers[i] + " ");
+                }
+                System.err.println();
             
-//         }
-//     }
+        }
+    }
 
 
 
-//dry run
+dry run
 
-//     Initial array: [2, 4, 6, 8, 10]
-// Variables: first = 0, last = 4 (last index)
-// First Iteration (first < last: 0 < 4)
+    Initial array: [2, 4, 6, 8, 10]
+Variables: first = 0, last = 4 (last index)
+First Iteration (first < last: 0 < 4)
 
-// Swap numbers[first] and numbers[last]: Swap numbers[0] and numbers[4]
-// temp = 10
-// numbers[4] = 2
-// numbers[0] = 10
-// Array becomes: [10, 4, 6, 8, 2]
-// first = 1, last = 3
-// Second Iteration (first < last: 1 < 3)
+Swap numbers[first] and numbers[last]: Swap numbers[0] and numbers[4]
+temp = 10
+numbers[4] = 2
+numbers[0] = 10
+Array becomes: [10, 4, 6, 8, 2]
+first = 1, last = 3
+Second Iteration (first < last: 1 < 3)
 
-// Swap numbers[1] and numbers[3]: Swap 4 and 8
-// temp = 8
-// numbers[3] = 4
-// numbers[1] = 8
-// Array becomes: [10, 8, 6, 4, 2]
-// first = 2, last = 2
-// Third Iteration (first < last: 2 < 2) condition fails, loop exits.
+Swap numbers[1] and numbers[3]: Swap 4 and 8
+temp = 8
+numbers[3] = 4
+numbers[1] = 8
+Array becomes: [10, 8, 6, 4, 2]
+first = 2, last = 2
+Third Iteration (first < last: 2 < 2) condition fails, loop exits.
 
-// Final reversed array: [10, 8, 6, 4, 2]
-
-
+Final reversed array: [10, 8, 6, 4, 2]
 
 
-                                                 // pairs in an array
+
+
+                                                 pairs in an array
                                                  
 
-    // ## time complexity for this is O(n square)
+    ## time complexity for this is O(n square)
 
 
 
-// public class array {
-//     public static void printpairs( int numbers[]) {
-//         for (int i =0; i<numbers.length; i++) {
-//             int current = numbers[i];
-//             for (int j = i+1; j<numbers.length; j++) {
-//               System.err.print(" (" + current + "," + numbers[j] + ")");
-//             }
-//             System.err.println();
-//         }
-//     }
+public class array {
+    public static void printpairs( int numbers[]) {
+        for (int i =0; i<numbers.length; i++) {
+            int current = numbers[i];
+            for (int j = i+1; j<numbers.length; j++) {
+              System.err.print(" (" + current + "," + numbers[j] + ")");
+            }
+            System.err.println();
+        }
+    }
 
-//     public static void main(String[] args) {
-//         int numbers[] = {2,4,6,8,10};
-//         printpairs(numbers);
-//     }
-//     }
-
-
-                                                     //or
-
-                                                     //## total pairs formula = n(n-1)/2 where n is n elements
+    public static void main(String[] args) {
+        int numbers[] = {2,4,6,8,10};
+        printpairs(numbers);
+    }
+    }
 
 
-// public class array {
-//     public static void printpairs( int numbers[]) {
-//         int tp = 0; // tp is total pairs
-//         for (int i =0; i<numbers.length; i++) {
-//             int current = numbers[i];
-//             for (int j = i+1; j<numbers.length; j++) {
-//               System.err.print(" (" + current + "," + numbers[j] + ")");
-//               tp++;
-//             }
-//             System.err.println();
-//         }
-//         System.err.println("total pairs = " + tp);
-//     }
+                                                     or
 
-//     public static void main(String[] args) {
-//         int numbers[] = {2,4,6,8,10};
-//         printpairs(numbers);
-//     }
-//     }
+                                                     ## total pairs formula = n(n-1)/2 where n is n elements
 
 
-                                                     //print subarrays
+public class array {
+    public static void printpairs( int numbers[]) {
+        int tp = 0; // tp is total pairs
+        for (int i =0; i<numbers.length; i++) {
+            int current = numbers[i];
+            for (int j = i+1; j<numbers.length; j++) {
+              System.err.print(" (" + current + "," + numbers[j] + ")");
+              tp++;
+            }
+            System.err.println();
+        }
+        System.err.println("total pairs = " + tp);
+    }
 
-                                      // (subarrays is a contionues part of array)
+    public static void main(String[] args) {
+        int numbers[] = {2,4,6,8,10};
+        printpairs(numbers);
+    }
+    }
 
 
+                                                     print subarrays
+
+                                      (subarrays is a contionues part of array)
 
 
 
-// public class array {
-//     public static void printSubarrays( int numbers[]) {
+
+
+public class array {
+    public static void printSubarrays( int numbers[]) {
       
-//         for (int i =0; i<numbers.length; i++) {
-//             int start = i;
-//             for(int j=i; j<numbers.length; j++) {
-//                 int end = j;
-//                 for ( int k = start; k<=end; k++) {
-//                     System.err.print(numbers[k]+" ");   // subarray
-//                 }
-//                 System.err.println();
-//             }
-//             System.err.println();
-//         }
-//     }
+        for (int i =0; i<numbers.length; i++) {
+            int start = i;
+            for(int j=i; j<numbers.length; j++) {
+                int end = j;
+                for ( int k = start; k<=end; k++) {
+                    System.err.print(numbers[k]+" ");   // subarray
+                }
+                System.err.println();
+            }
+            System.err.println();
+        }
+    }
 
-//     public static void main(String[] args) {
-//         int numbers[] = {2, 4, 6, 8, 10};
-//         printSubarrays(numbers);
-//     }
-//     }
+    public static void main(String[] args) {
+        int numbers[] = {2, 4, 6, 8, 10};
+        printSubarrays(numbers);
+    }
+    }
 
 
 
-//dry run
+dry run
 
-//     Outer loop, i (start index) runs from 0 to 4.
-// Middle loop, j (end index) runs from i to 4.
-// Inner loop prints elements from start = i to end = j.
-// Step-by-step output:
+    Outer loop, i (start index) runs from 0 to 4.
+Middle loop, j (end index) runs from i to 4.
+Inner loop prints elements from start = i to end = j.
+Step-by-step output:
 
-// For i=0:
+For i=0:
 
-// j=0: prints 2
-// j=1: prints 2 4
-// j=2: prints 2 4 6
-// j=3: prints 2 4 6 8
-// j=4: prints 2 4 6 8 10
-// (blank line)
+j=0: prints 2
+j=1: prints 2 4
+j=2: prints 2 4 6
+j=3: prints 2 4 6 8
+j=4: prints 2 4 6 8 10
+(blank line)
 
-// For i=1:
+For i=1:
 
-// j=1: prints 4
-// j=2: prints 4 6
-// j=3: prints 4 6 8
-// j=4: prints 4 6 8 10
-// (blank line)
+j=1: prints 4
+j=2: prints 4 6
+j=3: prints 4 6 8
+j=4: prints 4 6 8 10
+(blank line)
 
-// For i=2:
+For i=2:
 
-// j=2: prints 6
-// j=3: prints 6 8
-// j=4: prints 6 8 10
-// (blank line)
+j=2: prints 6
+j=3: prints 6 8
+j=4: prints 6 8 10
+(blank line)
 
-// For i=3:
+For i=3:
 
-// j=3: prints 8
-// j=4: prints 8 10
-// (blank line)
-// For i=4:
+j=3: prints 8
+j=4: prints 8 10
+(blank line)
+For i=4:
 
-// j=4: prints 10
-// (blank line)
-// This prints all possible contiguous subarrays of the array elements
+j=4: prints 10
+(blank line)
+This prints all possible contiguous subarrays of the array elements
 
                                   
 
 
-                                                         //or
+                                                         or
 
 
-// ## total subarray pairs = n(n+1)/2
+## total subarray pairs = n(n+1)/2
 
 
-// public class array {
-//     public static void printsubarrays( int numbers[]) {
-//      int  tp = 0;
-//         for (int i =0; i<numbers.length; i++) {
-//             int start = i;
-//             for(int j=i; j<numbers.length; j++) {
-//                 int end = j;
-//                 for ( int k = start; k<=end; k++) {
-//                     System.err.print(numbers[k]+" ");
-//                 }
-//                 tp++;
-//                 System.err.println();
-//             }
-//             System.err.println();
-//         }
-//         System.err.println("total subarrays = " + tp);
-//     }
+public class array {
+    public static void printsubarrays( int numbers[]) {
+     int  tp = 0;
+        for (int i =0; i<numbers.length; i++) {
+            int start = i;
+            for(int j=i; j<numbers.length; j++) {
+                int end = j;
+                for ( int k = start; k<=end; k++) {
+                    System.err.print(numbers[k]+" ");
+                }
+                tp++;
+                System.err.println();
+            }
+            System.err.println();
+        }
+        System.err.println("total subarrays = " + tp);
+    }
 
-//     public static void main(String[] args) {
-//         int numbers[] = {2,4,6,8,10};
-//         printsubarrays(numbers);
-//     }
-//     }
-
-
-
-
-                                           // maximum  subarry sum
+    public static void main(String[] args) {
+        int numbers[] = {2,4,6,8,10};
+        printsubarrays(numbers);
+    }
+    }
 
 
 
-//## here 3 nested loops are used like for, for, for, so time complexity is O(n cube) which is bad time compexity
+
+                                           maximum  subarry sum
 
 
 
-// public class array {
-//     public static void maxsubarraysum( int numbers[]) {
-//         int currsum = 0;
-//         int maxsum = Integer.MIN_VALUE;
+## here 3 nested loops are used like for, for, for, so time complexity is O(n cube) which is bad time compexity
+
+
+
+public class array {
+    public static void maxsubarraysum( int numbers[]) {
+        int currsum = 0;
+        int maxsum = Integer.MIN_VALUE;
 
       
-//         for (int i =0; i<numbers.length; i++) {
-//             int start = i;
-//             for(int j=i; j<numbers.length; j++) {
-//                 int end = j;
-//                 currsum = 0;
-//                 for ( int k = start; k<=end; k++) {
-//                     currsum += numbers[k];  // subarray sum
-//                 }
-//                 System.err.println(currsum);
-//                 if (maxsum < currsum) {
-//                     maxsum = currsum;
-//                 }
-//             }
+        for (int i =0; i<numbers.length; i++) {
+            int start = i;
+            for(int j=i; j<numbers.length; j++) {
+                int end = j;
+                currsum = 0;
+                for ( int k = start; k<=end; k++) {
+                    currsum += numbers[k];  // subarray sum
+                }
+                System.err.println(currsum);
+                if (maxsum < currsum) {
+                    maxsum = currsum;
+                }
+            }
             
-//         }
-//         System.err.println("max sum = " + maxsum);
-//     }
+        }
+        System.err.println("max sum = " + maxsum);
+    }
 
-//     public static void main(String[] args) {
-//         int numbers[] = {1, -2, 6, -1, 3};
-//         maxsubarraysum(numbers);
-//     }
-//     }
-
-
-
-    //dry run
-
-
-//     Starting at i = 0
-// j = 0 → [1] → sum = 1
-// j = 1 → [1, -2] → sum = -1
-// j = 2 → [1, -2, 6] → sum = 5
-// j = 3 → [1, -2, 6, -1] → sum = 4
-// j = 4 → [1, -2, 6, -1, 3] → sum = 7
-
-
-// Starting at i = 1
-// j = 1 → [-2] → sum = -2
-// j = 2 → [-2, 6] → sum = 4
-// j = 3 → [-2, 6, -1] → sum = 3
-// j = 4 → [-2, 6, -1, 3] → sum = 6
-
-
-// Starting at i = 2
-// j = 2 → [6] → sum = 6
-// j = 3 → [6, -1] → sum = 5
-// j = 4 → [6, -1, 3] → sum = 8
-
-
-// Starting at i = 3
-// j = 3 → [-1] → sum = -1
-// j = 4 → [-1, 3] → sum = 2
-// Starting at i = 4
-// j = 4 → [3] → sum = 3
-
-
-// Printed sums in order
-
-// 1
-// -1
-// 5
-// 4
-// 7
-// -2
-// 4
-// 3
-// 6
-// 6
-// 5
-// 8
-// -1
-// 2
-// 3
+    public static void main(String[] args) {
+        int numbers[] = {1, -2, 6, -1, 3};
+        maxsubarraysum(numbers);
+    }
+    }
 
 
 
-// Maximum sum
-// The maximum subarray sum is:
+    dry run
 
-// max sum = 8
-// This comes from subarray:
 
-// [6, -1, 3]
+    Starting at i = 0
+j = 0 → [1] → sum = 1
+j = 1 → [1, -2] → sum = -1
+j = 2 → [1, -2, 6] → sum = 5
+j = 3 → [1, -2, 6, -1] → sum = 4
+j = 4 → [1, -2, 6, -1, 3] → sum = 7
+
+
+Starting at i = 1
+j = 1 → [-2] → sum = -2
+j = 2 → [-2, 6] → sum = 4
+j = 3 → [-2, 6, -1] → sum = 3
+j = 4 → [-2, 6, -1, 3] → sum = 6
+
+
+Starting at i = 2
+j = 2 → [6] → sum = 6
+j = 3 → [6, -1] → sum = 5
+j = 4 → [6, -1, 3] → sum = 8
+
+
+Starting at i = 3
+j = 3 → [-1] → sum = -1
+j = 4 → [-1, 3] → sum = 2
+Starting at i = 4
+j = 4 → [3] → sum = 3
+
+
+Printed sums in order
+
+1
+-1
+5
+4
+7
+-2
+4
+3
+6
+6
+5
+8
+-1
+2
+3
+
+
+
+Maximum sum
+The maximum subarray sum is:
+
+max sum = 8
+This comes from subarray:
+
+[6, -1, 3]
