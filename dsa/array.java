@@ -5,7 +5,7 @@
 //         Scanner sc =new Scanner(System.in);
 //         int marks[] = new int[100];   //array
 
-//         //  // input
+//         // input
 
 //         System.err.print("enter a number :");
 //         marks[0] = sc.nextInt();    // 0 means 0th index value
@@ -458,29 +458,29 @@
 // ## total subarray pairs = n(n+1)/2
 
 
-public class array {
-    public static void printsubarrays( int numbers[]) {
-     int  tp = 0;
-        for (int i =0; i<numbers.length; i++) {
-            int start = i;
-            for(int j=i; j<numbers.length; j++) {
-                int end = j;
-                for ( int k = start; k<=end; k++) {
-                    System.err.print(numbers[k]+" ");
-                }
-                tp++;
-                System.err.println();
-            }
-            System.err.println();
-        }
-        System.err.println("total subarrays = " + tp);
-    }
+// public class array {
+//     public static void printsubarrays( int numbers[]) {
+//      int  tp = 0;
+//         for (int i =0; i<numbers.length; i++) {
+//             int start = i;
+//             for(int j=i; j<numbers.length; j++) {
+//                 int end = j;
+//                 for ( int k = start; k<=end; k++) {
+//                     System.err.print(numbers[k]+" ");
+//                 }
+//                 tp++;
+//                 System.err.println();
+//             }
+//             System.err.println();
+//         }
+//         System.err.println("total subarrays = " + tp);
+//     }
 
-    public static void main(String[] args) {
-        int numbers[] = {2,4,6,8,10};
-        printsubarrays(numbers);
-    }
-    }
+//     public static void main(String[] args) {
+//         int numbers[] = {2,4,6,8,10};
+//         printsubarrays(numbers);
+//     }
+//     }
 
 
 
@@ -493,32 +493,92 @@ public class array {
 
 
 
-// public class array {
-//     public static void maxsubarraysum( int numbers[]) {
-//         int currsum = 0;
-//         int maxsum = Integer.MIN_VALUE;
+public class array {
+    public static void maxsubarraysum( int numbers[]) {
+        int currsum = 0;
+        int maxsum = Integer.MIN_VALUE;
 
       
-//         for (int i =0; i<numbers.length; i++) {
-//             int start = i;
-//             for(int j=i; j<numbers.length; j++) {
-//                 int end = j;
-//                 currsum = 0;
-//                 for ( int k = start; k<=end; k++) {
-//                     currsum += numbers[k];  // subarray sum
-//                 }
-//                 System.err.println(currsum);
-//                 if (maxsum < currsum) {
-//                     maxsum = currsum;
-//                 }
-//             }
+        for (int i =0; i<numbers.length; i++) {
+            int start = i;
+            for(int j=i; j<numbers.length; j++) {
+                int end = j;
+                currsum = 0;
+                for ( int k = start; k<=end; k++) {
+                    currsum += numbers[k];  // subarray sum
+                }
+                System.err.println(currsum);
+                if (maxsum < currsum) {
+                    maxsum = currsum;
+                }
+            }
             
-//         }
-//         System.err.println("max sum = " + maxsum);
-//     }
+        }
+        System.err.println("max sum = " + maxsum);
+    }
 
-//     public static void main(String[] args) {
-//         int numbers[] = {1, -2, 6, -1, 3};
-//         maxsubarraysum(numbers);
-//     }
-//     }
+    public static void main(String[] args) {
+        int numbers[] = {1, -2, 6, -1, 3};
+        maxsubarraysum(numbers);
+    }
+    }
+
+
+
+    //dry run
+
+
+//     Starting at i = 0
+// j = 0 → [1] → sum = 1
+// j = 1 → [1, -2] → sum = -1
+// j = 2 → [1, -2, 6] → sum = 5
+// j = 3 → [1, -2, 6, -1] → sum = 4
+// j = 4 → [1, -2, 6, -1, 3] → sum = 7
+
+
+// Starting at i = 1
+// j = 1 → [-2] → sum = -2
+// j = 2 → [-2, 6] → sum = 4
+// j = 3 → [-2, 6, -1] → sum = 3
+// j = 4 → [-2, 6, -1, 3] → sum = 6
+
+
+// Starting at i = 2
+// j = 2 → [6] → sum = 6
+// j = 3 → [6, -1] → sum = 5
+// j = 4 → [6, -1, 3] → sum = 8
+
+
+// Starting at i = 3
+// j = 3 → [-1] → sum = -1
+// j = 4 → [-1, 3] → sum = 2
+// Starting at i = 4
+// j = 4 → [3] → sum = 3
+
+
+// Printed sums in order
+
+// 1
+// -1
+// 5
+// 4
+// 7
+// -2
+// 4
+// 3
+// 6
+// 6
+// 5
+// 8
+// -1
+// 2
+// 3
+
+
+// Maximum sum
+// The maximum subarray sum is:
+
+// max sum = 8
+// This comes from subarray:
+
+// [6, -1, 3]
