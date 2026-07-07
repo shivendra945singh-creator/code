@@ -102,21 +102,21 @@
 
 // public class twoDarray {
 //     public static boolean search(int matrix[][] , int key) { // if we use string[] args then error will come 
-//        for(int i=0; i<matrix.length; i++) {
-//         for(int j=0; j<matrix[0].length; j++) {
-//             if(matrix[i][j] == key) {
-//                 System.out.println("found at cell (" + i + "," + j + ")");
-//                 return true;
+//         for(int i=0; i<matrix.length; i++) {
+//             for(int j=0; j<matrix[0].length; j++) {
+//                 if(matrix[i][j] == key) {
+//                   System.out.println("found at cell (" + i + "," + j + ")");
+//                   return true;
+//                 }
 //             }
 //         }
-//     }
                                                       
 //            System.out.println(" key not found");
 //            return false;
-//             }
+//     }
       
        
-//         public static void main (String args[]) {
+//     public static void main (String args[]) {
 //             int matrix[][] = new int [3][3];
 //             int n = matrix.length; // no of rows
 //             int m = matrix[0].length; // no of columns
@@ -137,8 +137,8 @@
 //                 System.out.println();
 //             }
 //             search(matrix,  5);
-//         }
 //     }
+//  }
 
 
 
@@ -149,55 +149,55 @@
 
 
 
-// public class twoDarray {
+public class twoDarray {
 
-// public static void printspiral(int matrix[][]) {
-//     int startrow = 0;
-//     int endrow = matrix.length-1;
-//     int startcol = 0;
-//     int endcol = matrix[0].length-1;
+public static void printspiral(int matrix[][]) {
+    int startrow = 0;
+    int endrow = matrix.length-1;
+    int startcol = 0;
+    int endcol = matrix[0].length-1;
 
-//     while(startrow <= endrow && startcol <= endcol) {
-//         // top
-//         for(int j=startcol; j<=endcol; j++) { //here row is fixed and column is changing
-//             System.out.print(matrix[startrow][j] + " "); // here matrix[startrow][j] means value at row startrow and column j 
-//         }
-//         // right
-//         for(int i=startrow+1; i<=endrow; i++) { // here column is fixed and row is changing
-//             System.out.print(matrix[i][endcol] + " ");
-//         }
-//         // bottom
-//         for(int j=endcol-1; j>=startcol; j--) { // here row is fixed and column is changing in reverse order
-//             if(startrow == endrow) { // to avoid duplicate printing of the same row
-//                 break;
-//             }
-//             System.out.print(matrix[endrow][j] + " ");
-//         }
-//         // left
-//         for(int i=endrow-1; i>startrow; i--) { // here column is fixed and row is changing in reverse order
-//             if(startcol == endcol) { // to avoid duplicate printing of the same column
-//                 break;
-//             }
-//             System.out.print(matrix[i][startcol] + " ");
-//         }
-//         startrow++;
-//         endrow--;
-//         startcol++;
-//         endcol--;
-//     }
-//     System.out.println();
-// }
+    while(startrow <= endrow && startcol <= endcol) {
+        // top
+        for(int j=startcol; j<=endcol; j++) { //here row is fixed and column is changing
+            System.out.print(matrix[startrow][j] + " "); // here matrix[startrow][j] means value at row startrow and column j 
+        }
+        // right
+        for(int i=startrow+1; i<=endrow; i++) { // here column is fixed and row is changing
+            System.out.print(matrix[i][endcol] + " ");
+        }
+        // bottom
+        for(int j=endcol-1; j>=startcol; j--) { // here row is fixed and column is changing in reverse order
+            if(startrow == endrow) { // to avoid duplicate printing of the same row
+                break;
+            }
+            System.out.print(matrix[endrow][j] + " ");
+        }
+        // left
+        for(int i=endrow-1; i>startrow; i--) { // here column is fixed and row is changing in reverse order
+            if(startcol == endcol) { // to avoid duplicate printing of the same column
+                break;
+            }
+            System.out.print(matrix[i][startcol] + " ");
+        }
+        startrow++;
+        endrow--;
+        startcol++;
+        endcol--;
+    }
+    System.out.println();
+}
 
-// public static void main(String args []) {
-//     int matrix[][] = {
-//         {1, 2, 3, 4},
-//         {5, 6, 7, 8},
-//         {9, 10, 11, 12},
-//         {13, 14, 15, 16}
-//     };
-//     printspiral(matrix);
-// }
-// }
+public static void main(String args []) {
+    int matrix[][] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12},
+        {13, 14, 15, 16}
+    };
+    printspiral(matrix);
+}
+}
 
 
 

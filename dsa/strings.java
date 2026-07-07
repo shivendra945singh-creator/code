@@ -9,13 +9,15 @@
 //     public static void main(String[] args) {
 //        Scanner sc = new Scanner(System.in);
 
-//        //input and output of string
-//        String name = sc.nextLine(); // for input of string we use nextLine() method because it can take space as well but next() method can not take space as input
+//          //input and output of string
+//          System.out.println("enter your first name");
+//          String name = sc.nextLine(); // for input of string we use nextLine() method because it can take space as well but next() method can not take space as input
 //          System.out.println(name);
+//          System.out.println("enter your name");
 //          String name2 = sc.next(); // for input of string we use next() method because it can not take space as input
 //          System.out.println(name2);
-//           int length = name.length(); // for finding length of string we use .length() 
-//           System.out.println(length);
+//         int length = name.length(); // for finding length of string we use .length() 
+//         System.out.println(length);
 //     }
     
 // }
@@ -26,11 +28,11 @@
                                                     
  
 //  public class strings {
-//      public static void main(String[] args) {
+//     public static void main(String[] args) {
 //         String name = "hello world";
-//         System.err.println("length of string is " + name.length()); //for finding length of string we use .length() and space is also included in length of string
-//         }
-//         }
+//         System.out.println("length of string is " + name.length()); //for finding length of string we use .length() and space is also included in length of string
+//     }
+// }
 
 
 
@@ -69,30 +71,51 @@
 
 
 
-//  public class strings {
-//     public static void printletters(String str) {
+// public class strings {
+//     public static void printletters(String str) {//we can also use name in the place of str
 //         for(int i=0; i<str.length(); i++) {
 //             System.out.print(str.charAt(i) + " ");
 //         }
 //         System.out.println();
         
 //     }
-//      public static void main(String[] args) {
+//     public static void main(String[] args) {
 //         String name = "hello shivam";
 //         printletters(name);// function call 
-//      }
 //     }
+// }
 
 
 
                                                //Q1 check a string is palindrome(letters or numbers are same when read from left to right and right to left) or not       
                                                
-                                               
+         
+//  public class strings {
+//     public static boolean isPalindrome(String str) {
+//         for (int i = 0; i < str.length() / 2; i++) {
+//             if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+//                 return false; // not a palindrome
+//             }
+//         }
+//         return true; // is a palindrome
+//     }
+
+//     public static void main(String[] args) {
+//         String str = "madam";
+        
+//     System.out.println(isPalindrome(str));
+//     }   
+// }    
+
+
+                                                      //or
+
+
+
 
 //   public class strings {
 //     public static boolean isPalindrome(String str) {
 //         for (int i = 0; i < str.length() / 2; i++) {
-//             int n = str.length();
 //             if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
 //                 return false; // not a palindrome
 //             }
@@ -104,14 +127,38 @@
 
 //     public static void main(String[] args) {
 //         String str = "madam";
-//                                          // if (isPalindrome(str)) {
-//                                          //     System.out.println(str + " is a palindrome.");
-//                                          // } else {
-//                                           //     System.out.println(str + " is not a palindrome.");
+
+//         //or 
+//         if (isPalindrome(str)) { //if (isPalindrome(str)) is true then it will print the string is a palindrome otherwise it will print the string is not a palindrome
+//             System.out.println(str + " is a palindrome.");
+//         } else {
+//             System.out.println(str + " is not a palindrome.");
+//         }
+        
+//     }   
+// }    
+
+                                                          //or
+                                               
+//  public class strings {
+//     public static boolean isPalindrome(String str) {
+//         for (int i = 0; i < str.length() / 2; i++) {
+//             if (str.charAt(i) == str.charAt(str.length() - 1 - i)) {
+//                 return true; // a palindrome
+//             }
+//         }
+
+       
+//         return false; // is a palindrome
+//     }
+
+//     public static void main(String[] args) {
+//         String str = "madam";
         
 //     System.out.println(isPalindrome(str));
 //     }   
-// }    
+// }  
+
 
 
 //dry run
@@ -145,7 +192,7 @@
                                                  //Q2 find shortest path
 
 
-
+// public class strings {
 //  public static float getshortestpath(String path)  {
 //     int x = 0;
 //     int y = 0;
@@ -172,10 +219,11 @@
 //     return (float) Math.sqrt(x2 + y2);
 //  }
 
-//  public static void main(String[] args) {
-//     String path = "NNESWWS";
-//     System.out.println("Shortest path: " + getshortestpath(path));
-//   }
+//    public static void main(String[] args) {
+//       String path = "NNESWWS";
+//        System.out.println("Shortest path: " + getshortestpath(path));
+//     }
+// }
   
 
 
@@ -186,44 +234,56 @@
 
 // public class strings {
 //     public static void main(String[] args) {
-//         String name = "hello";
+//         String name1 = "hello";
 //         String name2 = "hello";
 //         String name3 = new String("hello");
-//         System.out.println(name == name2); // true because both name and name2 are pointing to the same string literal in the string pool
-//         System.out.println(name == name3); // false because name3 is created using new keyword and it is pointing to a different memory location in the heap
-//         System.out.println(name.equals(name3)); // true because equals() method compares the content of the string and both name and name3 have the same content "hello"
+//         System.out.println(name1 == name2); // true because both name and name2 are pointing to the same string literal in the string pool
+//         System.out.println(name1 == name3); // false because name3 is created using new keyword and it is pointing to a different memory location in the heap
+//         System.out.println(name1.equals(name3)); // true because equals() method compares the content of the string and both name and name3 have the same content "hello"
 //     // if we compare two strings using == operator then it will compare the reference of the string and if we compare two strings using equals() method then it will compare the content of the string
 //     }
 // }                                           
                                            
+                                                                     //or
+
+
+// public class strings {
+//     public static void main(String[] args) {
+//         String name1 = "hello";
+//         String name2 = "hello";
+       
+//         System.out.println(name1 == name2); 
+//         System.out.println(name1.equals(name2)); 
+//     }
+// }  
+
 
 
 
                                              //substring(means contiguous or connected sequence of characters within a string) of string
 
-//  public class strings {
-    //  public static String substring(String str, int si, int ei) {
-    //     String substr = "";
-    //     for (int i = si; i < ei; i++) {
-    //         substr += str.charAt(i);
-    //     }
-    //     return substr;
-    //  }
+// public class strings {
+//     public static String substring(String str, int si, int ei) {
+//         String substr = "";
+//         for (int i = si; i < ei; i++) {
+//             substr += str.charAt(i);
+//         }
+//         return substr;
+//     }
 
-    // public static void main(String args[]) {
-    //     //substring
-    //     String str = "hello world";
+//     public static void main(String args[]) {
+//         //substring
+//         String str = "hello world";
         
-    //     System.out.println(substring(str, 0, 5)); // hello
-    //     System.out.println(substring(str, 6, 11)); // world
-    // }
-        
-    //  }
+//         System.out.println(substring(str, 0, 5)); // hello
+//         System.out.println(substring(str, 6, 11)); // world
+//     }   
+// }
 
 
 
 
-                                         //or inbuild method for substring of string
+                                         //or inbuild method of substring for string
 
 
     //  public class strings {
@@ -257,7 +317,31 @@
 //             }
 //             System.out.println("largest string is " + largest);
 //         }
-//     }                                      
+//     }                          
+    
+    
+
+//dry run
+
+//Step-by-step
+// largest = "hello"
+// i = 1
+// str[1] = "world"
+// "hello".compareTo("world") < 0 → true
+// update largest = "world"
+
+// i = 2
+// str[2] = "java"
+// "world".compareTo("java") < 0 → false
+// largest stays "world"
+
+// i = 3
+// str[3] = "programming"
+// "world".compareTo("programming") < 0 → false
+// largest stays "world"
+
+// Final output
+// largest string is world
 
 
                                                 //string builder
@@ -301,14 +385,14 @@
     //     sb.append(ch); // for adding character to string builder we use append() method and it takes character as parameter
 
     //     for (int i = 1; i < str.length(); i++) {
-    //      if(str.charAt(i) == ' ' && i < str.length() - 1) { // for checking if the current character is space and it is not the last character of string
+    //         if(str.charAt(i) == ' ' && i < str.length() - 1) { // for checking if the current character is space and it is not the last character of string
     //          sb.append(' '); // for adding space to string builder we use append() method and it takes space as parameter
     //          i++; // for skipping the space character
     //          sb.append(Character.toUpperCase(str.charAt(i))); // for converting first letter of next word to uppercase we use toUpperCase() method of Character class and it takes character as parameter and returns the uppercase character
-    //      } else {
-    //          sb.append(Character.toLowerCase(str.charAt(i))); // for converting rest of the letters to lowercase we use toLowerCase() method of Character class and it takes character as parameter and returns the lowercase character
+    //         }else {
+    //            sb.append(Character.toLowerCase(str.charAt(i))); // for converting rest of the letters to lowercase we use toLowerCase() method of Character class and it takes character as parameter and returns the lowercase character
              
-    //      }
+    //         }
     //     }
     //     return sb.toString(); // for converting string builder to string we use toString() method and it returns the string representation of string builder
     // }
@@ -318,6 +402,110 @@
     //     String str = "hello world java programming";
     //     System.out.println(toUppercase(str));
     // }
+
+//dry run
+    
+
+// Start
+// sb = ""
+// str.charAt(0) = 'h'
+// Character.toUpperCase('h') = 'H'
+// sb = "H"
+
+// Loop
+// i = 1
+// e → append lowercase
+// sb = "He"
+
+// i = 2
+// l → sb = "Hel"
+
+// i = 3
+// l → sb = "Hell"
+
+// i = 4
+// o → sb = "Hello"
+
+// i = 5
+// space ' '
+// condition true: space and not last character
+// append space → sb = "Hello "
+// i++ makes i = 6
+// str.charAt(6) = 'w'
+// append uppercase W
+// sb = "Hello W"
+
+// i = 7
+// o → sb = "Hello Wo"
+
+// i = 8
+// r → sb = "Hello Wor"
+
+// i = 9
+// l → sb = "Hello Worl"
+
+// i = 10
+// d → sb = "Hello World"
+
+// i = 11
+// space
+// append space → sb = "Hello World "
+
+// i++ → i = 12
+// str.charAt(12) = 'j'
+// append uppercase J
+// sb = "Hello World J"
+
+// i = 13
+// a → sb = "Hello World Ja"
+
+// i = 14
+// v → sb = "Hello World Jav"
+
+// i = 15
+// a → sb = "Hello World Java"
+
+// i = 16
+// space
+// append space → sb = "Hello World Java "
+
+// i++ → i = 17
+// str.charAt(17) = 'p'
+// append uppercase P
+// sb = "Hello World Java P"
+
+// i = 18
+// r → sb = "Hello World Java Pr"
+
+// i = 19
+// o → sb = "Hello World Java Pro"
+
+// i = 20
+// g → sb = "Hello World Java Prog"
+
+// i = 21
+// r → sb = "Hello World Java Progr"
+
+// i = 22
+// a → sb = "Hello World Java Progra"
+
+// i = 23
+// m → sb = "Hello World Java Program"
+
+// i = 24
+// m → sb = "Hello World Java Programm"
+
+// i = 25
+// i → sb = "Hello World Java Programmi"
+
+// i = 26
+// n → sb = "Hello World Java Programmin"
+
+// i = 27
+// g → sb = "Hello World Java Programming"
+
+// Final output
+// Hello World Java Programming
 
 
 
