@@ -511,7 +511,7 @@
 
     //Q5 string compression 
 
-
+public class strings {
     public static String compress(String str) {//O(n)
             String newStr = "";
         for (int i = 0; i < str.length(); i++) {
@@ -523,7 +523,7 @@
            
             newStr += str.charAt(i); // for adding character to string we use + operator
             if (count > 1) {
-                newStr += count.toString(); // for adding count to string we use + operator and count is an integer so we need to convert it to string using toString() method of Integer class
+                newStr += count.toString(); // for adding count to string we use + operator and count is an integer so we need to convert it to string therefore we use  .toString() converts the integer value in count into a String
             }
         }
         return newStr;
@@ -533,3 +533,67 @@
         String str = "aaabbccdee";
         System.out.println(compress(str)); // a3b2c2de2
     }
+}
+
+
+
+//dry run
+
+
+// Initial
+// newStr = ""
+// Loop breakdown
+// 1st group: "aaa"
+
+// i = 0
+// count = 1
+// Compare:
+// str[0] = a, str[1] = a → same → count = 2, i = 1
+// str[1] = a, str[2] = a → same → count = 3, i = 2
+// str[2] = a, str[3] = b → stop
+// Add:
+// newStr = "a"
+// count > 1, so add 3
+// newStr = "a3"
+// 2nd group: "bb"
+
+// i = 3
+// count = 1
+// Compare:
+// str[3] = b, str[4] = b → same → count = 2, i = 4
+// str[4] = b, str[5] = c → stop
+// Add:
+// newStr = "a3b"
+// add 2
+// newStr = "a3b2"
+// 3rd group: "cc"
+
+// i = 5
+// count = 1
+// Compare:
+// str[5] = c, str[6] = c → same → count = 2, i = 6
+// str[6] = c, str[7] = d → stop
+// Add:
+// newStr = "a3b2c"
+// add 2
+// newStr = "a3b2c2"
+// 4th group: "d"
+
+// i = 7
+// count = 1
+// No repeated next character
+// Add:
+// newStr = "a3b2c2d"
+// count is 1, so no number added
+// 5th group: "ee"
+
+// i = 8
+// count = 1
+// Compare:
+// str[8] = e, str[9] = e → same → count = 2, i = 9
+// Add:
+// newStr = "a3b2c2de"
+// add 2
+// newStr = "a3b2c2de2"
+// Final Output
+// a3b2c2de2
