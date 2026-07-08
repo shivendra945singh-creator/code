@@ -54,7 +54,7 @@
 
 
 
-                                              //constructor in java
+//                                               constructor in java
 
 
 
@@ -76,7 +76,7 @@
 //     }
 
 
-                                                                  //or
+                                                                 // or
 
 
 // public class Oops {
@@ -96,9 +96,27 @@
 //         }
 //     }
 
+                                                             //or
 
 
-                                         //non -parameterized and parameterized constructor 
+//     public class Oops {
+//     public static void main(String args[]) {
+//         Student s1 = new Student("shivam");
+//     }
+// }        
+
+//      class Student {
+//          String name;
+//          int roll;
+
+//         Student(String name) {
+//             this.name = name; // here we are initializing the name property of student class with the value passed in constructor
+//             System.out.println("Student name: " + this.name); // accessing the name property of student class
+            
+//         }
+//     }
+
+//                                          non -parameterized and parameterized constructor 
                    
 
 // public class Oops {
@@ -130,7 +148,7 @@
 //     }
 
 
-                                                          //copy constructor ++
+//                                                          shallow copy constructor ++
 
 
 //  public class Oops {
@@ -139,10 +157,16 @@
 //         s1.name = "shivam"; // changing the name property of s1
 //         s1.roll = 101; // changing the roll property of s1
 //         s1.password = "shivam123"; // changing the password property of s1
+//         s1.marks[0] = 90; // changing the marks property of s1
+//         s1.marks[1] = 80; // changing the marks property of s1
+//         s1.marks[2] = 70; // changing the marks property of s1
 
-
-//         Student s2 = new Student(s1); // creating a new object s2 and passing the object s1 to the constructor of Student class //pass all properties of s1 to s2
+//         Student s2 = new Student(s1); // s1 ko copy kar chuka hu s2 mein // creating a new object s2 and passing the object s1 to the constructor of Student class //pass all properties of s1 to s2
 //         s2.password = "s2password"; // changing the password property of s2
+//         s1.marks[2] = 100;//value change ho jayege s1 ko already copy karne ke baad bhi s2 mein changes ho gye
+//         for (int i = 0; i < 3; i++) {
+//             System.out.println("Marks of s1: " + s2.marks[i]); // accessing the marks property of s1
+//         }
 //     }
 // }
 
@@ -151,34 +175,75 @@
 //     String name;
 //     int roll;
 //     String password;
+//     int marks[];
 
 
-//     Student(Student s1) { // copy constructor
+//     Student(Student s1) { // shallow copy constructor
+//         marks = new int[3]; // here we are initializing the marks property of student class with a new array of size 3
 //         this.name = s1.name; // here we are initializing the name property of student class with the value of name property of s1 object
 //         this.roll = s1.roll; // here we are initializing the roll property of student class with the value of roll property of s1 object
-
+//         this.marks = s1.marks;//yah par marks arr pura copy hoke nhi aaya yeh par uska regerence copy hoke  aaya
 //     }
 
 //     Student() { // default constructor
+//         marks = new int[3];
 //         System.out.println("Default Constructor IS called");
 //     }
 
-//     Student(String name) { // parameterized constructor
-//         this.name = name; // here we are initializing the name property of student class with the value passed in constructor
-//         System.out.println("Parameterized Constructor IS called");
+    
+// }
+
+
+                                                 //deep copy constructor
+
+
+//  public class Oops {
+//     public static void main(String args[]) {
+//         Student s1 = new Student();
+//         s1.name = "shivam"; 
+//         s1.roll = 101; 
+//         s1.password = "shivam123"; 
+//         s1.marks[0] = 90; 
+//         s1.marks[1] = 80; 
+//         s1.marks[2] = 70; 
+
+//         Student s2 = new Student(s1); 
+//         s2.password = "s2password"; 
+//         s1.marks[2] = 100;//original value hi milegi  ye changed value s2 mein reflect nhi karegi
+//         for (int i = 0; i < 3; i++) {
+//             System.out.println("Marks of s1: " + s2.marks[i]); // accessing the marks property of s1
+//         }
+//     }
+// }
+
+
+// class Student {
+//     String name;
+//     int roll;
+//     String password;
+//     int marks[];
+
+
+//     Student(Student s1) { // deep copy constructor
+//         marks = new int[3]; // here we are initializing the marks property of student class with a new array of size 3
+//         this.name = s1.name; // here we are initializing the name property of student class with the value of name property of s1 object
+//         this.roll = s1.roll; // here we are initializing the roll property of student class with the value of roll property of s1 object
+//         for(int i= 0;  i<marks.length; i++) {
+//             this.marks[i] = s1.marks[i];
+
+//         }
 //     }
 
-//     Student(int roll) { // parameterized constructor
-//         this.roll = roll; // here we are initializing the roll property of student class with the value passed in constructor
-//         System.out.println("Parameterized Constructor IS called");
-//     }
-    
+//     Student() { // default constructor
+//         marks = new int[3];
+//         System.out.println("Default Constructor IS called");
+//     }  
 // }
 
 
 
 
-                                                        //inheritance 
+                                                        // inheritance 
 
 
 //  public class Oops {
@@ -213,64 +278,19 @@
 
 
 
-                                         //multilevel inheritance
+//                                          multilevel inheritance
 
 
 
                                          
- public class Oops {
-    public static void main(String args[]) {
-        Dog shiba = new Dog(); // creating a new object shiba of Dog class
-        shiba.eat(); // calling the eat() method of Animal class using shiba object of Dog class
-        shiba.walk(); // calling the walk() method of Mammels class using shiba object of Dog class
-        shiba.bark(); // calling the bark() method of Dog class using shiba object of Dog class
-        shiba.legs = 4; // accessing the legs property of Mammels class using shiba object of Dog class
-        System.out.println("Dog has " + shiba.legs + " legs"); 
-    }
-}
-
-//base class
-class Animal {
-    String color;
-
-    void eat() {
-        System.out.println("eating...");
-    }
-
-    void sleep() {
-        System.out.println("sleeping...");
-    }
-}
-
-class Mammels extends Animal { //derived class
-    int legs;
-
-    void walk() {
-        System.out.println("walking...");
-    }
-}
-
-class Dog extends Mammels { //derived class
-    String breed;
-
-    void bark() {
-        System.out.println("barking...");
-    }
-}
-
-
-
-                                               //hierarchical inheritance
-
-                                        
 //  public class Oops {
 //     public static void main(String args[]) {
-//         Bird eagle = new Bird(); // creating a new object eagle of Bird class
-//         eagle.eat(); // calling the eat() method of Animal class using eagle object of Bird class
-//         eagle.walk(); // calling the walk() method of Mammels class using eagle object of Bird class
-//         eagle.fly(); // calling the fly() method of Bird class using eagle object of Bird class
-//         eagle.legs = 2; // accessing the legs property of Mammels class using eagle object of Bird class
-//         System.out.println("Bird has " + eagle.legs + " legs"); 
+//         Dog shiba = new Dog(); // creating a new object shiba of Dog class
+//         shiba.eat(); // calling the eat() method of Animal class using shiba object of Dog class
+//         shiba.walk(); // calling the walk() method of Mammels class using shiba object of Dog class
+//         shiba.bark(); // calling the bark() method of Dog class using shiba object of Dog class
+//         shiba.legs = 4; // accessing the legs property of Mammels class using shiba object of Dog class
+//         System.out.println("Dog has " + shiba.legs + " legs"); 
 //     }
 // }
 
@@ -295,7 +315,53 @@ class Dog extends Mammels { //derived class
 //     }
 // }
 
-// class Bird extends Mammels { //derived class
+// class Dog extends Mammels { //derived class
+//     String breed;
+
+//     void bark() {
+//         System.out.println("barking...");
+//     }
+// }
+
+
+
+                                           //  hierarchical inheritance
+
+                                        
+//  public class Oops {
+//     public static void main(String args[]) {
+//         Bird eagle = new Bird(); // creating a new object eagle of Bird class
+//         eagle.eat(); // calling the eat() method of Animal class using eagle object of Bird class 
+//         eagle.fly(); // calling the fly() method of Bird class using eagle object of Bird class
+
+//         // eagle.walk();//can't acces mammel properties
+//         // eagle.legs = 2; //can't acces mammel properties
+//         // System.out.println("Bird has " + eagle.legs + " legs"); 
+//     }
+// }
+
+// //base class
+// class Animal {
+//     String color;
+
+//     void eat() {
+//         System.out.println("eating...");
+//     }
+
+//     void sleep() {
+//         System.out.println("sleeping...");
+//     }
+// }
+
+// class Mammels extends Animal { //derived class
+//     int legs;
+
+//     void walk() {
+//         System.out.println("walking...");
+//     }
+// }
+
+// class Bird extends Animal { //derived class
 //     String breed;
 
 //     void fly() {
@@ -313,7 +379,7 @@ class Dog extends Mammels { //derived class
 
 
 
-                                                      //method overloading
+                                                       //method overloading
 
 
 // public class Oops {
@@ -341,7 +407,7 @@ class Dog extends Mammels { //derived class
 // }
 
 
-                                              //method overriding
+                                             // method overriding
 
 
 // public class Oops {
@@ -365,17 +431,17 @@ class Dog extends Mammels { //derived class
 
 
                                    
-                                   //Abstract class and abstract method
+                                   // Abstract class and abstract method
 
 
 // public class Oops {
 //     public static void main(String args[]) {
 //             Horse h = new Horse(); // creating a new object h of Horse class
-//             h.eat(); // calling the eat() method of Horse class
+//             h.eat(); // calling the eat() method of Animal class
 //             h.walk(); // calling the walk() method of Horse class
 
 //             Chicken c = new Chicken(); // creating a new object c of Chicken class
-//             c.eat(); // calling the eat() method of Chicken class
+//             c.eat(); // calling the eat() method of Animal class
 //             c.walk(); // calling the walk() method of Chicken class
 //     }
 // }
@@ -404,13 +470,13 @@ class Dog extends Mammels { //derived class
 
 
 
-                                              //abstract class and abstract method with constructor
+                                             // abstract class and abstract method with constructor
 
 
 // public class Oops {
 //     public static void main(String args[]) {
 //             Horse h = new Horse(); // creating a new object h of Horse class
-//             h.eat(); // calling the eat() method of Horse class
+//             h.eat(); // calling the eat() method of Animal class
 //             h.walk(); // calling the walk() method of Horse class
 
 //             System.out.println( h.color); //by default color is brown because when we create an object of Horse class , firstly and always the constructor of Animal class is called and the color is initialized to brown
@@ -457,7 +523,7 @@ class Dog extends Mammels { //derived class
 // }
 
 
-                                                 //or
+                                                  //or
 
 
 
@@ -533,6 +599,7 @@ class Dog extends Mammels { //derived class
 
                                                 //Interface 
 
+
 //  public class Oops {
 //     public static void main(String args[]) {
 //        Queen q = new Queen(); // creating a new object q of Queen class
@@ -563,7 +630,7 @@ class Dog extends Mammels { //derived class
 // }
 
 
-                                                 //or
+                                                 // or
 
 
 // public class Oops {
@@ -594,7 +661,7 @@ class Dog extends Mammels { //derived class
 
 
 
-                                                                 //static keyword in java
+                                                   // static keyword in java
 
 
 // public class Oops {
@@ -604,12 +671,12 @@ class Dog extends Mammels { //derived class
 //         System.out.println("Student 1 school name: " + s1.schoolName); 
 
 //         Student s2 = new Student(); // creating a new object s2 of Student class
-//         System.out.println("Student 2 school name: " + s2.schoolName); 
+//         System.out.println("Student 2 school name: " + s2.schoolName);// s2.schoolName is ABC automatically 
 
 //          Student s3 = new Student(); // creating a new object s3 of Student class
 //          s3.schoolName = "XYZ School"; // changing the schoolName property of s3 //now this schoolname is become new schoolname for  all object  
 //          System.out.println("Student 3 school name: " + s3.schoolName); 
-//            System.out.println("Student 1 school name: " + s1.schoolName); //now s1.schoolname is xyz from ABC
+//            System.out.println("Student 1 school name: " + s1.schoolName); //now s1.schoolname is xyz after ABC
 
 //     }
 // }
@@ -618,7 +685,7 @@ class Dog extends Mammels { //derived class
 //     String name;
 //     int roll;
 //     static String schoolName; //static property // here static keyword is used to declare a property that is shared among all the objects of the class and it is not specific to any object of the class
-//     //static schoolname hai woh all objects ke liye same hai , agar humne s1 ke schoolname ko change kiya to woh s2 ke schoolname ko bhi change kar dega
+//     //static schoolname  all objects ke liye same hai , agar humne s1 ke schoolname ko change kiya to woh s2 ke schoolname ko bhi change kar dega
 
 
 //     static int percentage(int math , int phy , int chem ) { //static function //this static function create in a memory once time not every time
@@ -635,7 +702,7 @@ class Dog extends Mammels { //derived class
 
 
 
-                                                   //super keyword 
+                                                    //super keyword 
 
 
 //  public class Oops {
@@ -653,37 +720,37 @@ class Dog extends Mammels { //derived class
 
 //     class Horse extends Animal { //derived class
 //         Horse() {
-//             super(); // jaise hai hume object creation ki line liki waise hi hum horse ke constructor pe ha gye toh horse ne super() constructor mean immediate parent class ka constructor  call kiya  aur phir horse ka constructor call hua //if we dont write super() then  java bydefault call the  super() constructor
+//             super(); // jaise hai hume object creation ki line liki waise hi hum horse ke constructor pe ha gye toh horse ne super() constructor mean immediate parent class ka constructor ko  call kiya  aur phir horse ka constructor call hua //if we dont write super() then  java by default call the  super() constructor
 //             System.out.println("Horse constructor is called");
 //         }
 //     }
 
 
 
-                                                              //or
+                                                               //or
 
 
-//  public class Oops {
-//     public static void main(String args[]) {
-//         Horse d = new Horse(); // creating a new object d of Horse class
-//         System.out.println("Horse color: " + d.color); // accessing the color property of Horse class
-//     }
-// }
+ public class Oops {
+    public static void main(String args[]) {
+        Horse d = new Horse(); // creating a new object d of Horse class
+        System.out.println("Horse color: " + d.color); // accessing the color property of Horse class
+    }
+}
     
-//     class Animal { //base class
-//         String color;
-//         Animal() {
-//             System.out.println("Animal constructor is called");
-//         }
+    class Animal { //base class
+        String color;
+        Animal() {
+            System.out.println("Animal constructor is called");
+        }
 
-//     }
+    }
 
-//     class Horse extends Animal { //derived class
-//         Horse() {
-//           super.color = "brown"; 
-//             System.out.println("Horse constructor is called");
-//         }
-//     }
+    class Horse extends Animal { //derived class
+        Horse() {
+          super.color = "brown"; //parent class ka color brown kar diya
+            System.out.println("Horse constructor is called");
+        }
+    }
 
 
 

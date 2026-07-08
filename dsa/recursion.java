@@ -3,7 +3,7 @@
                                         
 
 
-public class recursion {
+// public class recursion {
 //     public static void printDec(int n) {
 //         if (n == 1) {
 //             System.out.println(n);
@@ -567,28 +567,28 @@ public class recursion {
 
 
 
- public static void removeDuplicates(String str, int idx, StringBuilder newStr, boolean map[]) {
-    // base case: if we have reached the end of the string, print the new string and return
-    if (idx == str.length()) {
-        System.out.println(newStr);
-        return;
-    }
-    //kaam
-    char currChar = str.charAt(idx); // get the current character
-    if (map[currChar - 'a'] == true) { // if the current character has already been seen, skip it
-      //duplicate
-        removeDuplicates(str, idx + 1, newStr, map);
-    } else { // if the current character has not been seen, add it to the new string and mark it as seen
-        map[currChar - 'a'] = true; // mark the current character as seen
-        removeDuplicates(str, idx + 1, newStr.append(currChar), map); // recursive call to process the rest of the string
-    } 
-  }
+//  public static void removeDuplicates(String str, int idx, StringBuilder newStr, boolean map[]) {
+//     // base case: if we have reached the end of the string, print the new string and return
+//     if (idx == str.length()) {
+//         System.out.println(newStr);
+//         return;
+//     }
+//     //kaam
+//     char currChar = str.charAt(idx); // get the current character
+//     if (map[currChar - 'a'] == true) { // if the current character has already been seen, skip it
+//       //duplicate
+//         removeDuplicates(str, idx + 1, newStr, map);
+//     } else { // if the current character has not been seen, add it to the new string and mark it as seen
+//         map[currChar - 'a'] = true; // mark the current character as seen
+//         removeDuplicates(str, idx + 1, newStr.append(currChar), map); // recursive call to process the rest of the string
+//     } 
+//   }
   
-    public static void main(String args[]) {
-        String str = "aabbccaapnaaacollegeee";
-        removeDuplicates(str, 0, new StringBuilder(""), new boolean[26]);
-    }
-  // }
+//     public static void main(String args[]) {
+//         String str = "aabbccaapnaaacollegeee";
+//         removeDuplicates(str, 0, new StringBuilder(""), new boolean[26]);
+//     }
+//   // }
 
 
 
@@ -621,7 +621,7 @@ public class recursion {
                                               // or
 
 
-
+public class recursion {
   public static int friendPairing(int n) {
     // base case: if there are 0 or 1 friends, there is only one way to pair them
     if (n == 0 || n == 1) {
