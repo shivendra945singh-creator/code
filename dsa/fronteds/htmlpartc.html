@@ -1,0 +1,140 @@
+<!--tables-->
+
+<table>
+  
+    <caption>Food Menu</caption>
+    <!--table header-->
+<thead>
+    <tr>
+    <th>Item</th>
+    <th>Price</th>
+  </tr>
+</thead>
+    <!--table body-->
+<tbody>
+  <tr>
+    <td>frooti</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>samosa</td>
+    <td>12</td>
+  </tr>
+   <tr>
+    <td>chips</td>
+    <td>20</td>
+  </tr>
+</tbody>  
+
+</table>
+
+
+<!--tables-->
+
+<table border = "black">  <!--1 is also used in the place of black-->
+  
+    <caption>Food Menu</caption>
+    <!--table header-->
+<thead>
+    <tr>
+    <th rowspan = "2">Item</th>
+    <th colspan = "2">Price</th>
+  </tr>
+  <tr>
+    <th>Rs</th>
+    <th>$</th>
+  </tr>
+</thead>
+    <!--table body-->
+<tbody>
+  <tr>
+    <td>frooti</td>
+    <td>10</td>
+    <td>0.14</td>
+  </tr>
+  <tr>
+    <td>samosa</td>
+    <td>12</td>
+    <td>0.17</td>
+  </tr>
+   <tr>
+    <td>chips</td>
+    <td>20</td>
+    <td>0.32</td>
+  </tr>
+</tbody>  
+
+</table>
+
+
+<!--forms-->
+
+all inputs
+<input>
+<br>
+text
+<input type = "text" >
+<br>
+password
+<input type = "password" >
+<br>
+time
+<input type = "time" >
+<br>
+color
+<input type = "color" >
+<br>
+
+<!--placeholder attribute-->
+
+<input type = "text" placeholder = "Enter your name">
+
+<!--label-->
+
+<label>
+    enter your name:
+    <input type="text" placeholder="Enter your name">
+</label>
+<br>
+
+<!--or-->
+
+<div>
+   <label for="username">Enter your name:</label>
+   <input type="text" placeholder="Enter your name" id="username">
+</div>
+<div>
+   <label for="password">Enter your password:</label>
+   <input type="password" placeholder="Enter your password" id="password">
+</div>
+<div>
+   <label for="age">Enter your age:</label>
+   <input type="number" placeholder="Enter your age" id="age">
+</div>
+
+<br>
+
+<!--or-->
+
+<label for="name">Name:</label>
+<input type="text" id="name" name="name">
+<br>
+
+<!--button-->
+<form action = "my server" > <!--when i click on button i goes here page-->
+    
+<button>Click Me</button>
+<button> help</button>
+
+<!--button attributes-->
+
+<button type="submit"> submit</button>
+<button type="button"> button</button>
+<button type="reset"> reset</button>
+
+<!-- create button using input -->
+ <br>
+<input type="button" value="Click Me">
+<input type="submit">
+<input type="submit" value="submit">
+
