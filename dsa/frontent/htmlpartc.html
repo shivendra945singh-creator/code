@@ -138,3 +138,71 @@ color
 <input type="submit">
 <input type="submit" value="submit">
 
+<!-- checkbox -->
+<form action = "my server" >
+   <input type="checkbox" id="vehicle1" name="vehicle1" >
+   <label for="vehicle1"> I have a bike</label>
+  <button >Submit</button>
+<form>
+  <br>
+
+  <!--radio buttons-->
+
+  <input type="radio" name="fruits" id="apple" value="apple">  <!--name value is  always same for select only one option -->
+  <label for="apple">Apple</label><br>
+
+  <input type="radio" name="fruits" id="banana" value="banana">
+  <label for="banana">Banana</label><br>
+
+  <input type="radio" name="fruits" id="orange" value="orange">
+  <label for="orange">Orange</label>
+  <button>Submit</button>
+  <br>
+
+  <!--select element-->
+
+  choose your profession:
+  <select name="profession" id="profession">
+    <option>select your profession</option>
+    <option value="stud">Student</option>
+    <option value="tea">Teacher</option>
+  </select>
+  <button>Submit</button>
+  </form>
+  <br>
+
+
+  <!--or-->
+
+  
+  choose your profession:
+  <select name="profession" id="profession">
+    <option>select your profession</option>
+    <option value="stud" selected>Student</option> <!--selected is used to show option student firstly-->
+    <option value="tea">Teacher</option>
+  </select>
+  <button>Submit</button>
+  </form>
+  <br>
+
+  
+  <!--range input element-->
+<form action = "my server" > 
+  <label for="volume"> select your Volume:</label>
+  <input type="range"  name="vol" min="0" max="100">
+  <button>Submit</button>
+  </form>
+
+  <!--text area-->
+  <form action = "my server" > 
+  <label for="message">Enter your message:</label>
+  <textarea id="message" ></textarea>
+  <br>
+  <button>Submit</button>
+</form>
+
+<!--or-->
+
+<label for="message">Enter your message:</label>
+<textarea id="message" name="message"></textarea> 
+<button>Submit</button>

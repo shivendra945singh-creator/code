@@ -1,0 +1,22 @@
+ h2 {
+        color: rgb(128, 219, 16);
+    }
+    
+H3 {
+        color: rgb(219, 16, 219);
+        background-color: rgb(16, 219, 128);
+    }
+    
+p {
+        color: rgb(219, 16, 26);
+        background-color: rgb(16, 151, 219);
+    }
+
+button {
+        background-color: rgb(124, 16, 219);
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
