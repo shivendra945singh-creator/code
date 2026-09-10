@@ -20,3 +20,10 @@ button {
         cursor: pointer;
     }
 
+h4 {
+        text-align: center;  /* text property */
+        font-weight: bold;  /* font property */
+        text-decoration  : red wavy underline;  /* text decoration property */
+        font-size: 20px;  /* font property */
+        font-family: Arial, sans-serif;  /* font property */
+    }
