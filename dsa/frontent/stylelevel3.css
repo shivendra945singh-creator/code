@@ -1,0 +1,46 @@
+div{
+    height: 200px;
+    width: 500px;
+    background-color: lightblue;
+
+    /* border side property */
+    border: 5px solid rgb(235, 38, 120);
+    border-right-color: rgb(0, 255, 170);
+    border-right-style: dashed;
+
+    /* or border-right:5px dashed rgb(0, 255, 170); */
+    
+}
+
+/* border property */
+
+h1 {
+    border-width: 5px;
+    border-style: dashed;
+    border-color: purple;
+}
+
+/* border shorthand property */
+
+/* div {
+    border: 2px solid black;
+} */
+
+/* border-radius property */
+
+div {
+    border-radius: 20px;
+}
+
+/* padding property */
+div {
+    
+    padding-top: 10px;
+    padding-right: 30px;
+}
+
+/* margin property */
+
+div {
+    margin:30px;
+}
