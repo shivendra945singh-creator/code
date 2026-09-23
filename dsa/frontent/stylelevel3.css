@@ -22,25 +22,45 @@ h1 {
 
 /* border shorthand property */
 
-/* div {
+ div {
     border: 2px solid black;
-} */
+} 
 
 /* border-radius property */
 
-div {
+ div {
     border-radius: 20px;
-}
+} 
 
 /* padding property */
-div {
+ div {
     
     padding-top: 10px;
     padding-right: 30px;
-}
+} 
 
 /* margin property */
 
 div {
     margin:30px;
+} 
+
+/* percentage property */
+h1 {
+    border: 2px solid black;
+    width: 33.333%;
+}
+
+#outer {
+    background-color: rgb(230, 173, 204);
+    width: 400px;
+    height: 400px;
+    margin: 50px;
+}
+
+#inner {
+    background-color: rgb(144, 222, 238);
+    width: 100px;
+    height: 100px;
+    margin-left: 10%;
 }
