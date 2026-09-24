@@ -1,0 +1,137 @@
+
+/*justify content*/
+
+#container{
+    height: 300px;
+    width: 80%;
+    background-color: azure;
+    margin: 10px auto;
+    border: 2px solid black;
+    display: flex;/*by deafault div in rows*/
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+
+h1{
+    text-align: center;
+}
+
+#container div{
+    height: 20px;
+    width: 100px;
+    color: white;
+    text-align: center;
+    font-size:1.5em ;
+}
+/*justify content*/
+
+#nothing{
+    height: 300px;
+    width: 80%;
+    background-color: azure;
+    margin: 10px auto;
+    border: 2px solid black;
+    display: flex;/*by deafault div in rows*/
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+h2{
+    text-align: center;
+}
+
+#nothing div{
+    height: 100px;
+    width: 100px;
+    color: white;
+    text-align: center;
+    font-size:1.5em ;
+}
+
+/*flex wrap*/
+
+
+#no{
+    height: 300px;
+    width: 80%;
+    background-color: azure;
+    margin: 10px auto;
+    border: 2px solid black;
+    display: flex;/*by deafault div in rows*/
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;/*here element wrap acconding to their size and shift to next line according to flex direction*/
+    flex-wrap:wrap-reverse ;
+}
+
+h2{
+    text-align: center;
+}
+
+#no div{
+    height: 100px;
+    width: 300px;
+    color: white;
+    text-align: center;
+    font-size:1.5em ;
+}
+
+/*align item*/
+
+
+#nooo{
+    height: 600px;
+    width: 80%;
+    background-color: azure;
+    margin: 10px auto;
+    border: 2px solid black;
+    display: flex;/*by deafault div in rows*/
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;/*here element wrap acconding to their size and shift to next line according to flex direction*/
+    align-items: baseline;
+}
+
+h2{
+    text-align: center;
+}
+
+#nooo div{
+    height: 100px;
+    width: 300px;
+    color: white;
+    text-align: center;
+    font-size:1.5em ;
+}
+
+
+/*align self*/
+
+
+#noooo{
+    height: 600px;
+    width: 80%;
+    background-color: azure;
+    margin: 10px auto;
+    border: 2px solid black;
+    display: flex;/*by deafault div in rows*/
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+h2{
+    text-align: center;
+}
+
+#noooo div{
+    height: 100px;
+    width: 300px;
+    color: white;
+    text-align: center;
+    font-size:1.5em ;
+}
+
+#orange{
+    align-self: flex-end;
+}
