@@ -251,3 +251,21 @@ switch(day) {
      default:
     console.log("error")
 }
+
+//alert message
+
+alert("something is wrong");
+
+//error message
+
+console.error("error");
+
+//warning message
+
+console.warn("danger");
+
+//prompt message
+
+let firname = prompt("enter your name ");
+let lasname = prompt("enter your last name");
+console.log("welcome",firname, lasname,"our website");
