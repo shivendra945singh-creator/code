@@ -144,3 +144,12 @@ console.log(numm.sort());//[12,13,2,4,5] //not in ascending order becuase number
 let starts = ["jan", "fab", "mar", "apr"];
 console.log(starts.splice(0, 2, "may", "june"));//jan and fab delete
 console.log(starts);//["may", "june", "mar", "apr"];
+
+//nested arrays
+
+let nums = [[1,2], [4,5], [6,3]];
+console.log(nums);//[[1,2], [4,5], [6,3]]
+console.log(nums.length);//3
+console.log(nums[0]);//[1,2]
+console.log(nums[0].length);//2
+console.log(nums[0][0]);//1

@@ -105,3 +105,49 @@ let fruit =  ["mango", "apple", "banana", "litichi", "orange"];
 for(let i = fruit.length; i>=0; i--) {//reverse
     console.log(i, fruit[i]);
 }
+
+//loops with nested array
+
+let heroes = [["ironman", "spiderman", "thor"], ["superman", "wonder woman", "flash"]];
+
+for(let i = 0; i<heroes.length; i++){// for outer array
+    console.log(i, heroes[i], heroes[i].length);
+    for(let j=0; j<heroes[i].length; j++){//for inner array
+        console.log(`j=${j}, ${heroes[i][j]}`);
+    }
+}
+
+let stud = [["aman", 32], ["shivam", 45], ["rahul", 44]];
+
+for(let i = 0; i<stud.length; i++){// for outer array
+    console.log(`info of student #${i}`);
+    for(let j=0; j<stud[i].length; j++){//for inner array
+        console.log(stud[i][j]);
+    }
+}
+
+//for of loop
+
+let frui = ["mango", "mang", "man", "ma"];
+
+for(fruits of frui){
+    console.log(fruits);
+}
+
+for(char of "appanacollege"){
+    console.log(char);
+}
+
+let heroe = [["ironman", "spiderman", "thor"], ["superman", "wonder woman", "flash"]];
+for(heroes of heroe){
+    console.log(heroes);
+}
+
+//nested for of loop
+
+let heroess = [["ironman", "spiderman", "thor"], ["superman", "wonder woman", "flash"]];
+for(heroes of heroess){
+    for(jja of heroes){
+      console.log(jja);
+    } 
+}
