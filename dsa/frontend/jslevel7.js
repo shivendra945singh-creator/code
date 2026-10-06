@@ -219,6 +219,7 @@ function multiply(a, b ) {
 }
 console.log(multiply(5)); // Output: NaN // if we pass only one parameter then a is 5 and b is undefined so 5*undefined=NaN
 
+
 //spread(apply on arrays and string) - expands an iterable(iterate) into multiple values
 
 let t = [2, 3, 4, 6];
