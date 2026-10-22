@@ -1,3 +1,10 @@
+.abc {
+  color: white;
+  text-decoration: underline wavy;
+}
+
+
+
 body {
   font-family: Arial;
 }
