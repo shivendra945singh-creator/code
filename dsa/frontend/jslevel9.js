@@ -66,3 +66,77 @@ butto.addEventListener("click", function() {
 
 // more example of this
 
+// let h1 = document.querySelector("h1");
+// let h2 = document.querySelector("h2");
+
+// h1.addEventListener("click", function() {
+//   console.log(this.innerText);
+//   this.style.backgroundColor = "red";
+// });
+
+// h2.addEventListener("click", function() {
+//   console.log(this.innerText);
+//   this.style.backgroundColor = "red";
+// });
+
+//or - reduce redundancy   means not write same things again and again
+
+ let h1 = document.querySelector("h1");
+ let h2 = document.querySelector("h2");
+
+function changeColor() {
+  console.log(this.innerText);
+  this.style.backgroundColor = "red";
+}
+
+h1.addEventListener("click", changeColor);
+h2.addEventListener("click", changeColor);
+
+//keyboard events
+
+let inp = document.querySelector("input");
+inp.addEventListener("keydown", function(){
+  console.log("key was pressed");
+});
+inp.addEventListener("keyup", function(){
+  console.log("key was released");
+});
+
+//more
+
+let inpu = document.querySelector("input");
+inpu.addEventListener("keydown", function(event) {
+  console.log("key= ", event.key);
+  console.log("code=", event.code);
+  console.log("key was pressed");
+});
+
+//pointerEvent and keyboardEvent
+
+let btnn = document.querySelector("button ");
+btnn.addEventListener("click", function(event) {
+  console.log(event);//show pointerEvent
+  console.log("button is click");
+});
+
+let btnnn = document.querySelector("button ");
+btnnn.addEventListener("keydown", function(event) {
+  console.log(event);//show pointerEvent
+  console.log("button is click");
+});
+
+// more example
+
+let inpp = document.querySelector("input");
+inpp.addEventListener("keydown", function(event) {
+  console.log("code =", event.code);
+  if(event.code == "arrowup") {
+    console.log("CHACTER MOVES FORWARD");
+  } else if(event.code == "arrowdown") {
+    console.log("CHACTER MOVES downWARD");
+  } else if(event.code == "arrowleft") {
+    console.log("CHACTER MOVES left");
+  } else if(event.code == "arrowright") {
+    console.log("CHACTER MOVES right");
+  }
+});
