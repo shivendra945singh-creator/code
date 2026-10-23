@@ -196,6 +196,18 @@ h2.addEventListener("click", changeColor);
 // alert(`hi ${user.value}, your password is set to ${pass.value}`);
 // });
 
+//change event
+
+// let form = document.querySelector("form");
+// form.addEventListener("submit", function(event){
+//   event.preventDefault();
+// });
+// let user = document.querySelector("#user");
+// user.addEventListener("change", function(){//"change"initial and final change ki state ko track karta hai only
+//   console.log("input change ");
+//   console.log("final value =", this.value);
+// });
+
 //input event
 
 let form = document.querySelector("form");
@@ -203,7 +215,16 @@ form.addEventListener("submit", function(event){
   event.preventDefault();
 });
 let user = document.querySelector("#user");
-user.addEventListener("change", function(){//"change"initial and final change ki state ko track karta hai only
-  console.log("change event");
+user.addEventListener("input", function(){//"input"initial to  final change ki state ko track karta hai //only character keys hi input ko trigger karti hai, arrow keys shift cltr input ko trigger nhi karti
+  console.log("input change ");
   console.log("final value =", this.value);
+});
+
+//activity
+
+let inp = document.querySelector("#text");
+let pa = document.querySelector("p");
+inp.addEventListener("input", function(){
+  console.log(inp.value);
+  pa.innerText = inp.value;
 });
