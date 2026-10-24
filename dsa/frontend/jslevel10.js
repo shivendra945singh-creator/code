@@ -156,14 +156,197 @@ console.log("name");
 
 //now we see promise
 
-function savetoDb(data) {
+// function savetoDb(data) {
+//   return new Promise((resolve, reject) => {//resolve is success and reject is failure
+//     let internetSpeed = Math.floor(Math.random()*10 ) + 1;
+//     if(internetSpeed > 4) {
+//         resolve("success data was saved");
+//     }else{
+//         reject("failed data was not saved");
+//     }
+//   });   
+// }
+// savetoDb("hero");
+
+//promise method - then() and catch() method
+
+// function savetoDbPromise(data) {
+//   return new Promise((resolve, reject) => {//resolve is success and reject is failure
+//     let internetSpeed = Math.floor(Math.random()*10 ) + 1;
+//     if(internetSpeed > 4) {
+//         resolve("success data was saved");
+//     }else{
+//         reject("failed data was not saved");
+//     }
+//   });   
+// }
+
+// let request = savetoDbPromise("apna college");
+// request//request = promise object
+// .then(() => {//if success then print this
+//     console.log("promise resolved");
+// })
+// .catch(() => {//if fail then print this
+//     console.log("promise not  resolved");
+// });
+
+//or
+
+// function savetoDbPromise(data) {
+//   return new Promise((resolve, reject) => {//resolve is success and reject is failure
+//     let internetSpeed = Math.floor(Math.random()*10 ) + 1;
+//     if(internetSpeed > 4) {
+//         resolve("success data was saved");
+//     }else{
+//         reject("failed data was not saved");
+//     }
+//   });   
+// }
+
+// savetoDbPromise("apna college")
+// .then(() => {//if success then print this
+//     console.log("promise resolved");
+//  })
+// .catch(() => {//if fail then print this
+//     console.log("promise not  resolved");
+// });
+
+//promise chaining
+
+// function savetoDbPromise(data) {
+//   return new Promise((resolve, reject) => {//resolve is success and reject is failure
+//     let internetSpeed = Math.floor(Math.random()*10 ) + 1;
+//     if(internetSpeed > 4) {
+//         resolve("success data was saved");
+//     }else{
+//         reject("failed data was not saved");
+//     }
+//   });   
+// }
+
+// savetoDbPromise("apna college")
+// .then(() => {//if data save
+//     console.log(" data 1 saved. promise resolved");//then print this
+//     savetoDbPromise("helloworld").then(() => {//if this data save
+//         console.log("data 2 saved");//then print this
+//     });
+//  })
+// .catch(() => {//if tuno mein se ek mein bhi error aa gya then print this
+//     console.log("promise was  not  resolved");
+// });
+
+//optimize code
+
+// function savetoDbPromise(data) {
+//   return new Promise((resolve, reject) => {//resolve is success and reject is failure
+//     let internetSpeed = Math.floor(Math.random()*10 ) + 1;
+//     if(internetSpeed > 4) {
+//         resolve("success data was saved");
+//     }else{
+//         reject("failed data was not saved");
+//     }
+//   });   
+// }
+
+// savetoDbPromise("apna college")
+// .then(() => {//if data save
+//     console.log(" data 1 saved. promise resolved");//then print this
+//     return savetoDbPromise("helloworld");//2nd data ko save kaaro new promise return karo
+//  })
+//  .then(() => {//if 2nd data save
+//  console.log("data 2 saved");//then print this
+// })
+// .catch(() => {//if tuno mein se ek mein bhi error aa gya then print this
+//     console.log("promise was  not  resolved");
+// });
+
+//above code is  improve version and called promise chaining
+
+//more ex
+
+// function savetoDbPromise(data) {
+//   return new Promise((resolve, reject) => {//resolve is success and reject is failure
+//     let internetSpeed = Math.floor(Math.random()*10 ) + 1;
+//     if(internetSpeed > 4) {
+//         resolve("success data was saved");
+//     }else{
+//         reject("failed data was not saved");
+//     }
+//   });   
+// }
+
+// savetoDbPromise("apna college")
+// .then(() => {//if data save
+//     console.log(" data 1 saved. promise resolved");//then print this
+//     return savetoDbPromise("helloworld");//2nd data ko save kaaro new promise return karo
+//  })
+//  .then(() => {//if 2nd data save
+//  console.log("data 2 saved");//then print this
+//  return savetoDbPromise("shivam");//if 3rd data save
+// })
+// .then(() => {//then print this
+//     console.log("data3 saved");
+// })
+// .catch(() => {//if theno mein se ek mein bhi error aa gya then print this
+//     console.log("promise was  not  resolved");
+// });
+
+//result and errors in promises
+
+function savetoDbPromise(data) {
   return new Promise((resolve, reject) => {//resolve is success and reject is failure
     let internetSpeed = Math.floor(Math.random()*10 ) + 1;
     if(internetSpeed > 4) {
-        resolve("success data was saved");
+        resolve("success data was saved");//"success data was saved" is result
     }else{
-        reject("failed data was not saved");
+        reject("failed data was not saved");//"failed data was not saved" is error
     }
   });   
 }
-savetoDb("hero");
+
+savetoDbPromise("apna college")
+.then((result) => {//result is argument
+    console.log(" data 1 saved");
+    console.log("result of promise:", result);
+    return savetoDbPromise("helloworld");
+ })
+ .then((result) => {
+ console.log("data 2 saved");
+ console.log("result of promise:", result);
+ return savetoDbPromise("shivam");
+})
+.then((result) => {
+    console.log("data3 saved");
+    console.log("result of promise:", result);
+})
+.catch((error) => {//error is argument
+    console.log("promise was  not  resolved");
+    console.log("error of promise:", error);
+});
+
+//1st call successful ho tabi 2nd call jaye, 2nd call successful ho tabi 3rd call jaye,  iss tarre ki situation ko promises se handle karte hai
+
+//starting que solve with promise
+
+h1 = document.querySelector("h1");
+function changeColor(color, delay) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+      h1.style.color = color;
+      resolve("color changed");
+    }, delay);
+});
+}
+changeColor("red", 1000)
+    .then(() => {
+        console.log("red color was saved");
+        return changeColor("orange", 1000);
+    })
+    .then(() => {
+        console.log("orange color was saved");
+        return changeColor("pink", 1000);
+    })
+    .then(() => {
+        console.log("pink color was saved");
+        return changeColor("orange", 1000);
+    });
