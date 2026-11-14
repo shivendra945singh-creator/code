@@ -1,3 +1,5 @@
+
+
 console.log("hello world");
 console.log("shivam");
 let s = 10;
@@ -9,7 +11,7 @@ console.log("shivam",123);
 
 let pen = 10;
 let pencil = 3;
-// let output = "the total price is : " + (pen + pencil) +  " i konw "; // + is used to add string 
+// let output = "the total price is : " + (pen + pencil) +  " i konw "; // + is used to add string //if we dont use () addition will not  happen
 //or
 let output = ` the total price is : ${pen + pencil} i know `;// ` is called back tick
 console.log(output);
@@ -29,7 +31,9 @@ console.log(a/b);
 
 let r = 12;
 console.log(r++);//12
+console.log(r);//13
 console.log(++r);//14
+console.log(r);//14
 
 //assignment operator
 
@@ -58,7 +62,7 @@ console.log("after my if statement");
 
 let firstname = "shivam";
 if(firstname == "shivam") {
-    console.log(`welcome ${firstname}`);
+    console.log(`welcome ${firstname}`); //or  console.log("welcome", firstname);
 }
 
 //traffic light system
@@ -119,7 +123,7 @@ if(colors === "red") {
     console.log("wait");
 }else if(colors === "green") {
     console.log("go");
-}else {// if upper conditions is false then 100% this statement will print
+}else {// if upper conditions are  false then 100% this statement will print
     console.log("error");
 }
 
@@ -175,31 +179,31 @@ if(str[0]==="a" && str.length > 3) {
 //truthy and falsy
 
 if(true) {
-    console.log("it has true value");//it has true value
+    console.log("it has true value");//true has true value
 }else{
     console.log("it has false value");
 }
 
 if(0) {
-    console.log("it has true value");//it has false value
+    console.log("it has true value");
 }else{
-    console.log("it has false value");
+    console.log("it has false value");//0 has false value
 }
 
 if(1) {
-    console.log("it has true value");//it has true value
+    console.log("it has true value");//1 has true value
 }else{
     console.log("it has false value");
 }
 
 if("") {
-    console.log("it has true value");//it has false value
+    console.log("it has true value");
 }else{
-    console.log("it has false value");
+    console.log("it has false value");// "" has false value
 }
 
 if(" ") {
-    console.log("it has true value");//it has true value
+    console.log("it has true value");// " " has true value
 }else{
     console.log("it has false value");
 }
