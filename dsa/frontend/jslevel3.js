@@ -9,7 +9,7 @@ for(let i = 5; i>=1; i--){//backward
 }
 
 let i =2;
-console.log(i); //i  is not found if we dont write let i =2; // i in for loop is valid only in for loop
+console.log(i); //i is not found if we dont write let i =2; // i in for loop is valid only in for loop
 
 for(let i = 1; i<=15; i=i+2){
     console.log(i); 
