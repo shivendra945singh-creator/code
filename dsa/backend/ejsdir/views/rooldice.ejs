@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rooldice</title>
+</head>
+<body>
+    <h1> pls rool a dice :
+         <!-- <%= Math.floor(Math.random() * 6) + 1 %> --> <!-- generally jitna bhi comptional or calculation task hota hai or generally jitna bhi humare pass data hata hai woh data hum ejs file me generate nhi karte, woh data humare pass database se ha rha hota hai, toh hum assuume karte hai yha jo ye random number generate ho rha h ye yaha generate nhi ho rha ye kisi database se ha rha hai jo ki diceval variable se ha rha hai -->
+         <!-- or better way -->
+        <%= num %> <!-- diceval ki value idar ha gyi -->  <!--abb humara  data rooldice.ejs mein generate nhi ho rha , ab huamre pass data diceval se ha rha h --> 
+
+        <!-- conditional statement-->
+        <% if(num == 6) { %> <!-- js part --> <!-- this tag is used for js part --> <!-- if this condition is true then print lower line -->
+            <h2> Nice, roll dice again.</h2>  <!-- html part , therfore no use of tags -->
+        <% } %> <!-- js part -->
+
+        <!-- loops in ejs-->
+         <h3> Accounts that follows you:</h3>
+         <ul>
+           <% for(let name of followers) { %>
+                <li><%= name %></li> <!--without  <%=  %>name is string , to make name variable we use this-->
+           <% } %>
+         </ul>
+    </h1>
+</body>
+</html>
