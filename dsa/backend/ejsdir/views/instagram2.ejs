@@ -1,16 +1,46 @@
 
-<!DOCTYPE html>
+
+<!-- this  comment code we  used before include  -->
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>instagram</title>
-</head>
+    <!-- this is used when we dont link css file 
+     <style>
+        img{
+        height: 400px;
+        width: 400px;
+        }
+    </style> -->
+
+    <!-- <link rel="stylesheet" href="/style.css" /> 
+</head> --> -->
+
+<%- include("includes/common.ejs") %>   
+<!-- include means sub template , common.ejs ka code hai woh idar use ho jayega -->
+<!-- common.ejs file  hai isse maine includes folder mein create kya hai and includes folder ko views folder mein create kya hai-->
+ <!-- include("/includes/common.ejs")  esse nhi lik sakta-->
 <body>
-    <h1>This page is belongs to @ <%= data.name %> </h1>
+    <h1>This page is belongs to @ <%= data.name %> </h1>  <!-- in browser localhost:8080 /cats kiya toh instagram ke data mein search hoga ki cats name ka object hai kya agar hai toh woh object data mein chala jayega and now we want data.name means cats object ka name that is cats --> 
     <button> LIke </button> <button> Subscribe</button>
 
-    <p>Followers : <%= data.followers %></p>
-    <p>Following : <%= data.following %></p>
+    <p>
+        Followers : <%= data.followers %>  &nbsp;&nbsp;&nbsp;  Following : <%= data.following %>  <!--data.following  means cats object mein following par jake uske value return karuga -->
+    </p>
+    <hr/>  <!-- give doted horizontal line -->
+
+    <%  for(let post of data.posts) {  %> 
+        <img src = "<%=post.image%>" alt = "some img" > 
+        <p>
+            Like : <%= post.likes %>  &nbsp;&nbsp;&nbsp;  Comments : <%= post.comments %>
+        </p>
+    <hr/>
+  <%  } %>
+   
+  <%- include("includes/footer.ejs") %>
 </body>
-</html>
+<script src="/app.js"></script>
+</html> 
