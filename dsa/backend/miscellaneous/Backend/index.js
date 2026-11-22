@@ -6,7 +6,7 @@
 // const port = 8080;
 
 // app.get("/register", (req, res) => { //get request ko accept karne ke liye app.get use karte hai // get request ko accept karuga "/register route par , "/register" ko form mein likha tha and form "/request" mein submit hoga url mein "/register" show hoga
-//     let {user, password} = req.query;//jo form mein data send kar rhe hai woh res.qurery se collect kar sakte hai 
+//     let {user, password} = req.query;//jo form mein data send kar rhe hai woh req.qurery se collect kar sakte hai 
 //     res.send(`standard get response .  Welcome${user} your password is ${password}`);
 // });
 
